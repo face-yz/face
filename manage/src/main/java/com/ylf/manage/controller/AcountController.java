@@ -5,7 +5,7 @@ import com.ylf.manage.entity.Acount;
 import com.ylf.manage.entity.Response;
 import com.ylf.manage.serviceAPI.AcountService;
 import com.ylf.manage.util.Encryption;
-import com.ylf.manage.util.UUID;
+import com.ylf.manage.util.Token;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.redis.core.RedisTemplate;
 import org.springframework.web.bind.annotation.CrossOrigin;
@@ -37,7 +37,7 @@ public class AcountController {
     public Response login(@RequestBody Acount acount, HttpServletResponse response){
         boolean f=service.isLegal(acount);
         if(f){
-            String uuid= UUID.getUUID();
+            String uuid= Token.getToken(acount.getUsername());
             redisTemplate.opsForValue().set(Encryption.toEncryption(acount.getUsername()),uuid);
             redisTemplate.expire(Encryption.toEncryption(acount.getUsername()),60*60, TimeUnit.SECONDS);
             JSONObject ticket=new JSONObject();
