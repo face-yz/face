@@ -18,7 +18,6 @@ public class DeleteFace {
     public void delete(AipFace client) {
         // 传入可选参数调用接口
         HashMap<String, String> options = new HashMap<String, String>();
-
         String userId = "user1";
         String groupId = "group1";
         String faceToken = "7e3f97e1d8c3e06ff580e0ca80046ebb";
