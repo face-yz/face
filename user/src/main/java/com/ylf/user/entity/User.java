@@ -1,33 +1,17 @@
 package com.ylf.user.entity;
 
-
-import lombok.Data;
-
-/**
- * @author: leifeng.ye
- * @date: 2019-12-10
- * @desc:
- */
-public class User {
+public class User{
     private String uId;
-    private String userName;
+    private String username;
     private String password;
     private String phone;
 
-    public String getuId() {
-        return uId;
+    public String getUsername() {
+        return username;
     }
 
-    public void setuId(String uId) {
-        this.uId = uId;
-    }
-
-    public String getUserName() {
-        return userName;
-    }
-
-    public void setUserName(String userName) {
-        this.userName = userName;
+    public void setUsername(String username) {
+        this.username = username;
     }
 
     public String getPassword() {
@@ -44,5 +28,13 @@ public class User {
 
     public void setPhone(String phone) {
         this.phone = phone;
+    }
+
+    public String getuId() {
+        return uId;
+    }
+
+    public void setuId(String uId) {
+        this.uId = uId;
     }
 }
