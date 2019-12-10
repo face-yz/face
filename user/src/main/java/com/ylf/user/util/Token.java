@@ -1,4 +1,4 @@
-package com.ylf.manage.util;
+package com.ylf.user.util;
 
 import java.util.Date;
 
