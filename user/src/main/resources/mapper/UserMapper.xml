@@ -3,9 +3,13 @@
 <mapper namespace="com.ylf.user.daoAPI.UserMapper" >
     <resultMap id="BaseResultMap" type="com.ylf.user.entity.User" >
         <id column="u_id" property="uId" jdbcType="VARCHAR" />
+        <result column="userName" property="userName" jdbcType="VARCHAR"/>
         <result column="password" property="password" jdbcType="VARCHAR" />
         <result column="phone" property="phone" jdbcType="VARCHAR"/>
-        <result column="userName" property="userName" jdbcType="VARCHAR"/>
-    </resultMap>
 
+    </resultMap>
+    <insert id="insertUser" parameterType="com.ylf.user.entity.User">
+       insert into user (u_id,userName,password,phone)
+      values (#{uId,jdbcType=VARCHAR}, #{userName,jdbcType=VARCHAR},#{password,jdbcType=VARCHAR},#{phone,jdbcType=VARCHAR})
+    </insert>
 </mapper>
