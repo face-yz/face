@@ -13,8 +13,8 @@ public class Token {
 
     public static Long expire=new Date().getTime()+1000*60*60l;        //过期时间
 
-    public  static String getToken(String uuid){
-        String id=Encoder.encoder(uuid);
+    public  static String getToken(String uid){
+        String id=Encoder.encoder(uid);
         String expireTime=Encoder.encoder(expire.toString());
         String signature=Encoder.encoder((key));
         return id+"."+expireTime+"."+signature;

@@ -4,7 +4,6 @@ import com.alibaba.fastjson.JSONObject;
 import com.ylf.manage.entity.Acount;
 import com.ylf.manage.entity.Response;
 import com.ylf.manage.serviceAPI.AcountService;
-import com.ylf.manage.util.Encryption;
 import com.ylf.manage.util.Token;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.redis.core.RedisTemplate;
@@ -12,9 +11,7 @@ import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
-import javax.servlet.http.HttpServletResponse;
 import java.util.ArrayList;
-import java.util.concurrent.TimeUnit;
 
 /**
  * @author: leifeng.ye
@@ -34,12 +31,13 @@ public class AcountController {
 
     @RequestMapping("/login")
     @CrossOrigin
-    public Response login(@RequestBody Acount acount, HttpServletResponse response){
+    public Response login(@RequestBody Acount acount){
+        if(acount.getUsername()==null){
+            return Response.error("登录失败");
+        }
         boolean f=service.isLegal(acount);
         if(f){
             String uuid= Token.getToken(acount.getUsername());
-            redisTemplate.opsForValue().set(Encryption.toEncryption(acount.getUsername()),uuid);
-            redisTemplate.expire(Encryption.toEncryption(acount.getUsername()),60*60, TimeUnit.SECONDS);
             JSONObject ticket=new JSONObject();
             ticket.put("token",uuid);
             ArrayList<JSONObject> list=new ArrayList<>();

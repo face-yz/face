@@ -19,4 +19,10 @@ eureka:
 mybatis:
   mapper-locations: classpath:mapper/*.xml
 logging:
-  level: debug
+  level:
+    com:
+      ylf:
+        manage: debug
+feign:
+  hystrix:
+    enabled: true

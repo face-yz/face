@@ -1,4 +1,4 @@
-package com.ylf.manage.remote;
+package com.ylf.manage.remote.baidu;
 
 import com.baidu.aip.face.AipFace;
 import org.json.JSONObject;

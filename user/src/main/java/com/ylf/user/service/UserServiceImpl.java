@@ -3,8 +3,12 @@ package com.ylf.user.service;
 import com.ylf.user.daoAPI.UserMapper;
 import com.ylf.user.entity.User;
 import com.ylf.user.serviceAPI.UserService;
+import com.ylf.user.util.Encoder;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+
+import java.util.ArrayList;
+import java.util.List;
 
 /**
  * @author: leifeng.ye
@@ -20,5 +24,31 @@ public class UserServiceImpl implements UserService {
     @Override
     public int addUser(User user) {
         return dao.insertUser(user);
+    }
+
+    @Override
+    public User getUser(String uId) {
+        return dao.selectUser(uId);
+    }
+
+    @Override
+    public List getUserList() {
+        return dao.selectUserList();
+    }
+
+    @Override
+    public boolean isLegal(User user) {
+        ArrayList<User> list=(ArrayList<User>) getUserList();
+        for(User a:list){
+            if(Encoder.decoder(a.getuId()).equals(user.getuId())&&Encoder.decoder(a.getPassword()).equals(user.getPassword())){
+                return true;
+            }
+        }
+        return false;
+    }
+
+    @Override
+    public int updateUser(User user) {
+        return dao.updateUser(user);
     }
 }

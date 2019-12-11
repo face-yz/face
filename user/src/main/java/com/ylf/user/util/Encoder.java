@@ -1,6 +1,8 @@
 package com.ylf.user.util;
 import org.springframework.util.Base64Utils;
 
+import java.util.Date;
+
 /**
  * @author: leifeng.ye
  * @date: 2019-12-06
@@ -27,6 +29,4 @@ public class Encoder {
         }
         return s;
     }
-
-
 }

@@ -3,13 +3,34 @@
 <mapper namespace="com.ylf.user.daoAPI.UserMapper" >
     <resultMap id="BaseResultMap" type="com.ylf.user.entity.User" >
         <id column="u_id" property="uId" jdbcType="VARCHAR" />
-        <result column="userName" property="userName" jdbcType="VARCHAR"/>
+        <result column="userName" property="username" jdbcType="VARCHAR"/>
         <result column="password" property="password" jdbcType="VARCHAR" />
         <result column="phone" property="phone" jdbcType="VARCHAR"/>
 
     </resultMap>
     <insert id="insertUser" parameterType="com.ylf.user.entity.User">
        insert into user (u_id,userName,password,phone)
-      values (#{uId,jdbcType=VARCHAR}, #{userName,jdbcType=VARCHAR},#{password,jdbcType=VARCHAR},#{phone,jdbcType=VARCHAR})
+      values (#{uId,jdbcType=VARCHAR}, #{username,jdbcType=VARCHAR},#{password,jdbcType=VARCHAR},#{phone,jdbcType=VARCHAR})
     </insert>
+    <select id="selectUserList" resultMap="BaseResultMap">
+            select * from user
+    </select>
+    <select id="selectUser" parameterType="java.lang.String" resultMap="BaseResultMap">
+            select * from user where u_id=#{uId}
+    </select>
+    <update id="updateUser" parameterType="com.ylf.user.entity.User">
+            update user
+            <set>
+                <if test="username !=null and username !=''">
+                    username=#{username},
+                </if>
+                <if test="password != null and password !=''" >
+                    password = #{password,jdbcType=VARCHAR},
+                </if>
+                <if test="phone != null and phone !=''">
+                    phone=#{phone}
+                </if>
+            </set>
+            where u_id = #{uId,jdbcType=VARCHAR}
+    </update>
 </mapper>
