@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.ylf.manage.daoAPI.AttendPlanMapper" >
+  <resultMap id="BaseResultMap" type="com.ylf.manage.entity.AttendPlan" >
+    <id column="groupName" property="groupname" jdbcType="VARCHAR" />
+    <result column="startTime" property="starttime" jdbcType="DATE" />
+    <result column="endTime" property="endtime" jdbcType="DATE" />
+    <result column="markTime" property="marktime" jdbcType="TIME" />
+  </resultMap>
+  <sql id="Base_Column_List" >
+    groupName, startTime, endTime, markTime
+  </sql>
+  <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="java.lang.String" >
+    select 
+    <include refid="Base_Column_List" />
+    from attendPlan
+    where groupName = #{groupname,jdbcType=VARCHAR}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.String" >
+    delete from attendPlan
+    where groupName = #{groupname,jdbcType=VARCHAR}
+  </delete>
+  <insert id="insert" parameterType="com.ylf.manage.entity.AttendPlan" >
+    insert into attendPlan (groupName, startTime, endTime, 
+      markTime)
+    values (#{groupname,jdbcType=VARCHAR}, #{starttime,jdbcType=DATE}, #{endtime,jdbcType=DATE}, 
+      #{marktime,jdbcType=TIME})
+  </insert>
+  <insert id="insertSelective" parameterType="com.ylf.manage.entity.AttendPlan" >
+    insert into attendPlan
+    <trim prefix="(" suffix=")" suffixOverrides="," >
+      <if test="groupname != null" >
+        groupName,
+      </if>
+      <if test="starttime != null" >
+        startTime,
+      </if>
+      <if test="endtime != null" >
+        endTime,
+      </if>
+      <if test="marktime != null" >
+        markTime,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides="," >
+      <if test="groupname != null" >
+        #{groupname,jdbcType=VARCHAR},
+      </if>
+      <if test="starttime != null" >
+        #{starttime,jdbcType=DATE},
+      </if>
+      <if test="endtime != null" >
+        #{endtime,jdbcType=DATE},
+      </if>
+      <if test="marktime != null" >
+        #{marktime,jdbcType=TIME},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.ylf.manage.entity.AttendPlan" >
+    update attendPlan
+    <set >
+      <if test="starttime != null" >
+        startTime = #{starttime,jdbcType=DATE},
+      </if>
+      <if test="endtime != null" >
+        endTime = #{endtime,jdbcType=DATE},
+      </if>
+      <if test="marktime != null" >
+        markTime = #{marktime,jdbcType=TIME},
+      </if>
+    </set>
+    where groupName = #{groupname,jdbcType=VARCHAR}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.ylf.manage.entity.AttendPlan" >
+    update attendPlan
+    set startTime = #{starttime,jdbcType=DATE},
+      endTime = #{endtime,jdbcType=DATE},
+      markTime = #{marktime,jdbcType=TIME}
+    where groupName = #{groupname,jdbcType=VARCHAR}
+  </update>
+</mapper>

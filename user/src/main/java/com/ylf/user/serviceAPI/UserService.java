@@ -10,9 +10,9 @@ import java.util.List;
  * @desc:
  */
 public interface UserService {
-    int addUser(User user);
-    User getUser(String uId);
-    List getUserList();
-    boolean isLegal(User user);
-    int updateUser(User user);
+    int addUser(User user);    //添加用户信息
+    User getUser(String uId);  //获取用户信息
+    List getUserList();        //获取用户列表
+    boolean isLegal(User user);//登录是否合法
+    int updateUser(User user); //更新用户信息
 }

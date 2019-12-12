@@ -15,7 +15,22 @@ import java.util.HashMap;
  */
 @Component
 public class FaceRpc {
-    AipFace client=new AipFace("17970422","zSDokOAIfXMH06y0NhnfmUjg","NSyjgYVuq1phaWvlxL9wouGcGOVtBMsF");
+
+    public static void main(String[] args) {
+       new FaceRpc().deleteGroup(new FaceRpc().getClient(),"test_1576972800000");
+    }
+
+    AipFace client=null;
+
+    public AipFace getClient(){
+        if(client==null){
+            client=new AipFace("17970422","zSDokOAIfXMH06y0NhnfmUjg","NSyjgYVuq1phaWvlxL9wouGcGOVtBMsF");
+            return client;
+        }
+        else {
+            return client;
+        }
+    }
 
     public static String fileToBase64(MultipartFile file){
         String str="";
@@ -120,7 +135,7 @@ public class FaceRpc {
 
     }
 
-    public JSONObject CreateGroup(AipFace client,String groupId) {  //创建用户组
+    public JSONObject createGroup(AipFace client,String groupId) {  //创建用户组
         // 传入可选参数调用接口
         HashMap<String, String> options = new HashMap<String, String>();
         // 创建用户组
