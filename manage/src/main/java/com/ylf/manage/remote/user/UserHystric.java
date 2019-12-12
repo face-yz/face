@@ -21,4 +21,10 @@ public class UserHystric implements UserRpc{
     public Response updateUser(User user) {
         return Response.error("Rpc服务器宕机");
     }
+
+    @Override
+    public User getUser(User user) {
+        return null;
+    }
+
 }

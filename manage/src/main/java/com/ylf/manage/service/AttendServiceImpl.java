@@ -2,9 +2,14 @@ package com.ylf.manage.service;
 
 import com.ylf.manage.daoAPI.AttendPlanMapper;
 import com.ylf.manage.entity.AttendPlan;
+import com.ylf.manage.entity.Response;
+import com.ylf.manage.remote.baidu.FaceRpc;
 import com.ylf.manage.serviceAPI.AttendPlanService;
+import org.json.JSONObject;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import org.springframework.web.multipart.MultipartFile;
+
 import java.util.ArrayList;
 import java.util.List;
 
@@ -18,6 +23,9 @@ public class AttendServiceImpl implements AttendPlanService {
 
     @Autowired
     private AttendPlanMapper dao;
+
+    @Autowired
+    private FaceRpc faceRpc;
 
     @Override
     public int addPlan(AttendPlan plan) {
@@ -41,5 +49,16 @@ public class AttendServiceImpl implements AttendPlanService {
             }
         }
         return false;
+    }
+
+    @Override
+    public boolean faceIsLegal(MultipartFile img) {
+        JSONObject msg=faceRpc.detect(faceRpc.getClient(),img);
+        if(msg.getInt("error_code")==222202||msg.getJSONObject("result").getInt("face_num")>1){
+            return false;
+        }
+        else {
+            return true;
+        }
     }
 }

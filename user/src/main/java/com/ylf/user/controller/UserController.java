@@ -11,6 +11,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import java.util.ArrayList;
+import java.util.List;
 
 /**
  * @author: leifeng.ye
@@ -65,5 +66,11 @@ public class UserController {
         else {
             return Response.success(null,"更新成功");
         }
+    }
+
+    @RequestMapping("/getUserInfo")
+    public User getUserInfo(@RequestBody User user){
+        User u=service.getUser(Encoder.encoder(user.getuId()));
+        return u;
     }
 }

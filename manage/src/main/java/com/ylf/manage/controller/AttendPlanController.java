@@ -1,14 +1,20 @@
 package com.ylf.manage.controller;
 
 import com.ylf.manage.entity.AttendPlan;
+import com.ylf.manage.entity.FaceImage;
 import com.ylf.manage.entity.Response;
+import com.ylf.manage.entity.User;
 import com.ylf.manage.remote.baidu.FaceRpc;
+import com.ylf.manage.remote.user.UserRpc;
 import com.ylf.manage.serviceAPI.AttendPlanService;
 import org.json.JSONObject;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.multipart.MultipartFile;
+
+import java.util.ArrayList;
 
 /**
  * @author: leifeng.ye
@@ -25,6 +31,9 @@ public class AttendPlanController {
     @Autowired
     private FaceRpc faceRpc;
 
+    @Autowired
+    private UserRpc userRpc;
+
     @RequestMapping("/addPlan")
     public Response addPlan(@RequestBody AttendPlan plan){
 
@@ -36,6 +45,22 @@ public class AttendPlanController {
             faceRpc.createGroup(faceRpc.getClient(),faceGroupName);
             service.addPlan(plan);
             return Response.success(null,"添加计划成功");
+        }
+    }
+
+
+    @RequestMapping("/addPlan/addPlanUser")
+    public Response addPlanUser(FaceImage faceImage){
+        boolean f=service.faceIsLegal(faceImage.getImg());
+        if(f){
+            User u=new User();
+            u.setuId(faceImage.getuId());
+            User res=userRpc.getUser(u);
+            faceRpc.addFace(faceRpc.getClient(),res.getUsername(),faceImage.getImg(),faceImage.getGroupName(),faceImage.getuId());
+            return Response.success(null,"添加成功");
+        }
+        else {
+            return Response.error("照片不符合规定");
         }
 
     }

@@ -24,8 +24,9 @@ public class UserController {
         return userRpc.login(user);
     }
 
-    @RequestMapping("updateUser")
+    @RequestMapping("/updateUser")
     public Response updateUser(@RequestBody User user){
         return userRpc.updateUser(user);
     }
+
 }

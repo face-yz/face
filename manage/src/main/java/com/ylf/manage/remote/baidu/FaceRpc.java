@@ -15,10 +15,10 @@ import java.util.HashMap;
  */
 @Component
 public class FaceRpc {
-
     public static void main(String[] args) {
-       new FaceRpc().deleteGroup(new FaceRpc().getClient(),"test_1576972800000");
+        new FaceRpc().deleteGroup(new FaceRpc().getClient(),"test_1577059200000_50400000");
     }
+
 
     AipFace client=null;
 
@@ -98,7 +98,7 @@ public class FaceRpc {
         // 传入可选参数调用接口
         HashMap<String, String> options = new HashMap<String, String>();
         options.put("face_field", "age");
-        options.put("max_face_num", "1");
+        options.put("max_face_num", "10");
         options.put("face_type", "LIVE");
         options.put("liveness_control", "LOW");
 
