@@ -27,4 +27,9 @@ public interface UserRpc {
     @RequestMapping("/api/v2/getUserInfo")
     @HystrixCommand(fallbackMethod = "login")
     User getUser(@RequestBody User user);
+
+
+    @RequestMapping("/api/v2/addUser")
+    @HystrixCommand(fallbackMethod = "addUser")
+    Response addUser(@RequestBody User user);
 }

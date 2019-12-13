@@ -29,4 +29,9 @@ public class UserController {
         return userRpc.updateUser(user);
     }
 
+    @RequestMapping("/addUser")
+    public Response addUser(@RequestBody User user){
+        return userRpc.addUser(user);
+    }
+
 }
