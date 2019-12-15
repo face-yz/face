@@ -52,6 +52,11 @@ public class AttendServiceImpl implements AttendPlanService {
                     return true;
                 }
             }
+            if(plan.getStarttime().getTime()<=p.getStarttime().getTime()&&plan.getEndtime().getTime()>=p.getEndtime().getTime()){
+                if (Math.abs(p.getMarktime().getTime() - plan.getMarktime().getTime()) < standard) {
+                    return true;
+                }
+            }
         }
         return false;
     }
