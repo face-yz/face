@@ -9,6 +9,7 @@ import com.ylf.manage.remote.user.UserRpc;
 import com.ylf.manage.serviceAPI.AttendPlanService;
 import org.json.JSONObject;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
@@ -35,6 +36,7 @@ public class AttendPlanController {
     private UserRpc userRpc;
 
     @RequestMapping("/addPlan")
+    @CrossOrigin
     public Response addPlan(@RequestBody AttendPlan plan){
 
         if(service.hasConflict(plan)==true){
@@ -50,6 +52,7 @@ public class AttendPlanController {
 
 
     @RequestMapping("/addPlan/addPlanUser")
+    @CrossOrigin
     public Response addPlanUser(FaceImage faceImage){
         boolean f=service.faceIsLegal(faceImage.getImg());
         if(f){

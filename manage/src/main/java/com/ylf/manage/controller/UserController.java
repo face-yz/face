@@ -4,6 +4,7 @@ import com.ylf.manage.entity.Response;
 import com.ylf.manage.entity.User;
 import com.ylf.manage.remote.user.UserRpc;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
@@ -20,16 +21,19 @@ public class UserController {
     private UserRpc userRpc;
 
     @RequestMapping("/userLogin")
+    @CrossOrigin
     public Response userLogin(@RequestBody User user){
         return userRpc.login(user);
     }
 
     @RequestMapping("/updateUser")
+    @CrossOrigin
     public Response updateUser(@RequestBody User user){
         return userRpc.updateUser(user);
     }
 
     @RequestMapping("/addUser")
+    @CrossOrigin
     public Response addUser(@RequestBody User user){
         return userRpc.addUser(user);
     }
