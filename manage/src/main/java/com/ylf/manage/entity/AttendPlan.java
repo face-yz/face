@@ -14,6 +14,7 @@ public class AttendPlan {
     @DateTimeFormat(pattern = "HH:mm:ss")
     @JsonFormat(pattern = "HH:mm:ss")
     private Date marktime;
+    private String clazzname;
 
     public String getGroupname() {
         return groupname;
@@ -45,5 +46,13 @@ public class AttendPlan {
 
     public void setMarktime(Date marktime) {
         this.marktime = marktime;
+    }
+
+    public String getClazzname() {
+        return clazzname;
+    }
+
+    public void setClazzname(String clazzname) {
+        this.clazzname = clazzname;
     }
 }

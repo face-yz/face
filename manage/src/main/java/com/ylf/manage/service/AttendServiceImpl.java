@@ -1,16 +1,17 @@
 package com.ylf.manage.service;
 
 import com.ylf.manage.daoAPI.AttendPlanMapper;
+import com.ylf.manage.daoAPI.SignMapper;
 import com.ylf.manage.entity.AttendPlan;
-import com.ylf.manage.entity.Response;
+import com.ylf.manage.entity.Sign;
 import com.ylf.manage.remote.baidu.FaceRpc;
 import com.ylf.manage.serviceAPI.AttendPlanService;
 import org.json.JSONObject;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.web.multipart.MultipartFile;
-
 import java.util.ArrayList;
+import java.util.Date;
 import java.util.List;
 
 /**
@@ -23,6 +24,9 @@ public class AttendServiceImpl implements AttendPlanService {
 
     @Autowired
     private AttendPlanMapper dao;
+
+    @Autowired
+    private SignMapper signDao;
 
     @Autowired
     private FaceRpc faceRpc;
@@ -71,4 +75,29 @@ public class AttendServiceImpl implements AttendPlanService {
             return true;
         }
     }
+
+    @Override
+    public void addDefaultSign(String u_id,Date start, Date end,String clazzName,String groupName) {
+        Long s=start.getTime();
+        Long e=end.getTime();
+        Long oneDay=1000*60*60*24l;
+         while(s<=e){
+             Date time=new Date(s);
+             if(time.getDay()==6||time.getDay()==0){
+                 s+=oneDay;
+             }
+             else{
+                 Sign sign=new Sign();
+                 sign.setuId(u_id);
+                 sign.setClazzname(clazzName);
+                 sign.setGroupname(groupName);
+                 sign.setState(0);
+                 sign.setSigndate(time);
+                 signDao.insert(sign);
+                 s+=oneDay;
+             }
+
+         }
+    }
+
 }

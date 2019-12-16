@@ -3,6 +3,7 @@ package com.ylf.manage.serviceAPI;
 import com.ylf.manage.entity.AttendPlan;
 import org.springframework.web.multipart.MultipartFile;
 
+import java.util.Date;
 import java.util.List;
 
 /**
@@ -15,4 +16,5 @@ public interface AttendPlanService {
     List<AttendPlan> getAttendPlanList(String groupName);  //查询一个group下的所有计划
     boolean hasConflict(AttendPlan plan);            //判断计划是否有冲突
     boolean faceIsLegal(MultipartFile img);         //人脸是否合法
+    void addDefaultSign(String u_id,Date start, Date end,String clazzName,String groupName);     //添加学生默认打卡记录
 }
