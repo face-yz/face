@@ -17,4 +17,5 @@ public interface AttendPlanService {
     boolean hasConflict(AttendPlan plan);            //判断计划是否有冲突
     boolean faceIsLegal(MultipartFile img);         //人脸是否合法
     void addDefaultSign(String u_id,Date start, Date end,String clazzName,String groupName);     //添加学生默认打卡记录
+    List selectList();    //返回所有考勤计划记录
 }

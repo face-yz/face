@@ -9,6 +9,8 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
+import java.util.Map;
+
 /**
  * @author: leifeng.ye
  * @date: 2019-12-11
@@ -36,6 +38,12 @@ public class UserController {
     @CrossOrigin
     public Response addUser(@RequestBody User user){
         return userRpc.addUser(user);
+    }
+
+    @RequestMapping("/selectUserList")
+    @CrossOrigin
+    public Response selectList(){
+        return userRpc.selectUserList();
     }
 
 }

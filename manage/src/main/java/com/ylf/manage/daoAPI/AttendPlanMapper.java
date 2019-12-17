@@ -11,4 +11,6 @@ public interface AttendPlanMapper {
     int insert(AttendPlan record);
 
     List<AttendPlan> selectByPrimaryKey(String groupname);
+
+    List<AttendPlan> selectList();
 }

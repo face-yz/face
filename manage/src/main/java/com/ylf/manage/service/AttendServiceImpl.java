@@ -46,6 +46,7 @@ public class AttendServiceImpl implements AttendPlanService {
         Long standard=2*60*60*1000+30*60*1000l;   //上课时间2小时+休息时间30分钟
         ArrayList<AttendPlan> list=(ArrayList<AttendPlan>) getAttendPlanList(plan.getGroupname());
         for(AttendPlan p:list) {
+            System.out.println(p.getStarttime().toLocaleString());
             if (plan.getStarttime().getTime()>=p.getStarttime().getTime()&&plan.getStarttime().getTime()<=p.getEndtime().getTime()) {
                 if (Math.abs(p.getMarktime().getTime() - plan.getMarktime().getTime()) < standard) {
                         return true;
@@ -98,6 +99,11 @@ public class AttendServiceImpl implements AttendPlanService {
              }
 
          }
+    }
+
+    @Override
+    public List selectList() {
+        return dao.selectList();
     }
 
 }

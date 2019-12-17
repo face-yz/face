@@ -15,6 +15,7 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
+import java.util.ArrayList;
 import java.util.Date;
 
 
@@ -71,5 +72,12 @@ public class AttendPlanController {
             return Response.error("照片不符合规定");
         }
 
+    }
+
+    @RequestMapping("/selectAttendPlanList")
+    @CrossOrigin
+    public Response selectList(){
+        ArrayList<AttendPlan> list=(ArrayList<AttendPlan>) service.selectList();
+        return Response.success(list,"返回所有考勤计划记录");
     }
 }

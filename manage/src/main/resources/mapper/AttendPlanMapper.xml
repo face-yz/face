@@ -23,5 +23,8 @@
     values (#{groupname,jdbcType=VARCHAR}, #{starttime,jdbcType=DATE}, #{endtime,jdbcType=DATE},
       #{marktime,jdbcType=TIME},#{clazzname,jdbcType=VARCHAR})
   </insert>
+  <select id="selectList" resultMap="BaseResultMap">
+    select * from attendPlan;
+  </select>
 
 </mapper>

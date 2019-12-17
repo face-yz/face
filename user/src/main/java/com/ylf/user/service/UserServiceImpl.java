@@ -28,12 +28,24 @@ public class UserServiceImpl implements UserService {
 
     @Override
     public User getUser(String uId) {
+        User user=dao.selectUser(uId);
+        user.setuId(Encoder.decoder(user.getuId()));
+        if(user.getPhone()!=null){
+            user.setPhone(Encoder.decoder(user.getPhone()));
+        }
         return dao.selectUser(uId);
     }
 
     @Override
     public List getUserList() {
-        return dao.selectUserList();
+       ArrayList<User> list=(ArrayList<User>) dao.selectUserList();
+       for(User user:list){
+           user.setuId(Encoder.decoder(user.getuId()));
+           if(user.getPhone()!=null){
+               user.setPhone(Encoder.decoder(user.getPhone()));
+           }
+       }
+       return list;
     }
 
     @Override
@@ -51,4 +63,6 @@ public class UserServiceImpl implements UserService {
     public int updateUser(User user) {
         return dao.updateUser(user);
     }
+
+
 }

@@ -32,4 +32,10 @@ public interface UserRpc {
     @RequestMapping("/api/v2/addUser")
     @HystrixCommand(fallbackMethod = "addUser")
     Response addUser(@RequestBody User user);
+
+    @RequestMapping("/api/v2/selectUserList")
+    @HystrixCommand(fallbackMethod = "selectUserList")
+    Response selectUserList();
+
+
 }

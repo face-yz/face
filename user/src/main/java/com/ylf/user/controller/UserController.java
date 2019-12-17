@@ -58,7 +58,12 @@ public class UserController {
     @RequestMapping("/updateUser")
     public Response update(@RequestBody User user){
         user.setuId(Encoder.encoder(user.getuId()));
-        user.setPhone(Encoder.encoder(user.getPhone()));
+        if(user.getPassword()!=null){
+            user.setPassword(Encoder.encoder(user.getPassword()));
+        }
+        if(user.getPhone()!=null){
+            user.setPhone(Encoder.encoder(user.getPhone()));
+        }
         int f=service.updateUser(user);
         if(f<1){
             return Response.error("更新失败");
@@ -73,4 +78,11 @@ public class UserController {
         User u=service.getUser(Encoder.encoder(user.getuId()));
         return u;
     }
+
+    @RequestMapping("/selectUserList")
+    public Response selectList(){
+        ArrayList<User> list=(ArrayList<User>) service.getUserList();
+        return Response.success(list,"返回所有学生信息");
+    }
+
 }

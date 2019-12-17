@@ -3,6 +3,7 @@ package com.ylf.manage.remote.user;
 import com.ylf.manage.entity.Response;
 import com.ylf.manage.entity.User;
 import org.springframework.stereotype.Component;
+import org.springframework.web.bind.annotation.RequestBody;
 
 /**
  * @author: leifeng.ye
@@ -31,5 +32,11 @@ public class UserHystric implements UserRpc{
     public Response addUser(User user) {
         return  Response.error("Rpc服务器宕机");
     }
+
+    @Override
+    public Response selectUserList() {
+        return  Response.error("Rpc服务器宕机");
+    }
+
 
 }

@@ -26,7 +26,7 @@ public class ManageApplication {
 
     @RequestMapping("/hi")
     public String hello(){
-        return "hi i am "+port+" 你妈死了！";
+        return "hi i am "+port;
     }
 
 }
