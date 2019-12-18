@@ -10,9 +10,8 @@ import org.json.JSONObject;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.web.multipart.MultipartFile;
-import java.util.ArrayList;
-import java.util.Date;
-import java.util.List;
+
+import java.util.*;
 
 /**
  * @author: leifeng.ye
@@ -33,6 +32,7 @@ public class AttendServiceImpl implements AttendPlanService {
 
     @Override
     public int addPlan(AttendPlan plan) {
+
         return dao.insert(plan);
     }
 
@@ -46,22 +46,35 @@ public class AttendServiceImpl implements AttendPlanService {
         Long standard=2*60*60*1000+30*60*1000l;   //上课时间2小时+休息时间30分钟
         ArrayList<AttendPlan> list=(ArrayList<AttendPlan>) getAttendPlanList(plan.getGroupname());
         for(AttendPlan p:list) {
-            System.out.println(p.getStarttime().toLocaleString());
+            String[] days=p.getDays().split("_");
+            ArrayList<Integer> l=new ArrayList<>();
+            for(String d:days){
+                l.add(Integer.valueOf(d));
+            }
+            boolean f=weekhasConflict(l,plan.getWeekdays());
             if (plan.getStarttime().getTime()>=p.getStarttime().getTime()&&plan.getStarttime().getTime()<=p.getEndtime().getTime()) {
-                if (Math.abs(p.getMarktime().getTime() - plan.getMarktime().getTime()) < standard) {
+                if(f){
+                    if (Math.abs(p.getMarktime().getTime() - plan.getMarktime().getTime()) < standard) {
                         return true;
+                    }
                 }
             }
             if(plan.getEndtime().getTime()>=p.getStarttime().getTime()&&plan.getEndtime().getTime()<=p.getEndtime().getTime()){
-                if (Math.abs(p.getMarktime().getTime() - plan.getMarktime().getTime()) < standard) {
-                    return true;
+                if(f){
+                    if (Math.abs(p.getMarktime().getTime() - plan.getMarktime().getTime()) < standard) {
+                        return true;
+                    }
                 }
             }
             if(plan.getStarttime().getTime()<=p.getStarttime().getTime()&&plan.getEndtime().getTime()>=p.getEndtime().getTime()){
-                if (Math.abs(p.getMarktime().getTime() - plan.getMarktime().getTime()) < standard) {
-                    return true;
+                if(f){
+                    if (Math.abs(p.getMarktime().getTime() - plan.getMarktime().getTime()) < standard) {
+                        return true;
+                    }
                 }
+
             }
+
         }
         return false;
     }
@@ -78,13 +91,17 @@ public class AttendServiceImpl implements AttendPlanService {
     }
 
     @Override
-    public void addDefaultSign(String u_id,Date start, Date end,String clazzName,String groupName) {
+    public void addDefaultSign(String u_id,Date start, Date end,String clazzName,String groupName,Date markTime,Integer[] weekdays,String days) {
+        ArrayList<Integer> list=new ArrayList<>();
+        for(Integer a:weekdays){
+            list.add(a);
+        }
         Long s=start.getTime();
         Long e=end.getTime();
         Long oneDay=1000*60*60*24l;
          while(s<=e){
              Date time=new Date(s);
-             if(time.getDay()==6||time.getDay()==0){
+             if(time.getDay()==6||time.getDay()==0||!list.contains(time.getDay())){
                  s+=oneDay;
              }
              else{
@@ -94,6 +111,9 @@ public class AttendServiceImpl implements AttendPlanService {
                  sign.setGroupname(groupName);
                  sign.setState(0);
                  sign.setSigndate(time);
+                 sign.setMarktime(markTime);
+                 sign.setStarttime(start);
+                 sign.setDays(days);
                  signDao.insert(sign);
                  s+=oneDay;
              }
@@ -104,6 +124,18 @@ public class AttendServiceImpl implements AttendPlanService {
     @Override
     public List selectList() {
         return dao.selectList();
+    }
+
+    @Override
+    public boolean weekhasConflict(ArrayList<Integer> l,Integer[] plan) {
+        boolean f=false;
+        for(int i=0;i<plan.length;i++){
+            if(l.contains(plan[i])){
+                f=true;
+                break;
+            }
+        }
+        return f;
     }
 
 }

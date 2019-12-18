@@ -1,5 +1,7 @@
 package com.ylf.manage.controller;
 
+import com.fasterxml.jackson.annotation.JsonFormat;
+import com.ylf.manage.config.FaceRedisTemplate;
 import com.ylf.manage.entity.AttendPlan;
 import com.ylf.manage.entity.FaceImage;
 import com.ylf.manage.entity.Response;
@@ -9,12 +11,15 @@ import com.ylf.manage.remote.user.UserRpc;
 import com.ylf.manage.serviceAPI.AttendPlanService;
 import com.ylf.manage.util.Encoder;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.redis.core.RedisTemplate;
+import org.springframework.data.redis.core.StringRedisTemplate;
 import org.springframework.format.annotation.DateTimeFormat;
 import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
+import javax.annotation.Resource;
 import java.util.ArrayList;
 import java.util.Date;
 
@@ -40,12 +45,21 @@ public class AttendPlanController {
     @RequestMapping("/addPlan")
     @CrossOrigin
     public Response addPlan(@RequestBody AttendPlan plan){
-
         if(service.hasConflict(plan)==true){
             return Response.error("此计划和已有计划有冲突");
         }
         else{
-            String faceGroupName=plan.getGroupname()+"_"+plan.getStarttime().getTime()+"_"+plan.getMarktime().getTime();
+            String days="";
+            for(int i=0;i<plan.getWeekdays().length;i++){
+                if(i==plan.getWeekdays().length-1){
+                    days+=plan.getWeekdays()[i];
+                }
+                else{
+                    days+=plan.getWeekdays()[i]+"_";
+                }
+            }
+            plan.setDays(days);
+            String faceGroupName=plan.getGroupname()+"_"+plan.getStarttime().getTime()+"_"+plan.getMarktime().getTime()+"_"+days;
             faceRpc.createGroup(faceRpc.getClient(),faceGroupName);
             service.addPlan(plan);
             return Response.success(null,"添加计划成功");
@@ -55,18 +69,23 @@ public class AttendPlanController {
 
     @RequestMapping("/addPlan/addPlanUser")
     @CrossOrigin
-    public Response addPlanUser(FaceImage faceImage, @DateTimeFormat(pattern = "yyyy-MM-dd") Date start,  @DateTimeFormat(pattern = "yyyy-MM-dd")Date end,String clazzname){
+    public Response addPlanUser( FaceImage faceImage){
         boolean f=service.faceIsLegal(faceImage.getImg());
         if(f){
             User u=new User();
             u.setuId(faceImage.getuId());
             User res=userRpc.getUser(u);
-            faceRpc.addFace(faceRpc.getClient(),res.getUsername(),faceImage.getImg(),faceImage.getGroupName(),faceImage.getuId());
-            String[] split=faceImage.getGroupName().split("_");
+            String bdGroupName=faceImage.getGroupName()+"_"+faceImage.getStart().getTime()+"_"+faceImage.getMarktime().getTime()+"_"+faceImage.getDays();
+            faceRpc.addFace(faceRpc.getClient(),res.getUsername(),faceImage.getImg(),bdGroupName,faceImage.getuId());
+            String[] days=faceImage.getDays().split("_");
+            Integer[] l=new Integer[days.length];
+            for(int i=0;i<days.length;i++){
+                l[i]=Integer.valueOf(days[i]);
+            }
             new Thread(()->{
-                service.addDefaultSign(Encoder.encoder(faceImage.getuId()),start,end,clazzname,split[0]);
+                service.addDefaultSign(Encoder.encoder(faceImage.getuId()),faceImage.getStart(),faceImage.getEnd(),faceImage.getClazzname(),faceImage.getGroupName(),faceImage.getMarktime(),l,faceImage.getDays());
             }).start();
-            return Response.success(null,"添加成功");
+            return Response.success(null,"学生录入成功");
         }
         else {
             return Response.error("照片不符合规定");

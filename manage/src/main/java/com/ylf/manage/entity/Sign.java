@@ -1,5 +1,6 @@
 package com.ylf.manage.entity;
 
+import com.fasterxml.jackson.annotation.JsonFormat;
 import org.springframework.format.annotation.DateTimeFormat;
 
 import java.util.Date;
@@ -15,6 +16,15 @@ public class Sign {
     private Date signdate;
 
     private Integer state;
+
+    @DateTimeFormat(pattern = "HH:mm:ss")
+    @JsonFormat(pattern = "HH:mm:ss")
+    private Date marktime;
+
+    @DateTimeFormat(pattern = "yyyy-MM-dd")
+    private Date starttime;
+
+    private String days;
 
     public String getuId() {
         return uId;
@@ -54,5 +64,29 @@ public class Sign {
 
     public void setState(Integer state) {
         this.state = state;
+    }
+
+    public Date getStarttime() {
+        return starttime;
+    }
+
+    public void setStarttime(Date starttime) {
+        this.starttime = starttime;
+    }
+
+    public Date getMarktime() {
+        return marktime;
+    }
+
+    public void setMarktime(Date marktime) {
+        this.marktime = marktime;
+    }
+
+    public String getDays() {
+        return days;
+    }
+
+    public void setDays(String days) {
+        this.days = days;
     }
 }

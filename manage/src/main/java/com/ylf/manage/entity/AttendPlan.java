@@ -15,6 +15,8 @@ public class AttendPlan {
     @JsonFormat(pattern = "HH:mm:ss")
     private Date marktime;
     private String clazzname;
+    private Integer[] weekdays;
+    private String days;
 
     public String getGroupname() {
         return groupname;
@@ -54,5 +56,21 @@ public class AttendPlan {
 
     public void setClazzname(String clazzname) {
         this.clazzname = clazzname;
+    }
+
+    public Integer[] getWeekdays() {
+        return weekdays;
+    }
+
+    public void setWeekdays(Integer[] weekdays) {
+        this.weekdays = weekdays;
+    }
+
+    public String getDays() {
+        return days;
+    }
+
+    public void setDays(String days) {
+        this.days = days;
     }
 }

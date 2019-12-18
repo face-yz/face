@@ -7,9 +7,10 @@
     <result column="endTime" property="endtime" jdbcType="DATE" />
     <result column="markTime" property="marktime" jdbcType="TIME" />
     <result column="clazzName" property="clazzname" jdbcType="VARCHAR"/>
+    <result column="days"  property="days"  jdbcType="VARCHAR" />
   </resultMap>
   <sql id="Base_Column_List" >
-    groupName, startTime, endTime, markTime,clazzName
+    groupName, startTime, endTime, markTime,clazzName, days
   </sql>
   <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="java.lang.String" >
     select 
@@ -19,9 +20,9 @@
   </select>
   <insert id="insert" parameterType="com.ylf.manage.entity.AttendPlan" >
     insert into attendPlan (groupName, startTime, endTime, 
-      markTime,clazzName)
+      markTime,clazzName,days)
     values (#{groupname,jdbcType=VARCHAR}, #{starttime,jdbcType=DATE}, #{endtime,jdbcType=DATE},
-      #{marktime,jdbcType=TIME},#{clazzname,jdbcType=VARCHAR})
+      #{marktime,jdbcType=TIME},#{clazzname,jdbcType=VARCHAR},#{days,jdbcType=VARCHAR})
   </insert>
   <select id="selectList" resultMap="BaseResultMap">
     select * from attendPlan;

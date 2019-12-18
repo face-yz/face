@@ -4,84 +4,23 @@
   <resultMap id="BaseResultMap" type="com.ylf.manage.entity.Sign" >
     <id column="u_id" property="uId" jdbcType="VARCHAR" />
     <id column="groupName" property="groupname" jdbcType="VARCHAR" />
-    <id column="clazzName" property="clazzname" jdbcType="VARCHAR" />
     <id column="signDate" property="signdate" jdbcType="DATE" />
+    <id column="markTime" property="marktime" jdbcType="TIME" />
+    <id column="startTime" property="starttime" jdbcType="DATE" />
+    <id column="days" property="days" jdbcType="VARCHAR" />
+    <result column="clazzName" property="clazzname" jdbcType="VARCHAR" />
     <result column="state" property="state" jdbcType="INTEGER" />
   </resultMap>
   <sql id="Base_Column_List" >
-    u_id, groupName, clazzName, signDate, state
+    u_id, groupName, clazzName, signDate, state, markTime, startTime, days
   </sql>
-  <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="com.ylf.manage.entity.Sign" >
-    select 
-    <include refid="Base_Column_List" />
-    from sign
-    where u_id = #{uId,jdbcType=VARCHAR}
-      and groupName = #{groupname,jdbcType=VARCHAR}
-      and clazzName = #{clazzname,jdbcType=VARCHAR}
-      and signDate = #{signdate,jdbcType=DATE}
-  </select>
+
 
   <insert id="insert" parameterType="com.ylf.manage.entity.Sign" >
     insert into sign (u_id, groupName, clazzName, 
-      signDate, state)
+      signDate, state, markTime, startTime, days)
     values (#{uId,jdbcType=VARCHAR}, #{groupname,jdbcType=VARCHAR}, #{clazzname,jdbcType=VARCHAR}, 
-      #{signdate,jdbcType=DATE}, #{state,jdbcType=INTEGER})
+      #{signdate,jdbcType=DATE}, #{state,jdbcType=INTEGER}, #{marktime,jdbcType=TIME}, #{starttime,jdbcType=DATE},#{days,jdbcType=VARCHAR})
   </insert>
-  <insert id="insertSelective" parameterType="com.ylf.manage.entity.Sign" >
-    insert into sign
-    <trim prefix="(" suffix=")" suffixOverrides="," >
-      <if test="uId != null" >
-        u_id,
-      </if>
-      <if test="groupname != null" >
-        groupName,
-      </if>
-      <if test="clazzname != null" >
-        clazzName,
-      </if>
-      <if test="signdate != null" >
-        signDate,
-      </if>
-      <if test="state != null" >
-        state,
-      </if>
-    </trim>
-    <trim prefix="values (" suffix=")" suffixOverrides="," >
-      <if test="uId != null" >
-        #{uId,jdbcType=VARCHAR},
-      </if>
-      <if test="groupname != null" >
-        #{groupname,jdbcType=VARCHAR},
-      </if>
-      <if test="clazzname != null" >
-        #{clazzname,jdbcType=VARCHAR},
-      </if>
-      <if test="signdate != null" >
-        #{signdate,jdbcType=DATE},
-      </if>
-      <if test="state != null" >
-        #{state,jdbcType=INTEGER},
-      </if>
-    </trim>
-  </insert>
-  <update id="updateByPrimaryKeySelective" parameterType="com.ylf.manage.entity.Sign" >
-    update sign
-    <set >
-      <if test="state != null" >
-        state = #{state,jdbcType=INTEGER},
-      </if>
-    </set>
-    where u_id = #{uId,jdbcType=VARCHAR}
-      and groupName = #{groupname,jdbcType=VARCHAR}
-      and clazzName = #{clazzname,jdbcType=VARCHAR}
-      and signDate = #{signdate,jdbcType=DATE}
-  </update>
-  <update id="updateByPrimaryKey" parameterType="com.ylf.manage.entity.Sign" >
-    update sign
-    set state = #{state,jdbcType=INTEGER}
-    where u_id = #{uId,jdbcType=VARCHAR}
-      and groupName = #{groupname,jdbcType=VARCHAR}
-      and clazzName = #{clazzname,jdbcType=VARCHAR}
-      and signDate = #{signdate,jdbcType=DATE}
-  </update>
+
 </mapper>
