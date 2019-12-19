@@ -2,14 +2,12 @@ package com.ylf.manage.controller;
 
 import com.fasterxml.jackson.annotation.JsonFormat;
 import com.ylf.manage.config.FaceRedisTemplate;
-import com.ylf.manage.entity.AttendPlan;
-import com.ylf.manage.entity.FaceImage;
-import com.ylf.manage.entity.Response;
-import com.ylf.manage.entity.User;
+import com.ylf.manage.entity.*;
 import com.ylf.manage.remote.baidu.FaceRpc;
 import com.ylf.manage.remote.user.UserRpc;
 import com.ylf.manage.serviceAPI.AttendPlanService;
 import com.ylf.manage.util.Encoder;
+import org.json.JSONObject;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.redis.core.RedisTemplate;
 import org.springframework.data.redis.core.StringRedisTemplate;
@@ -22,6 +20,7 @@ import org.springframework.web.bind.annotation.RestController;
 import javax.annotation.Resource;
 import java.util.ArrayList;
 import java.util.Date;
+import java.util.Map;
 
 
 /**
@@ -69,23 +68,27 @@ public class AttendPlanController {
 
     @RequestMapping("/addPlan/addPlanUser")
     @CrossOrigin
-    public Response addPlanUser( FaceImage faceImage){
+    public Response addPlanUser(FaceImage faceImage){
         boolean f=service.faceIsLegal(faceImage.getImg());
         if(f){
-            User u=new User();
-            u.setuId(faceImage.getuId());
-            User res=userRpc.getUser(u);
             String bdGroupName=faceImage.getGroupName()+"_"+faceImage.getStart().getTime()+"_"+faceImage.getMarktime().getTime()+"_"+faceImage.getDays();
-            faceRpc.addFace(faceRpc.getClient(),res.getUsername(),faceImage.getImg(),bdGroupName,faceImage.getuId());
-            String[] days=faceImage.getDays().split("_");
-            Integer[] l=new Integer[days.length];
-            for(int i=0;i<days.length;i++){
-                l[i]=Integer.valueOf(days[i]);
+            JSONObject res =faceRpc.getUserInfo(faceRpc.getClient(),faceImage.getuId(),bdGroupName);
+            if(res.getInt("error_code")!=0){
+                faceRpc.addFace(faceRpc.getClient(),faceImage.getUserName(),faceImage.getImg(),bdGroupName,faceImage.getuId());
+                String[] days=faceImage.getDays().split("_");
+                Integer[] l=new Integer[days.length];
+                for(int i=0;i<days.length;i++){
+                    l[i]=Integer.valueOf(days[i]);
+                }
+                new Thread(()->{
+                    service.addDefaultSign(Encoder.encoder(faceImage.getuId()),faceImage.getStart(),faceImage.getEnd(),faceImage.getClazzname(),faceImage.getGroupName(),faceImage.getMarktime(),l,faceImage.getDays());
+                }).start();
+                return Response.success(null,"学生录入成功");
             }
-            new Thread(()->{
-                service.addDefaultSign(Encoder.encoder(faceImage.getuId()),faceImage.getStart(),faceImage.getEnd(),faceImage.getClazzname(),faceImage.getGroupName(),faceImage.getMarktime(),l,faceImage.getDays());
-            }).start();
-            return Response.success(null,"学生录入成功");
+            else{
+                return Response.success(null,"此学生已录入当前考勤计划");
+            }
+
         }
         else {
             return Response.error("照片不符合规定");
@@ -98,5 +101,22 @@ public class AttendPlanController {
     public Response selectList(){
         ArrayList<AttendPlan> list=(ArrayList<AttendPlan>) service.selectList();
         return Response.success(list,"返回所有考勤计划记录");
+    }
+
+    @RequestMapping("/selectAttendPlanCount")
+    @CrossOrigin
+    public Response selectCount(){
+        ArrayList<Integer> list=new ArrayList<>();
+        list.add(service.selectCount());
+        return Response.success(list,"查询考勤计划数目成功");
+    }
+
+    @RequestMapping("/selectAttendPlanLimitList")
+    @CrossOrigin
+    public Response selectAttendPlanLimitList(@RequestBody Map map){
+        Page page=new Page();
+        page.setPageNo((Integer) map.get("k"));
+        ArrayList<AttendPlan> list=(ArrayList<AttendPlan>)service.selectLimitList(page);
+        return Response.success(list,"分页查询成功");
     }
 }

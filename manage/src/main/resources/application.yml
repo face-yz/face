@@ -2,6 +2,11 @@
 server:
   port: 8089
 spring:
+  servlet:
+    multipart:
+      enabled: true
+      max-request-size: 20MB
+      max-file-size: 10MB
   jackson:
     time-zone: GMT+8
   application:
@@ -29,3 +34,10 @@ logging:
 feign:
   hystrix:
     enabled: true
+hystrix:
+  command:
+   default:
+    execution:
+     isolation:
+      thread:
+       timeoutInMilliseconds: 5000

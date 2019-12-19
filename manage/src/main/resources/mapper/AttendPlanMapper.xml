@@ -27,5 +27,12 @@
   <select id="selectList" resultMap="BaseResultMap">
     select * from attendPlan;
   </select>
+  <select id="selectCount" resultType="java.lang.Integer">
+    select count(*) from attendPlan;
+  </select>
+  <select id="selectLimitList" parameterType="com.ylf.manage.entity.Page" resultMap="BaseResultMap">
+    select * from attendPlan limit #{pageNo},#{pageSize}
+  </select>
+
 
 </mapper>

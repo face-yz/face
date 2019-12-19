@@ -1,4 +1,4 @@
-package com.ylf.manage.remote.baidu;
+package com.ylf.user.remote.baidu;
 
 import com.baidu.aip.face.AipFace;
 import org.json.JSONObject;
@@ -16,7 +16,7 @@ import java.util.HashMap;
 @Component
 public class FaceRpc {
     public static void main(String[] args) {
-        new FaceRpc().deleteGroup(new FaceRpc().getClient(),"FF205_1576771200000_0_1_2_3_4");
+        new FaceRpc().deleteGroup(new FaceRpc().getClient(),"test_1575734400000_39600000_1_3");
     }
 
 

@@ -3,6 +3,7 @@ package com.ylf.manage.service;
 import com.ylf.manage.daoAPI.AttendPlanMapper;
 import com.ylf.manage.daoAPI.SignMapper;
 import com.ylf.manage.entity.AttendPlan;
+import com.ylf.manage.entity.Page;
 import com.ylf.manage.entity.Sign;
 import com.ylf.manage.remote.baidu.FaceRpc;
 import com.ylf.manage.serviceAPI.AttendPlanService;
@@ -136,6 +137,18 @@ public class AttendServiceImpl implements AttendPlanService {
             }
         }
         return f;
+    }
+
+    @Override
+    public int selectCount() {
+        return dao.selectCount();
+    }
+
+    @Override
+    public List selectLimitList(Page page) {
+        page.setPageSize(10);
+        page.setPageNo(page.getPageNo()*10);
+        return dao.selectLimitList(page);
     }
 
 }

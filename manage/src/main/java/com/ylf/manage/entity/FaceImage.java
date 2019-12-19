@@ -4,6 +4,7 @@ import com.fasterxml.jackson.annotation.JsonFormat;
 import org.springframework.format.annotation.DateTimeFormat;
 import org.springframework.web.multipart.MultipartFile;
 
+import java.io.Serializable;
 import java.util.Date;
 
 /**
@@ -11,7 +12,7 @@ import java.util.Date;
  * @date: 2019-12-12
  * @desc:
  */
-public class FaceImage {
+public class FaceImage implements Serializable {
     private String uId;
     private String userName;
     private String groupName;

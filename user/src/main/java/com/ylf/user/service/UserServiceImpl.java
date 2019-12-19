@@ -33,7 +33,7 @@ public class UserServiceImpl implements UserService {
         if(user.getPhone()!=null){
             user.setPhone(Encoder.decoder(user.getPhone()));
         }
-        return dao.selectUser(uId);
+        return user;
     }
 
     @Override

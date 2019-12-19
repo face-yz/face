@@ -1,4 +1,4 @@
-package com.ylf.manage.entity;
+package com.ylf.user.entity;
 
 import com.fasterxml.jackson.annotation.JsonFormat;
 import org.springframework.format.annotation.DateTimeFormat;

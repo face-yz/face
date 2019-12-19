@@ -7,11 +7,12 @@ import java.util.List;
  * @date: 2019-12-04
  * @desc: 响应
  */
-public class Response {
+public class Response<T> {
 
     private String code;
     private String msg;
-    private List data;
+    private List<T> data;
+
 
     public static Response success(List data,String msg){
         Response res=new Response();
@@ -45,11 +46,11 @@ public class Response {
         this.msg = msg;
     }
 
-    public List getData() {
+    public List<T> getData() {
         return data;
     }
 
-    public void setData(List data) {
+    public void setData(List<T> data) {
         this.data = data;
     }
 }

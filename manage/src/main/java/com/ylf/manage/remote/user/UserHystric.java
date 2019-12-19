@@ -3,7 +3,6 @@ package com.ylf.manage.remote.user;
 import com.ylf.manage.entity.Response;
 import com.ylf.manage.entity.User;
 import org.springframework.stereotype.Component;
-import org.springframework.web.bind.annotation.RequestBody;
 
 /**
  * @author: leifeng.ye
