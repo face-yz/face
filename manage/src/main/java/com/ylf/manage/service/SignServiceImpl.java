@@ -21,8 +21,14 @@ public class SignServiceImpl implements SignService {
     private SignMapper dao;
 
     @Override
-    public List selectUserAttendPlan(Sign sign) {
+    public List selectUserSign(Sign sign) {
         sign.setuId(Encoder.encoder(sign.getuId()));
-        return dao.selectUserAttendPlan(sign);
+        return dao.selectUserSign(sign);
+    }
+
+    @Override
+    public List selectUserAttendPlan(String uId) {
+        String id=Encoder.encoder(uId);
+        return dao.selectUserAttendPlan(id);
     }
 }

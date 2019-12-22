@@ -5,11 +5,13 @@ import com.ylf.manage.entity.Response;
 import com.ylf.manage.entity.Sign;
 import com.ylf.manage.serviceAPI.SignService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import java.util.ArrayList;
+import java.util.Map;
 
 /**
  * @author: leifeng.ye
@@ -23,9 +25,18 @@ public class SignController {
     @Autowired
     private SignService service;
 
-    @RequestMapping("/selectUserAttendPlan")
+    @RequestMapping("/selectUserSign")
+    @CrossOrigin
     public Response selectUserAttendPlan(@RequestBody Sign sign){
-        ArrayList<AttendPlan> list=(ArrayList<AttendPlan>) service.selectUserAttendPlan(sign);
+        ArrayList<AttendPlan> list=(ArrayList<AttendPlan>) service.selectUserSign(sign);
+        return Response.success(list,"查询成功");
+    }
+
+    @RequestMapping("/selectUserAttendPlan")
+    @CrossOrigin
+    public Response selectUserAttendPlan(@RequestBody Map map){
+        String uId=(String) map.get("uId");
+        ArrayList<Sign> list=(ArrayList<Sign>)service.selectUserAttendPlan(uId);
         return Response.success(list,"查询成功");
     }
 }

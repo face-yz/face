@@ -23,8 +23,12 @@
       #{signdate,jdbcType=DATE}, #{state,jdbcType=INTEGER}, #{marktime,jdbcType=TIME}, #{starttime,jdbcType=DATE},#{days,jdbcType=VARCHAR})
   </insert>
 
-  <select id="selectUserAttendPlan" parameterType="com.ylf.manage.entity.Sign" resultMap="BaseResultMap">
+  <select id="selectUserSign" parameterType="com.ylf.manage.entity.Sign" resultMap="BaseResultMap">
     select * from sign where u_id=#{uId} and signDate=#{signdate}
+  </select>
+
+  <select id="selectUserAttendPlan" parameterType="java.lang.String" resultMap="BaseResultMap">
+    select distinct groupName,startTime,clazzName,markTime,days from sign where u_id=#{uId}
   </select>
 
 </mapper>

@@ -8,5 +8,6 @@ import java.util.List;
 @Repository
 public interface SignMapper {
         int insert(Sign sign);
-        List selectUserAttendPlan(Sign sign);
+        List selectUserSign(Sign sign);
+        List selectUserAttendPlan(String uId);
 }

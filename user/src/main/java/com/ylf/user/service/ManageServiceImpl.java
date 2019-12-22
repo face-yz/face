@@ -63,7 +63,7 @@ public class ManageServiceImpl implements ManageService {
                   Sign sign=new Sign();
                   sign.setuId(id);
                   sign.setSigndate(img.getNow());
-                  ArrayList<Sign> list=(ArrayList<Sign>) manageRpc.selectUserAttendPlan(sign).getData();
+                  ArrayList<Sign> list=(ArrayList<Sign>) manageRpc.selectUserSign(sign).getData();
                   return  list;
             }
             else{

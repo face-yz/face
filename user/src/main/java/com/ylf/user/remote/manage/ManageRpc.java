@@ -27,7 +27,7 @@ public interface ManageRpc {
     @RequestMapping("/api/v1/selectAttendPlanCount")
     Response<Integer> selectAttendPlanCount();
 
-    @HystrixCommand(fallbackMethod = "selectUserAttendPlan")
-    @RequestMapping("/api/v1/selectUserAttendPlan")
-    Response<Sign> selectUserAttendPlan(@RequestBody Sign sign);
+    @HystrixCommand(fallbackMethod = "selectUserSign")
+    @RequestMapping("/api/v1/selectUserSign")
+    Response<Sign> selectUserSign(@RequestBody Sign sign);
 }

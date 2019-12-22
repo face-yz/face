@@ -4,9 +4,9 @@ import com.ylf.user.entity.ImageDate;
 import com.ylf.user.entity.Response;
 import com.ylf.user.entity.Sign;
 import com.ylf.user.entity.User;
-import com.ylf.user.remote.manage.ManageRpc;
 import com.ylf.user.serviceAPI.ManageService;
 import com.ylf.user.serviceAPI.UserService;
+import com.ylf.user.util.Encoder;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
@@ -29,7 +29,7 @@ public class ManageController {
     private UserService userService;
 
 
-    @RequestMapping("/selectUserAttendPlanList")
+    @RequestMapping("/selectUserSignAttendPlanList")
     public Response test(ImageDate imageDate){
         ArrayList<Sign> list=(ArrayList<Sign>) service.getUserAttendPlanList(imageDate);
         if(list!=null&&list.size()>0){

@@ -28,7 +28,7 @@ public class ManageHystric implements ManageRpc{
     }
 
     @Override
-    public Response<Sign> selectUserAttendPlan(Sign sign) {
+    public Response<Sign> selectUserSign(Sign sign) {
         return Response.error("rpc服务器宕机");
     }
 }

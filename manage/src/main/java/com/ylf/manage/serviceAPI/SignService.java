@@ -10,5 +10,6 @@ import java.util.List;
  * @desc:
  */
 public interface SignService {
-    List selectUserAttendPlan(Sign sign);   //返回用户当天的考勤计划
+    List selectUserSign(Sign sign);   //返回用户当天的考勤记录
+    List selectUserAttendPlan(String uId);  //返回用户的考勤计划
 }

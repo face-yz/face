@@ -46,8 +46,10 @@ public class UserController {
     public Response login(@RequestBody User user){
         boolean f=service.isLegal(user);
         if(f){
-            ArrayList<String> list=new ArrayList<>();
+            User u=service.getUser(Encoder.encoder(user.getuId()));
+            ArrayList list=new ArrayList<>();
             list.add(Token.getToken(user.getuId()));
+            list.add(u);
             return Response.success(list,"登录成功");
         }
         else {
