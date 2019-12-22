@@ -41,6 +41,7 @@ public class UserServiceImpl implements UserService {
        ArrayList<User> list=(ArrayList<User>) dao.selectUserList();
        for(User user:list){
            user.setuId(Encoder.decoder(user.getuId()));
+           user.setPassword(Encoder.decoder(user.getPassword()));
            if(user.getPhone()!=null){
                user.setPhone(Encoder.decoder(user.getPhone()));
            }
