@@ -52,7 +52,7 @@ public class UserServiceImpl implements UserService {
     public boolean isLegal(User user) {
         ArrayList<User> list=(ArrayList<User>) getUserList();
         for(User a:list){
-            if(Encoder.decoder(a.getuId()).equals(user.getuId())&&Encoder.decoder(a.getPassword()).equals(user.getPassword())){
+            if(a.getuId().equals(user.getuId())&&a.getPassword().equals(user.getPassword())){
                 return true;
             }
         }
