@@ -26,7 +26,7 @@ public class LeaveServiceImpl implements LeaveService {
     public int askLeave(Leave leave) {
         leave.setId(UUID.getUUID());
         leave.setuId(Encoder.encoder(leave.getuId()));
-        leave.setType(-1);
+        leave.setState(-1);
         leave.setTeachersay("");
         return dao.insert(leave);
     }
@@ -56,12 +56,13 @@ public class LeaveServiceImpl implements LeaveService {
 
     @Override
     public int updateUserSign(Leave leave) {
+        leave.setuId(Encoder.encoder(leave.getuId()));
         return dao.updateUserSign(leave);
     }
 
     @Override
     public int updateArgee(Leave leave) {
         updateUserSign(leave);
-        return dao.updateArgee(Encoder.encoder(leave.getuId()));
+        return dao.updateArgee(leave.getId());
     }
 }

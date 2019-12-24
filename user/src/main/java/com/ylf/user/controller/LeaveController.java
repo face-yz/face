@@ -3,6 +3,7 @@ package com.ylf.user.controller;
 import com.ylf.user.entity.Leave;
 import com.ylf.user.entity.Response;
 import com.ylf.user.serviceAPI.LeaveService;
+import com.ylf.user.util.Encoder;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.RequestBody;
@@ -25,7 +26,6 @@ public class LeaveController {
     private LeaveService service;
 
     @RequestMapping("/askLeave")
-    @CrossOrigin
     public Response askLeave(@RequestBody Leave leave){
         int n=service.askLeave(leave);
         if(n>0){
@@ -37,41 +37,27 @@ public class LeaveController {
     }
 
     @RequestMapping("/selectUserLeave")
-    @CrossOrigin
     public Response selectUserLeave(@RequestBody Map map){
         String uId=(String)map.get("uId");
-        ArrayList<Leave> list=(ArrayList<Leave>) service.selectUserLeave(uId);
+        ArrayList<Leave> list=(ArrayList<Leave>) service.selectUserLeave(Encoder.encoder(uId));
         return Response.success(list,"查询成功");
     }
 
     @RequestMapping("/selectLeaveList")
-    @CrossOrigin
     public Response selectLeaveList(){
         ArrayList<Leave> list=(ArrayList<Leave>) service.selectList();
         return Response.success(list,"查询成功");
     }
 
     @RequestMapping("/updateNoArgee")
-    @CrossOrigin
     public Response updateNoArgee(@RequestBody Leave leave){
-        int n=service.updateNoArgee(leave);
-        if(n>0){
-            return Response.success(null,"审批成功");
-        }
-        else{
-            return Response.error("审批失败");
-        }
+        service.updateNoArgee(leave);
+        return Response.success(null,"审批成功");
     }
 
     @RequestMapping("/updateArgee")
-    @CrossOrigin
     public Response updateArgee(@RequestBody Leave leave){
-        int n=service.updateArgee(leave);
-        if(n>0){
-            return Response.success(null,"审批成功");
-        }
-        else{
-            return Response.error("审批失败");
-        }
+        service.updateArgee(leave);
+        return Response.success(null,"审批成功");
     }
 }

@@ -10,53 +10,49 @@
     <result column="clazzName" jdbcType="VARCHAR" property="clazzname" />
     <result column="u_id" jdbcType="VARCHAR" property="uId" />
     <result column="username" jdbcType="VARCHAR" property="username" />
-    <result column="startdate" jdbcType="DATE" property="startdate" />
-    <result column="enddate" jdbcType="DATE" property="enddate" />
-    <result column="reason" jdbcType="VARCHAR" property="reason" />
-    <result column="type" jdbcType="INTEGER" property="type" />
+    <result column="startt" jdbcType="DATE" property="startt" />
+    <result column="endt" jdbcType="DATE" property="endt" />
+    <result column="userReason" jdbcType="VARCHAR" property="userreason" />
+    <result column="state" jdbcType="INTEGER" property="state" />
     <result column="teacherSay" jdbcType="VARCHAR" property="teachersay" />
   </resultMap>
   <sql id="Base_Column_List">
-    id, groupName, startTime, markTime, days, clazzName, u_id, username, startdate, enddate, 
-    reason, type, teacherSay
+    id, groupName, startTime, markTime, days, clazzName, u_id, username, startt, endt,
+    userReason, state, teacherSay
   </sql>
   <select id="selectByPrimaryKey" parameterType="java.lang.String" resultMap="BaseResultMap">
     select 
     <include refid="Base_Column_List" />
-    from leave
+    from askLeave
     where id = #{id,jdbcType=VARCHAR}
   </select>
   <select id="selectUserLeave" parameterType="java.lang.String" resultMap="BaseResultMap">
-    select * from leave where u_id=#{uId}
+    select * from askLeave where u_id=#{uId}
   </select>
   <delete id="deleteByPrimaryKey" parameterType="java.lang.String">
-    delete from leave
+    delete from askLeave
     where id = #{id,jdbcType=VARCHAR}
   </delete>
   <insert id="insert" parameterType="com.ylf.user.entity.Leave">
-    insert into leave (id, groupName, startTime, 
-      markTime, days, clazzName, 
-      u_id, username, startdate, 
-      enddate, reason, type, 
-      teacherSay)
+    insert into askLeave (id, groupName, startTime, markTime, days, clazzName, u_id, username, startt, endt, userReason, state, teacherSay)
     values (#{id,jdbcType=VARCHAR}, #{groupname,jdbcType=VARCHAR}, #{starttime,jdbcType=DATE}, 
       #{marktime,jdbcType=TIME}, #{days,jdbcType=VARCHAR}, #{clazzname,jdbcType=VARCHAR}, 
-      #{uId,jdbcType=VARCHAR}, #{username,jdbcType=VARCHAR}, #{startdate,jdbcType=DATE}, 
-      #{enddate,jdbcType=DATE}, #{reason,jdbcType=VARCHAR}, #{type,jdbcType=INTEGER}, 
+      #{uId,jdbcType=VARCHAR}, #{username,jdbcType=VARCHAR}, #{startt,jdbcType=DATE},
+      #{endt,jdbcType=DATE}, #{userreason,jdbcType=VARCHAR}, #{state,jdbcType=INTEGER},
       #{teachersay,jdbcType=VARCHAR})
   </insert>
   <update id="updateArgee" parameterType="java.lang.String">
-    update leave set type=1 where id=#{id}
+    update askLeave set state=1 where id=#{id}
   </update>
   <update id="updateUserSign" parameterType="com.ylf.user.entity.Leave">
-    update sign set state=2 where signDate&gt;=#{startdate} and signDate&lt;=#{enddate} and
-    u_id=#{uId} and groupName=#{groupname} and startTime=#{starttime} and markTime=#{marktime} and
-    days=#{days}
+    update sign set state=2 where signDate&gt;=#{startt,jdbcType=DATE} and signDate&lt;=#{endt,jdbcType=DATE} and
+    u_id=#{uId} and groupName=#{groupname} and startTime=#{starttime,jdbcType=DATE} and markTime=#{marktime,jdbcType=TIME} and
+    days=#{days} and clazzName=#{clazzname}
   </update>
   <update id="updateNoArgee" parameterType="com.ylf.user.entity.Leave">
-    update leave set type=0,teacherSay=#{teachersay} where id=#{id}
+    update askLeave set state=0,teacherSay=#{teachersay} where id=#{id}
   </update>
   <select id="selectList" resultMap="BaseResultMap">
-    select * from leave;
+    select * from askLeave;
   </select>
 </mapper>
