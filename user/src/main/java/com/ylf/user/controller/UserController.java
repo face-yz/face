@@ -1,5 +1,6 @@
 package com.ylf.user.controller;
 
+import com.alibaba.fastjson.JSONObject;
 import com.ylf.user.entity.Response;
 import com.ylf.user.entity.User;
 import com.ylf.user.serviceAPI.UserService;
@@ -11,6 +12,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
 
 /**
@@ -48,7 +50,9 @@ public class UserController {
         if(f){
             User u=service.getUser(Encoder.encoder(user.getuId()));
             ArrayList list=new ArrayList<>();
-            list.add(Token.getToken(user.getuId()));
+            JSONObject ticket=new JSONObject();
+            ticket.put("token",Token.getToken(user.getuId()));
+            list.add(ticket);
             list.add(u);
             return Response.success(list,"登录成功");
         }

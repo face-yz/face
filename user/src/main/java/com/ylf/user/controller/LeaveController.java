@@ -1,5 +1,6 @@
 package com.ylf.user.controller;
 
+import com.ylf.user.constantEnum.LeaveEnum;
 import com.ylf.user.entity.Leave;
 import com.ylf.user.entity.Response;
 import com.ylf.user.serviceAPI.LeaveService;
@@ -11,6 +12,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.Map;
 
 /**
@@ -39,13 +41,13 @@ public class LeaveController {
     @RequestMapping("/selectUserLeave")
     public Response selectUserLeave(@RequestBody Map map){
         String uId=(String)map.get("uId");
-        ArrayList<Leave> list=(ArrayList<Leave>) service.selectUserLeave(Encoder.encoder(uId));
+        ArrayList list=(ArrayList<Leave>) service.selectUserLeave(Encoder.encoder(uId));
         return Response.success(list,"查询成功");
     }
 
     @RequestMapping("/selectLeaveList")
     public Response selectLeaveList(){
-        ArrayList<Leave> list=(ArrayList<Leave>) service.selectList();
+        ArrayList list=(ArrayList<Leave>) service.selectList();
         return Response.success(list,"查询成功");
     }
 

@@ -1,5 +1,6 @@
 package com.ylf.manage.controller;
 
+import com.ylf.manage.constantEnum.SignEnum;
 import com.ylf.manage.entity.AttendPlan;
 import com.ylf.manage.entity.Response;
 import com.ylf.manage.entity.Sign;
@@ -11,6 +12,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.Map;
 
 /**
@@ -28,7 +30,7 @@ public class SignController {
     @RequestMapping("/selectUserSign")
     @CrossOrigin
     public Response selectUserAttendPlan(@RequestBody Sign sign){
-        ArrayList<AttendPlan> list=(ArrayList<AttendPlan>) service.selectUserSign(sign);
+        ArrayList list=(ArrayList<AttendPlan>) service.selectUserSign(sign);
         return Response.success(list,"查询成功");
     }
 
@@ -36,7 +38,7 @@ public class SignController {
     @CrossOrigin
     public Response selectUserAttendPlan(@RequestBody Map map){
         String uId=(String) map.get("uId");
-        ArrayList<Sign> list=(ArrayList<Sign>)service.selectUserAttendPlan(uId);
+        ArrayList list=(ArrayList<Sign>)service.selectUserAttendPlan(uId);
         return Response.success(list,"查询成功");
     }
 }
