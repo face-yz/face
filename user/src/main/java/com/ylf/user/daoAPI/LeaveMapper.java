@@ -19,4 +19,6 @@ public interface LeaveMapper {
     int updateNoArgee(Leave leave);
 
     int updateUserSign(Leave leave);
+
+    List isLegalLeave(Leave leave);
 }

@@ -29,12 +29,18 @@ public class LeaveController {
 
     @RequestMapping("/askLeave")
     public Response askLeave(@RequestBody Leave leave){
-        int n=service.askLeave(leave);
-        if(n>0){
-            return Response.success(null,"请假成功,等待老师审批");
+        boolean f=service.isLegalLeave(leave);
+        if(f){
+            return Response.error("请假重复");
         }
         else{
-            return Response.error("请假失败");
+            int n=service.askLeave(leave);
+            if(n>0){
+                return Response.success(null,"请假成功,等待老师审批");
+            }
+            else{
+                return Response.error("请假失败");
+            }
         }
     }
 

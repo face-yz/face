@@ -16,4 +16,5 @@ public interface LeaveService {
     int updateNoArgee(Leave leave);  //老师拒绝请假
     int updateUserSign(Leave leave); //审批通过后更新考勤记录
     int updateArgee(Leave leave);   //老师同意请假
+    boolean isLegalLeave(Leave leave); //查重请假
 }

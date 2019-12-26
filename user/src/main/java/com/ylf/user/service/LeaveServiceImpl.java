@@ -65,4 +65,14 @@ public class LeaveServiceImpl implements LeaveService {
         updateUserSign(leave);
         return dao.updateArgee(leave.getId());
     }
+
+    @Override
+    public boolean isLegalLeave(Leave leave) {
+        boolean f=false;
+        ArrayList<Leave> list=(ArrayList<Leave>) dao.isLegalLeave(leave);
+        if(list.size()>0){
+            f=true;
+        }
+        return f;
+    }
 }

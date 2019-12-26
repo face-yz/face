@@ -7,10 +7,12 @@ import com.ylf.user.entity.Sign;
 import com.ylf.user.remote.baidu.FaceRpc;
 import com.ylf.user.remote.manage.ManageRpc;
 import com.ylf.user.serviceAPI.ManageService;
+import com.ylf.user.util.Encoder;
 import org.json.JSONArray;
 import org.json.JSONObject;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import org.springframework.web.multipart.MultipartFile;
 
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -50,13 +52,13 @@ public class ManageServiceImpl implements ManageService {
     }
 
     @Override
-    public List getUserAttendPlanList(ImageDate img) {
+    public List getUserAttendPlanList(ImageDate img) {   //匹配度需要大于80
         int n=manageRpc.selectAttendPlanCount().getData().get(0)/10;
         int i=0;
         while (i<=n){
             String groupList=getBaiduGroupList(i);
             JSONObject res=faceRpc.search(faceRpc.getClient(),img.getImg(),groupList);
-            if(res.getInt("error_code")==0){
+            if(res.getInt("error_code")==0&&res.getJSONObject("result").getJSONArray("user_list").getJSONObject(0).getDouble("score")>80f){
                   JSONObject result=res.getJSONObject("result");
                   JSONArray users=result.getJSONArray("user_list");
                   String id= users.getJSONObject(0).getString("user_id");
@@ -71,5 +73,16 @@ public class ManageServiceImpl implements ManageService {
             }
         }
         return null;
+    }
+
+    @Override
+    public boolean faceIsLegal(MultipartFile img) {
+        JSONObject msg=faceRpc.detect(faceRpc.getClient(),img);
+        if(msg.getInt("error_code")==222202){
+            return false;
+        }
+        else {
+            return true;
+        }
     }
 }

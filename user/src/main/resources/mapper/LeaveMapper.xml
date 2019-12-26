@@ -29,6 +29,10 @@
   <select id="selectUserLeave" parameterType="java.lang.String" resultMap="BaseResultMap">
     select * from askLeave where u_id=#{uId}
   </select>
+  <select id="isLegalLeave" parameterType="com.ylf.user.entity.Leave" resultMap="BaseResultMap">
+    select * from askLeave where u_id=#{uId} and groupName=#{groupname} and startTime=#{starttime}
+    and markTime=#{marktime} and days=#{days} and startt=#{startt,jdbcType=DATE} and endt=#{endt,jdbcType=DATE}
+  </select>
   <delete id="deleteByPrimaryKey" parameterType="java.lang.String">
     delete from askLeave
     where id = #{id,jdbcType=VARCHAR}

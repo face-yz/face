@@ -1,6 +1,7 @@
 package com.ylf.user.serviceAPI;
 
 import com.ylf.user.entity.ImageDate;
+import org.springframework.web.multipart.MultipartFile;
 
 import java.util.List;
 
@@ -12,4 +13,5 @@ import java.util.List;
 public interface ManageService {
     String getBaiduGroupList(int k);      //返回百度API group列表
     List  getUserAttendPlanList(ImageDate img);    //返回用户当天的考勤计划
+    boolean faceIsLegal(MultipartFile img);      //照片是否合法
 }
