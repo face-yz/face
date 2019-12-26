@@ -5,7 +5,7 @@ import java.util.HashMap;
 /**
  * @author: leifeng.ye
  * @date: 2019-12-26
- * @desc: 用户列出当日签到计划时的状态描述
+ * @desc: 用户列出当日考勤计划时的状态描述
  */
 public enum UserSignEnum {
 
