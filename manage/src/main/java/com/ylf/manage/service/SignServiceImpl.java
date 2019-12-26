@@ -37,8 +37,10 @@ public class SignServiceImpl implements SignService {
     public List selectUserSignList(Sign sign) {
         sign.setuId(Encoder.encoder(sign.getuId()));
         ArrayList<Sign> list=(ArrayList<Sign>) dao.selectUserSignList(sign);
-        for(Sign a:list){
-            a.setuId(Encoder.decoder(a.getuId()));
+        if(list.size()>0){
+            for(Sign a:list){
+                a.setuId(Encoder.decoder(a.getuId()));
+            }
         }
         return list;
     }

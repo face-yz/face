@@ -34,8 +34,10 @@ public class LeaveServiceImpl implements LeaveService {
     @Override
     public List selectUserLeave(String uId) {
         ArrayList<Leave> list=(ArrayList<Leave>)dao.selectUserLeave(uId);
-        for(Leave a:list){
-            a.setuId(Encoder.decoder(a.getuId()));
+        if(list.size()>0){
+            for(Leave a:list){
+                a.setuId(Encoder.decoder(a.getuId()));
+            }
         }
         return list;
     }
@@ -43,8 +45,10 @@ public class LeaveServiceImpl implements LeaveService {
     @Override
     public List selectList() {
         ArrayList<Leave> list=(ArrayList<Leave>)dao.selectList();
-        for(Leave a:list){
-            a.setuId(Encoder.decoder(a.getuId()));
+        if(list.size()>0){
+            for(Leave a:list){
+                a.setuId(Encoder.decoder(a.getuId()));
+            }
         }
         return list;
     }

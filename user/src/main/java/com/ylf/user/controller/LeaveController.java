@@ -21,7 +21,7 @@ import java.util.Map;
  * @desc:
  */
 @RestController
-@RequestMapping("api/v2")
+@RequestMapping("/api/v2")
 public class LeaveController {
 
     @Autowired
