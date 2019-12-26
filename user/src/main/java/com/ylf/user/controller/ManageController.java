@@ -30,7 +30,7 @@ public class ManageController {
 
 
     @RequestMapping("/selectUserSignAttendPlanList")
-    public Response test(ImageDate imageDate){
+    public Response selectUserSignAttendPlanList(ImageDate imageDate){
         if(service.faceIsLegal(imageDate.getImg())){
             ArrayList<Sign> list=(ArrayList<Sign>) service.getUserAttendPlanList(imageDate);
             if(list!=null&&list.size()>0){

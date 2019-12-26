@@ -26,6 +26,9 @@ public class Sign {
 
     private String days;
 
+    @DateTimeFormat(pattern = "yyyy-MM-dd")
+    private Date selecttime;
+
     public String getuId() {
         return uId;
     }
@@ -88,5 +91,13 @@ public class Sign {
 
     public void setDays(String days) {
         this.days = days;
+    }
+
+    public Date getSelecttime() {
+        return selecttime;
+    }
+
+    public void setSelecttime(Date selecttime) {
+        this.selecttime = selecttime;
     }
 }

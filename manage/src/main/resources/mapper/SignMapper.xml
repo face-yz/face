@@ -31,4 +31,8 @@
     select distinct groupName,startTime,clazzName,markTime,days from sign where u_id=#{uId}
   </select>
 
+  <select id="selectUserSignList" parameterType="com.ylf.manage.entity.Sign" resultMap="BaseResultMap">
+    select * from sign where u_id=#{uId} and groupName=#{groupname} and startTime=#{starttime,jdbcType=DATE}
+    and markTime=#{marktime,jdbcType=TIME} and days=#{days} and clazzName=#{clazzname} and signDate&lt;=#{selecttime}
+  </select>
 </mapper>
