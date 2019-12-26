@@ -27,6 +27,8 @@ public class Sign {
 
     private String days;
 
+    private Integer flag;
+
     public String getuId() {
         return uId;
     }
@@ -91,4 +93,11 @@ public class Sign {
         this.days = days;
     }
 
+    public Integer getFlag() {
+        return flag;
+    }
+
+    public void setFlag(Integer flag) {
+        this.flag = flag;
+    }
 }

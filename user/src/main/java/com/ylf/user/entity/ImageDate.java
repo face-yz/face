@@ -1,5 +1,6 @@
 package com.ylf.user.entity;
 
+import com.fasterxml.jackson.annotation.JsonFormat;
 import org.springframework.format.annotation.DateTimeFormat;
 import org.springframework.web.multipart.MultipartFile;
 
@@ -14,6 +15,9 @@ public class ImageDate {
     private MultipartFile img;
     @DateTimeFormat(pattern = "yyyy-MM-dd")
     private Date now;
+    @DateTimeFormat(pattern = "HH:mm:ss")
+    @JsonFormat(pattern = "HH:mm:ss")
+    private Date nowtime;
 
 
     public Date getNow() {
@@ -30,5 +34,13 @@ public class ImageDate {
 
     public void setImg(MultipartFile img) {
         this.img = img;
+    }
+
+    public Date getNowtime() {
+        return nowtime;
+    }
+
+    public void setNowtime(Date nowtime) {
+        this.nowtime = nowtime;
     }
 }
