@@ -67,14 +67,16 @@ public class ManageServiceImpl implements ManageService {
                   sign.setSigndate(img.getNow());
                   ArrayList<Sign> list=(ArrayList<Sign>) manageRpc.selectUserSign(sign).getData();
                   for(Sign a:list) {
-                      if (img.getNowtime().getTime() - a.getMarktime().getTime() < -1000 * 60 * 30l) {
-                          a.setFlag(0);
-                      } else if (img.getNowtime().getTime() - a.getMarktime().getTime() >= -1000 * 60 * 30l && img.getNowtime().getTime() <= a.getMarktime().getTime()) {
-                          a.setFlag(1);
-                      } else if (img.getNowtime().getTime() - a.getMarktime().getTime() > 0 && img.getNowtime().getTime() - a.getMarktime().getTime() <= 1000 * 60 * 60 * 2l) {
-                          a.setFlag(2);
-                      } else {
-                          a.setFlag(3);
+                      if(a.getState()==0){
+                          if (img.getNowtime().getTime() - a.getMarktime().getTime() < -1000 * 60 * 30l) {
+                              a.setFlag(-1);
+                          } else if (img.getNowtime().getTime() - a.getMarktime().getTime() >= -1000 * 60 * 30l && img.getNowtime().getTime() <= a.getMarktime().getTime()) {
+                              a.setFlag(-2);
+                          } else if (img.getNowtime().getTime() - a.getMarktime().getTime() > 0 && img.getNowtime().getTime() - a.getMarktime().getTime() <= 1000 * 60 * 60 * 2l) {
+                              a.setFlag(-3);
+                          } else {
+                              a.setFlag(-4);
+                          }
                       }
                   }
                   return  list;

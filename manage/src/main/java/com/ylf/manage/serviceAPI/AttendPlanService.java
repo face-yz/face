@@ -1,7 +1,7 @@
 package com.ylf.manage.serviceAPI;
 
 import com.ylf.manage.entity.AttendPlan;
-import com.ylf.manage.entity.Page;
+import com.ylf.manage.entity.BasePage.ReqPage;
 import org.springframework.web.multipart.MultipartFile;
 
 import java.util.ArrayList;
@@ -22,5 +22,5 @@ public interface AttendPlanService {
     List selectList();    //返回所有考勤计划记录
     boolean weekhasConflict(ArrayList<Integer> days, Integer[] plan);  //判断上课星期是否有冲突
     int selectCount();  //返回考勤计划数目
-    List selectLimitList(Page page); //分页查询考勤计划
+    List selectLimitList(ReqPage page); //分页查询考勤计划
 }

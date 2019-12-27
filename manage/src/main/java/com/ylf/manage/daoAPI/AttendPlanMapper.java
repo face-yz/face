@@ -1,7 +1,7 @@
 package com.ylf.manage.daoAPI;
 
 import com.ylf.manage.entity.AttendPlan;
-import com.ylf.manage.entity.Page;
+import com.ylf.manage.entity.BasePage.ReqPage;
 import org.springframework.stereotype.Repository;
 
 import java.util.List;
@@ -17,5 +17,5 @@ public interface AttendPlanMapper {
 
     int selectCount();
 
-    List<AttendPlan> selectLimitList(Page page);
+    List<AttendPlan> selectLimitList(ReqPage page);
 }

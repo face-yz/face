@@ -1,25 +1,19 @@
 package com.ylf.manage.controller;
 
-import com.fasterxml.jackson.annotation.JsonFormat;
-import com.ylf.manage.config.FaceRedisTemplate;
 import com.ylf.manage.entity.*;
+import com.ylf.manage.entity.BasePage.ReqPage;
 import com.ylf.manage.remote.baidu.FaceRpc;
 import com.ylf.manage.remote.user.UserRpc;
 import com.ylf.manage.serviceAPI.AttendPlanService;
 import com.ylf.manage.util.Encoder;
 import org.json.JSONObject;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.data.redis.core.RedisTemplate;
-import org.springframework.data.redis.core.StringRedisTemplate;
-import org.springframework.format.annotation.DateTimeFormat;
 import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import javax.annotation.Resource;
 import java.util.ArrayList;
-import java.util.Date;
 import java.util.Map;
 
 
@@ -114,7 +108,7 @@ public class AttendPlanController {
     @RequestMapping("/selectAttendPlanLimitList")
     @CrossOrigin
     public Response selectAttendPlanLimitList(@RequestBody Map map){
-        Page page=new Page();
+        ReqPage page=new ReqPage();
         page.setPageNo((Integer) map.get("k"));
         ArrayList<AttendPlan> list=(ArrayList<AttendPlan>)service.selectLimitList(page);
         return Response.success(list,"分页查询成功");

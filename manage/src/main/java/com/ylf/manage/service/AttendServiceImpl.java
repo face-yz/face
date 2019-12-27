@@ -3,8 +3,8 @@ package com.ylf.manage.service;
 import com.ylf.manage.daoAPI.AttendPlanMapper;
 import com.ylf.manage.daoAPI.SignMapper;
 import com.ylf.manage.entity.AttendPlan;
-import com.ylf.manage.entity.Page;
-import com.ylf.manage.entity.Sign;
+import com.ylf.manage.entity.BasePage.ReqPage;
+import com.ylf.manage.entity.ReqSign;
 import com.ylf.manage.remote.baidu.FaceRpc;
 import com.ylf.manage.serviceAPI.AttendPlanService;
 import org.json.JSONObject;
@@ -106,7 +106,7 @@ public class AttendServiceImpl implements AttendPlanService {
                  s+=oneDay;
              }
              else{
-                 Sign sign=new Sign();
+                 ReqSign sign=new ReqSign();
                  sign.setuId(u_id);
                  sign.setClazzname(clazzName);
                  sign.setGroupname(groupName);
@@ -145,7 +145,7 @@ public class AttendServiceImpl implements AttendPlanService {
     }
 
     @Override
-    public List selectLimitList(Page page) {
+    public List selectLimitList(ReqPage page) {
         page.setPageSize(10);
         page.setPageNo(page.getPageNo()*10);
         return dao.selectLimitList(page);

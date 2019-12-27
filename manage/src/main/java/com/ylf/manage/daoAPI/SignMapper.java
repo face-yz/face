@@ -1,14 +1,15 @@
 package com.ylf.manage.daoAPI;
 
-import com.ylf.manage.entity.Sign;
+import com.ylf.manage.entity.ReqSign;
 import org.springframework.stereotype.Repository;
 
 import java.util.List;
 
 @Repository
 public interface SignMapper {
-        int insert(Sign sign);
-        List selectUserSign(Sign sign);
+        int insert(ReqSign sign);
+        List selectUserSign(ReqSign sign);
         List selectUserAttendPlan(String uId);
-        List selectUserSignList(Sign sign);
+        List selectUserSignList(ReqSign sign);
+        int selectUserSignListCount(ReqSign sign);
 }

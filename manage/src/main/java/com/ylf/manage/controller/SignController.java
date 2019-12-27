@@ -1,6 +1,6 @@
 package com.ylf.manage.controller;
-import com.ylf.manage.entity.Response;
-import com.ylf.manage.entity.Sign;
+import com.ylf.manage.entity.*;
+import com.ylf.manage.remote.user.UserRpc;
 import com.ylf.manage.serviceAPI.SignService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.CrossOrigin;
@@ -22,10 +22,13 @@ public class SignController {
     @Autowired
     private SignService service;
 
+    @Autowired
+    private UserRpc userRpc;
+
     @RequestMapping("/selectUserSign")
     @CrossOrigin
-    public Response selectUserSign(@RequestBody Sign sign){
-        ArrayList list=(ArrayList<Sign>) service.selectUserSign(sign);
+    public Response selectUserSign(@RequestBody ReqSign sign){
+        ArrayList list=(ArrayList<ReqSign>) service.selectUserSign(sign);
         return Response.success(list,"查询成功");
     }
 
@@ -33,14 +36,17 @@ public class SignController {
     @CrossOrigin
     public Response selectUserAttendPlan(@RequestBody Map map){
         String uId=(String) map.get("uId");
-        ArrayList list=(ArrayList<Sign>)service.selectUserAttendPlan(uId);
+        ArrayList list=(ArrayList<ReqSign>)service.selectUserAttendPlan(uId);
         return Response.success(list,"查询成功");
     }
 
     @RequestMapping("/selectUserSignList")
     @CrossOrigin
-    public Response selectUserSignList(@RequestBody Sign sign){
-        ArrayList list=(ArrayList<Sign>) service.selectUserSignList(sign);
+    public Response selectUserSignList(@RequestBody ReqSign sign){
+        ResSignPage res=service.selectUserSignList(sign);
+        ArrayList list=new ArrayList();
+        list.add(res);
         return Response.success(list,"查询成功");
     }
+
 }

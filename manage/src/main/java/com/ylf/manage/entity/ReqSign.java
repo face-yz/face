@@ -1,11 +1,11 @@
 package com.ylf.manage.entity;
 
 import com.fasterxml.jackson.annotation.JsonFormat;
+import com.ylf.manage.entity.BasePage.ReqPage;
 import org.springframework.format.annotation.DateTimeFormat;
-
 import java.util.Date;
 
-public class Sign {
+public class ReqSign extends ReqPage {
     private String uId;
 
     private String groupname;
@@ -100,4 +100,5 @@ public class Sign {
     public void setSelecttime(Date selecttime) {
         this.selecttime = selecttime;
     }
+
 }

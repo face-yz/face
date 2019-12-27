@@ -1,6 +1,7 @@
 package com.ylf.manage.remote.user;
 
 import com.netflix.hystrix.contrib.javanica.annotation.HystrixCommand;
+import com.ylf.manage.entity.ImageDate;
 import com.ylf.manage.entity.Leave;
 import com.ylf.manage.entity.Response;
 import com.ylf.manage.entity.User;
@@ -59,5 +60,6 @@ public interface UserRpc {
     @RequestMapping("/api/v2/updateArgee")
     @HystrixCommand(fallbackMethod = "updateArgee")
     Response updateArgee(@RequestBody Leave leave);
+
 
 }

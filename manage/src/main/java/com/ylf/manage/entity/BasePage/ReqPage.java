@@ -1,12 +1,13 @@
-package com.ylf.manage.entity;
+package com.ylf.manage.entity.BasePage;
+
 
 /**
  * @author: leifeng.ye
- * @date: 2019-12-19
+ * @date: 2019-12-27
  * @desc:
  */
-public class Page {
-    private Integer pageSize;
+public class ReqPage {
+    private Integer pageSize=10;
     private Integer pageNo;
 
     public Integer getPageSize() {

@@ -1,5 +1,6 @@
 package com.ylf.manage.remote.user;
 
+import com.ylf.manage.entity.ImageDate;
 import com.ylf.manage.entity.Leave;
 import com.ylf.manage.entity.Response;
 import com.ylf.manage.entity.User;

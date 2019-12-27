@@ -1,6 +1,8 @@
 package com.ylf.manage.serviceAPI;
 
-import com.ylf.manage.entity.Sign;
+import com.ylf.manage.entity.ResSign;
+import com.ylf.manage.entity.ReqSign;
+import com.ylf.manage.entity.ResSignPage;
 
 import java.util.List;
 
@@ -10,7 +12,8 @@ import java.util.List;
  * @desc:
  */
 public interface SignService {
-    List selectUserSign(Sign sign);   //返回用户当天的考勤记录
+    List selectUserSign(ReqSign sign);   //返回用户当天的考勤记录
     List selectUserAttendPlan(String uId);  //返回用户的考勤计划
-    List selectUserSignList(Sign sign);   //返回用户某考勤计划下的考勤记录
+    ResSignPage selectUserSignList(ReqSign sign);   //返回用户某考勤计划下的考勤记录
+    int selectUserSignListCount(ReqSign sign);  ///返回用户某考勤计划下的考勤记录数量
 }

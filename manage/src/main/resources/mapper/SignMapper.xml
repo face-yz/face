@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
 <mapper namespace="com.ylf.manage.daoAPI.SignMapper" >
-  <resultMap id="BaseResultMap" type="com.ylf.manage.entity.Sign" >
+  <resultMap id="BaseResultMap" type="com.ylf.manage.entity.ResSign" >
     <id column="u_id" property="uId" jdbcType="VARCHAR" />
     <id column="groupName" property="groupname" jdbcType="VARCHAR" />
     <id column="signDate" property="signdate" jdbcType="DATE" />
@@ -16,14 +16,19 @@
   </sql>
 
 
-  <insert id="insert" parameterType="com.ylf.manage.entity.Sign" >
+  <insert id="insert" parameterType="com.ylf.manage.entity.ReqSign" >
     insert into sign (u_id, groupName, clazzName, 
       signDate, state, markTime, startTime, days)
     values (#{uId,jdbcType=VARCHAR}, #{groupname,jdbcType=VARCHAR}, #{clazzname,jdbcType=VARCHAR}, 
       #{signdate,jdbcType=DATE}, #{state,jdbcType=INTEGER}, #{marktime,jdbcType=TIME}, #{starttime,jdbcType=DATE},#{days,jdbcType=VARCHAR})
   </insert>
 
-  <select id="selectUserSign" parameterType="com.ylf.manage.entity.Sign" resultMap="BaseResultMap">
+  <select id="selectUserSignListCount" parameterType="com.ylf.manage.entity.ReqSign" resultType="java.lang.Integer">
+     select count(*) from sign where u_id=#{uId} and groupName=#{groupname} and startTime=#{starttime,jdbcType=DATE}
+    and markTime=#{marktime,jdbcType=TIME} and days=#{days} and clazzName=#{clazzname} and signDate&lt;=#{selecttime}
+  </select>
+
+  <select id="selectUserSign" parameterType="com.ylf.manage.entity.ReqSign" resultMap="BaseResultMap">
     select * from sign where u_id=#{uId} and signDate=#{signdate}
   </select>
 
@@ -31,8 +36,9 @@
     select distinct groupName,startTime,clazzName,markTime,days from sign where u_id=#{uId}
   </select>
 
-  <select id="selectUserSignList" parameterType="com.ylf.manage.entity.Sign" resultMap="BaseResultMap">
+  <select id="selectUserSignList" parameterType="com.ylf.manage.entity.ReqSign" resultMap="BaseResultMap">
     select * from sign where u_id=#{uId} and groupName=#{groupname} and startTime=#{starttime,jdbcType=DATE}
     and markTime=#{marktime,jdbcType=TIME} and days=#{days} and clazzName=#{clazzname} and signDate&lt;=#{selecttime}
+    limit #{pageNo},#{pageSize}
   </select>
 </mapper>
