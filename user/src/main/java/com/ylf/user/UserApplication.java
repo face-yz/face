@@ -11,7 +11,7 @@ import org.springframework.cloud.openfeign.EnableFeignClients;
 @EnableEurekaClient
 @MapperScan(
         "com.ylf.user.daoAPI"
-        )
+)
 public class UserApplication {
 
     public static void main(String[] args) {

@@ -1,10 +1,10 @@
-package com.ylf.manage;
+package com.ylf.user;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;
 
 @SpringBootTest
-class ManageApplicationTests {
+class UserApplicationTests {
 
     @Test
     void contextLoads() {

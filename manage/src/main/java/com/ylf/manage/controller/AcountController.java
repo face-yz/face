@@ -11,6 +11,7 @@ import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
+
 import java.util.ArrayList;
 
 /**
@@ -31,20 +32,19 @@ public class AcountController {
 
     @RequestMapping("/login")
     @CrossOrigin
-    public Response login(@RequestBody Acount acount){
-        if(acount.getUsername()==null){
+    public Response login(@RequestBody Acount acount) {
+        if (acount.getUsername() == null) {
             return Response.error("登录失败");
         }
-        boolean f=service.isLegal(acount);
-        if(f){
-            String uuid= Token.getToken(acount.getUsername());
-            JSONObject ticket=new JSONObject();
-            ticket.put("token",uuid);
-            ArrayList<JSONObject> list=new ArrayList<>();
+        boolean f = service.isLegal(acount);
+        if (f) {
+            String uuid = Token.getToken(acount.getUsername());
+            JSONObject ticket = new JSONObject();
+            ticket.put("token", uuid);
+            ArrayList<JSONObject> list = new ArrayList<>();
             list.add(ticket);
-            return Response.success(list,"登录成功");
-        }
-        else{
+            return Response.success(list, "登录成功");
+        } else {
             return Response.error("登录失败");
         }
 

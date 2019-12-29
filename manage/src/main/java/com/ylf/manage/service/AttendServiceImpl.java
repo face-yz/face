@@ -43,32 +43,32 @@ public class AttendServiceImpl implements AttendPlanService {
     }
 
     @Override
-    public boolean hasConflict(AttendPlan plan){
-        Long standard=2*60*60*1000+30*60*1000l;   //上课时间2小时+休息时间30分钟
-        ArrayList<AttendPlan> list=(ArrayList<AttendPlan>) getAttendPlanList(plan.getGroupname());
-        for(AttendPlan p:list) {
-            String[] days=p.getDays().split("_");
-            ArrayList<Integer> l=new ArrayList<>();
-            for(String d:days){
+    public boolean hasConflict(AttendPlan plan) {
+        Long standard = 2 * 60 * 60 * 1000 + 30 * 60 * 1000l;   //上课时间2小时+休息时间30分钟
+        ArrayList<AttendPlan> list = (ArrayList<AttendPlan>) getAttendPlanList(plan.getGroupname());
+        for (AttendPlan p : list) {
+            String[] days = p.getDays().split("_");
+            ArrayList<Integer> l = new ArrayList<>();
+            for (String d : days) {
                 l.add(Integer.valueOf(d));
             }
-            boolean f=weekhasConflict(l,plan.getWeekdays());
-            if (plan.getStarttime().getTime()>=p.getStarttime().getTime()&&plan.getStarttime().getTime()<=p.getEndtime().getTime()) {
-                if(f){
+            boolean f = weekhasConflict(l, plan.getWeekdays());
+            if (plan.getStarttime().getTime() >= p.getStarttime().getTime() && plan.getStarttime().getTime() <= p.getEndtime().getTime()) {
+                if (f) {
                     if (Math.abs(p.getMarktime().getTime() - plan.getMarktime().getTime()) < standard) {
                         return true;
                     }
                 }
             }
-            if(plan.getEndtime().getTime()>=p.getStarttime().getTime()&&plan.getEndtime().getTime()<=p.getEndtime().getTime()){
-                if(f){
+            if (plan.getEndtime().getTime() >= p.getStarttime().getTime() && plan.getEndtime().getTime() <= p.getEndtime().getTime()) {
+                if (f) {
                     if (Math.abs(p.getMarktime().getTime() - plan.getMarktime().getTime()) < standard) {
                         return true;
                     }
                 }
             }
-            if(plan.getStarttime().getTime()<=p.getStarttime().getTime()&&plan.getEndtime().getTime()>=p.getEndtime().getTime()){
-                if(f){
+            if (plan.getStarttime().getTime() <= p.getStarttime().getTime() && plan.getEndtime().getTime() >= p.getEndtime().getTime()) {
+                if (f) {
                     if (Math.abs(p.getMarktime().getTime() - plan.getMarktime().getTime()) < standard) {
                         return true;
                     }
@@ -82,44 +82,42 @@ public class AttendServiceImpl implements AttendPlanService {
 
     @Override
     public boolean faceIsLegal(MultipartFile img) {
-        JSONObject msg=faceRpc.detect(faceRpc.getClient(),img);
-        if(msg.getInt("error_code")==222202||msg.getJSONObject("result").getInt("face_num")>1){
+        JSONObject msg = faceRpc.detect(faceRpc.getClient(), img);
+        if (msg.getInt("error_code") == 222202 || msg.getJSONObject("result").getInt("face_num") > 1) {
             return false;
-        }
-        else {
+        } else {
             return true;
         }
     }
 
     @Override
-    public void addDefaultSign(String u_id,Date start, Date end,String clazzName,String groupName,Date markTime,Integer[] weekdays,String days) {
-        ArrayList<Integer> list=new ArrayList<>();
-        for(Integer a:weekdays){
+    public void addDefaultSign(String u_id, Date start, Date end, String clazzName, String groupName, Date markTime, Integer[] weekdays, String days) {
+        ArrayList<Integer> list = new ArrayList<>();
+        for (Integer a : weekdays) {
             list.add(a);
         }
-        Long s=start.getTime();
-        Long e=end.getTime();
-        Long oneDay=1000*60*60*24l;
-         while(s<=e){
-             Date time=new Date(s);
-             if(time.getDay()==6||time.getDay()==0||!list.contains(time.getDay())){
-                 s+=oneDay;
-             }
-             else{
-                 ReqSign sign=new ReqSign();
-                 sign.setuId(u_id);
-                 sign.setClazzname(clazzName);
-                 sign.setGroupname(groupName);
-                 sign.setState(0);
-                 sign.setSigndate(time);
-                 sign.setMarktime(markTime);
-                 sign.setStarttime(start);
-                 sign.setDays(days);
-                 signDao.insert(sign);
-                 s+=oneDay;
-             }
+        Long s = start.getTime();
+        Long e = end.getTime();
+        Long oneDay = 1000 * 60 * 60 * 24l;
+        while (s <= e) {
+            Date time = new Date(s);
+            if (time.getDay() == 6 || time.getDay() == 0 || !list.contains(time.getDay())) {
+                s += oneDay;
+            } else {
+                ReqSign sign = new ReqSign();
+                sign.setuId(u_id);
+                sign.setClazzname(clazzName);
+                sign.setGroupname(groupName);
+                sign.setState(0);
+                sign.setSigndate(time);
+                sign.setMarktime(markTime);
+                sign.setStarttime(start);
+                sign.setDays(days);
+                signDao.insert(sign);
+                s += oneDay;
+            }
 
-         }
+        }
     }
 
     @Override
@@ -128,11 +126,11 @@ public class AttendServiceImpl implements AttendPlanService {
     }
 
     @Override
-    public boolean weekhasConflict(ArrayList<Integer> l,Integer[] plan) {
-        boolean f=false;
-        for(int i=0;i<plan.length;i++){
-            if(l.contains(plan[i])){
-                f=true;
+    public boolean weekhasConflict(ArrayList<Integer> l, Integer[] plan) {
+        boolean f = false;
+        for (int i = 0; i < plan.length; i++) {
+            if (l.contains(plan[i])) {
+                f = true;
                 break;
             }
         }
@@ -147,7 +145,7 @@ public class AttendServiceImpl implements AttendPlanService {
     @Override
     public List selectLimitList(ReqPage page) {
         page.setPageSize(10);
-        page.setPageNo(page.getPageNo()*10);
+        page.setPageNo(page.getPageNo() * 10);
         return dao.selectLimitList(page);
     }
 

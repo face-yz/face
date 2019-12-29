@@ -11,7 +11,7 @@ import java.util.Date;
  * @desc:
  */
 
-public class ResSign{
+public class ResSign {
     private String uId;
 
     private String groupname;

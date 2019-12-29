@@ -1,6 +1,6 @@
 package com.ylf.user.entity;
 
-public class User{
+public class User {
     private String uId;
     private String username;
     private String password;

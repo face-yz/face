@@ -16,7 +16,7 @@ import java.util.Map;
  * @date: 2019-12-19
  * @desc:
  */
-@FeignClient(name = "face-manage",fallback = ManageHystric.class)
+@FeignClient(name = "face-manage", fallback = ManageHystric.class)
 @Service
 public interface ManageRpc {
     @HystrixCommand(fallbackMethod = "selectAttendPlanLimitList")

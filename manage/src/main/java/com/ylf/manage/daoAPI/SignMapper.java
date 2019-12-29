@@ -7,9 +7,15 @@ import java.util.List;
 
 @Repository
 public interface SignMapper {
-        int insert(ReqSign sign);
-        List selectUserSign(ReqSign sign);
-        List selectUserAttendPlan(String uId);
-        List selectUserSignList(ReqSign sign);
-        int selectUserSignListCount(ReqSign sign);
+    int insert(ReqSign sign);
+
+    List selectUserSign(ReqSign sign);
+
+    List selectUserAttendPlan(String uId);
+
+    List selectUserSignList(ReqSign sign);
+
+    int selectUserSignListCount(ReqSign sign);
+
+    int updateUserSign(ReqSign sign);
 }

@@ -13,16 +13,16 @@ public class Response<T> {
     private String msg;
     private List<T> data;
 
-    public static Response success(List data,String msg){
-        Response res=new Response();
+    public static Response success(List data, String msg) {
+        Response res = new Response();
         res.setCode("1");
         res.setData(data);
         res.setMsg(msg);
         return res;
     }
 
-    public static Response error(String msg){
-        Response res=new Response();
+    public static Response error(String msg) {
+        Response res = new Response();
         res.setCode("0");
         res.setMsg(msg);
         return res;

@@ -7,8 +7,11 @@ import java.util.List;
 
 @Repository
 public interface UserMapper {
-   int insertUser(User user);
-   List selectUserList();
-   User selectUser(String uId);
-   int updateUser(User user);
+    int insertUser(User user);
+
+    List selectUserList();
+
+    User selectUser(String uId);
+
+    int updateUser(User user);
 }

@@ -23,7 +23,7 @@ public class TeacherServiceImpl implements TeacherService {
     public int insert(Teacher teacher) {
         teacher.settId(Encoder.encoder(teacher.gettId()));
         teacher.setPassword(Encoder.encoder(teacher.getPassword()));
-        if(teacher.getPhone()!=null){
+        if (teacher.getPhone() != null) {
             teacher.setPhone(Encoder.encoder(teacher.getPhone()));
         }
         return dao.insert(teacher);
@@ -31,10 +31,10 @@ public class TeacherServiceImpl implements TeacherService {
 
     @Override
     public Teacher getTeacher(String tId) {
-        Teacher teacher=dao.selectByPrimaryKey(Encoder.encoder(tId));
-        if(teacher!=null){
+        Teacher teacher = dao.selectByPrimaryKey(Encoder.encoder(tId));
+        if (teacher != null) {
             teacher.settId(Encoder.decoder(teacher.gettId()));
-            if(teacher.getPhone()!=null){
+            if (teacher.getPhone() != null) {
                 teacher.setPhone(Encoder.decoder(teacher.getPhone()));
             }
         }
@@ -44,10 +44,10 @@ public class TeacherServiceImpl implements TeacherService {
     @Override
     public int updateTeacher(Teacher teacher) {
         teacher.settId(Encoder.encoder(teacher.gettId()));
-        if(teacher.getPassword()!=null){
+        if (teacher.getPassword() != null) {
             teacher.setPassword(Encoder.encoder(teacher.getPassword()));
         }
-        if(teacher.getPhone()!=null){
+        if (teacher.getPhone() != null) {
             teacher.setPhone(Encoder.encoder(teacher.getPhone()));
         }
         return dao.updateTeacher(teacher);

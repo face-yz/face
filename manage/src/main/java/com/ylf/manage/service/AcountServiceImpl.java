@@ -1,10 +1,12 @@
 package com.ylf.manage.service;
+
 import com.ylf.manage.daoAPI.AcountMapper;
 import com.ylf.manage.entity.Acount;
 import com.ylf.manage.serviceAPI.AcountService;
 import com.ylf.manage.util.Encryption;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+
 import java.util.ArrayList;
 import java.util.List;
 
@@ -26,9 +28,9 @@ public class AcountServiceImpl implements AcountService {
 
     @Override
     public boolean isLegal(Acount acount) {
-        ArrayList<Acount> list=(ArrayList<Acount>) selectList();
-        for(Acount a:list){
-            if(Encryption.toEncryption(acount.getUsername()).equals(a.getUsername())&&Encryption.toEncryption(acount.getPassword()).equals(a.getPassword())){
+        ArrayList<Acount> list = (ArrayList<Acount>) selectList();
+        for (Acount a : list) {
+            if (Encryption.toEncryption(acount.getUsername()).equals(a.getUsername()) && Encryption.toEncryption(acount.getPassword()).equals(a.getPassword())) {
                 return true;
             }
         }

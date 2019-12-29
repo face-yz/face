@@ -23,17 +23,15 @@ public class TeacherController {
 
     @RequestMapping("/addTeacher")
     @CrossOrigin
-    public Response addTeacher(@RequestBody Teacher teacher){
-        Teacher t=service.getTeacher(teacher.gettId());
-        if(t!=null){
+    public Response addTeacher(@RequestBody Teacher teacher) {
+        Teacher t = service.getTeacher(teacher.gettId());
+        if (t != null) {
             return Response.error("此老师已添加");
-        }
-        else{
-            int n=service.insert(teacher);
-            if(n>0){
-                return Response.success(null,"添加成功");
-            }
-            else{
+        } else {
+            int n = service.insert(teacher);
+            if (n > 0) {
+                return Response.success(null, "添加成功");
+            } else {
                 return Response.error("添加失败");
             }
         }
@@ -41,12 +39,11 @@ public class TeacherController {
 
     @RequestMapping("/updateTeacher")
     @CrossOrigin
-    public Response updateTeacher(@RequestBody Teacher teacher){
-        int n=service.updateTeacher(teacher);
-        if(n>0){
-            return Response.success(null,"更新成功");
-        }
-        else{
+    public Response updateTeacher(@RequestBody Teacher teacher) {
+        int n = service.updateTeacher(teacher);
+        if (n > 0) {
+            return Response.success(null, "更新成功");
+        } else {
             return Response.error("更新失败");
         }
     }

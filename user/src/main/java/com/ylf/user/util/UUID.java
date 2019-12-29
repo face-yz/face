@@ -9,10 +9,10 @@ import java.io.RandomAccessFile;
  * @desc: token
  */
 public class UUID {
-    public static String getUUID(){
-            String id=java.util.UUID.randomUUID().toString();
-            id=id.replaceAll("-","");
-            return id;
+    public static String getUUID() {
+        String id = java.util.UUID.randomUUID().toString();
+        id = id.replaceAll("-", "");
+        return id;
     }
 
 }

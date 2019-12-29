@@ -8,6 +8,7 @@ import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
+
 import java.util.Map;
 
 /**
@@ -25,31 +26,31 @@ public class LeaveController {
     @RequestMapping("/askLeave")
     @CrossOrigin
     public Response askLeave(@RequestBody Leave leave) {
-         return userRpc.askLeave(leave);
+        return userRpc.askLeave(leave);
     }
 
     @RequestMapping("/selectUserLeave")
     @CrossOrigin
-    public Response selectUserLeave(@RequestBody Map map){
+    public Response selectUserLeave(@RequestBody Map map) {
         return userRpc.selectUserLeave(map);
     }
 
 
     @RequestMapping("/selectLeaveList")
     @CrossOrigin
-    public Response selectLeaveList(){
-       return userRpc.selectLeaveList();
+    public Response selectLeaveList() {
+        return userRpc.selectLeaveList();
     }
 
     @RequestMapping("/updateNoArgee")
     @CrossOrigin
-    public Response updateNoArgee(@RequestBody Leave leave){
-       return userRpc.updateNoArgee(leave);
+    public Response updateNoArgee(@RequestBody Leave leave) {
+        return userRpc.updateNoArgee(leave);
     }
 
     @RequestMapping("/updateArgee")
     @CrossOrigin
-    public Response updateArgee(@RequestBody Leave leave){
+    public Response updateArgee(@RequestBody Leave leave) {
         return userRpc.updateArgee(leave);
     }
 

@@ -5,7 +5,8 @@
 
 <generatorConfiguration>
     <!--mysql 连接数据库jar 这里选择自己本地位置-->
-    <classPathEntry location="/home/ylf/Downloads/maven-hub/mysql/mysql-connector-java/8.0.18/mysql-connector-java-8.0.18.jar"/>
+    <classPathEntry
+            location="/home/ylf/Downloads/maven-hub/mysql/mysql-connector-java/8.0.18/mysql-connector-java-8.0.18.jar"/>
     <context id="testTables" targetRuntime="MyBatis3">
         <commentGenerator>
             <!-- 是否去除自动生成的注释 true：是 ： false:否 -->
@@ -47,7 +48,7 @@
         <!-- table表生成对应的DoaminObject -->
         <table tableName="" domainObjectName=""
                enableCountByExample="false" enableUpdateByExample="false" enableDeleteByExample="false"
-               enableSelectByExample="false" selectByExampleQueryId="false" >
+               enableSelectByExample="false" selectByExampleQueryId="false">
             <property name="useActualColumnNames" value="false"/>
         </table>
 

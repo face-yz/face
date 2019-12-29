@@ -14,7 +14,7 @@ import java.util.Map;
  * @desc:
  */
 @Component
-public class UserHystric implements UserRpc{
+public class UserHystric implements UserRpc {
 
     @Override
     public Response login(User user) {
@@ -33,12 +33,12 @@ public class UserHystric implements UserRpc{
 
     @Override
     public Response addUser(User user) {
-        return  Response.error("Rpc服务器宕机");
+        return Response.error("Rpc服务器宕机");
     }
 
     @Override
     public Response selectUserList() {
-        return  Response.error("Rpc服务器宕机");
+        return Response.error("Rpc服务器宕机");
     }
 
     @Override

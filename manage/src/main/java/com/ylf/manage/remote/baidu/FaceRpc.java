@@ -16,29 +16,28 @@ import java.util.HashMap;
 @Component
 public class FaceRpc {
     public static void main(String[] args) {
-        new FaceRpc().deleteGroup(new FaceRpc().getClient(),"FF205_1576771200000_0_1_2_3_4");
+        new FaceRpc().deleteGroup(new FaceRpc().getClient(), "FF205_1576771200000_0_1_2_3_4");
     }
 
 
-    AipFace client=null;
+    AipFace client = null;
 
-    public AipFace getClient(){
-        if(client==null){
-            client=new AipFace("17970422","zSDokOAIfXMH06y0NhnfmUjg","NSyjgYVuq1phaWvlxL9wouGcGOVtBMsF");
+    public AipFace getClient() {
+        if (client == null) {
+            client = new AipFace("17970422", "zSDokOAIfXMH06y0NhnfmUjg", "NSyjgYVuq1phaWvlxL9wouGcGOVtBMsF");
             return client;
-        }
-        else {
+        } else {
             return client;
         }
     }
 
-    public static String fileToBase64(MultipartFile file){
-        String str="";
-        try{
-            BASE64Encoder bs=new BASE64Encoder();
-            str=bs.encode(file.getBytes());
+    public static String fileToBase64(MultipartFile file) {
+        String str = "";
+        try {
+            BASE64Encoder bs = new BASE64Encoder();
+            str = bs.encode(file.getBytes());
 
-        }catch (Exception e){
+        } catch (Exception e) {
             e.printStackTrace();
         }
         return str;
@@ -51,20 +50,20 @@ public class FaceRpc {
         options.put("quality_control", "NORMAL");
         options.put("liveness_control", "LOW");
         options.put("action_type", "REPLACE");
-        try{
-            String bs=fileToBase64(imgFile);
+        try {
+            String bs = fileToBase64(imgFile);
             String imageType = "BASE64";
             // 人脸注册
             JSONObject res = client.addUser(bs, imageType, groupId, userId, options);
             return res;
-        }catch (Exception e){
-               e.printStackTrace();
-               return null;
+        } catch (Exception e) {
+            e.printStackTrace();
+            return null;
         }
 
     }
 
-    public JSONObject update(AipFace client,String user_info, MultipartFile imgFile, String groupId, String userId) { //更新人脸
+    public JSONObject update(AipFace client, String user_info, MultipartFile imgFile, String groupId, String userId) { //更新人脸
         // 传入可选参数调用接口
         HashMap<String, String> options = new HashMap<String, String>();
         options.put("user_info", user_info);
@@ -72,20 +71,20 @@ public class FaceRpc {
         options.put("liveness_control", "LOW");
         options.put("action_type", "REPLACE");
 
-        try{
-            String bs=fileToBase64(imgFile);
+        try {
+            String bs = fileToBase64(imgFile);
             String image = "取决于image_type参数，传入BASE64字符串或URL字符串或FACE_TOKEN字符串";
             String imageType = "BASE64";
             // 人脸更新
             JSONObject res = client.updateUser(bs, imageType, groupId, userId, options);
             return res;
-        }catch (Exception e){
+        } catch (Exception e) {
             e.printStackTrace();
             return null;
         }
     }
 
-    public JSONObject delete(AipFace client,String userId,String groupId,String faceToken) {
+    public JSONObject delete(AipFace client, String userId, String groupId, String faceToken) {
         // 传入可选参数调用接口
         HashMap<String, String> options = new HashMap<String, String>();
         // 人脸删除
@@ -94,7 +93,7 @@ public class FaceRpc {
     }
 
 
-    public JSONObject detect(AipFace client,MultipartFile imgFile) {  //检测人脸
+    public JSONObject detect(AipFace client, MultipartFile imgFile) {  //检测人脸
         // 传入可选参数调用接口
         HashMap<String, String> options = new HashMap<String, String>();
         options.put("face_field", "age");
@@ -102,19 +101,19 @@ public class FaceRpc {
         options.put("face_type", "LIVE");
         options.put("liveness_control", "LOW");
 
-        try{
-            String bs= fileToBase64(imgFile);
+        try {
+            String bs = fileToBase64(imgFile);
             String imageType = "BASE64";
             // 人脸检测
             JSONObject res = client.detect(bs, imageType, options);
             return res;
-        }catch (Exception e){
-             e.printStackTrace();
-             return null;
+        } catch (Exception e) {
+            e.printStackTrace();
+            return null;
         }
     }
 
-    public JSONObject search(AipFace client,MultipartFile imgFile,String groupIdList) {  //搜索
+    public JSONObject search(AipFace client, MultipartFile imgFile, String groupIdList) {  //搜索
         // 传入可选参数调用接口
         HashMap<String, String> options = new HashMap<String, String>();
         options.put("max_face_num", "1");
@@ -122,20 +121,20 @@ public class FaceRpc {
         options.put("quality_control", "NORMAL");
         options.put("liveness_control", "LOW");
         options.put("max_user_num", "1");
-        try{
-            String bs=fileToBase64(imgFile);
+        try {
+            String bs = fileToBase64(imgFile);
             String imageType = "BASE64";
             // 人脸搜索
             JSONObject res = client.search(bs, imageType, groupIdList, options);
             return res;
-        }catch (Exception e){
+        } catch (Exception e) {
             e.printStackTrace();
             return null;
         }
 
     }
 
-    public JSONObject createGroup(AipFace client,String groupId) {  //创建用户组
+    public JSONObject createGroup(AipFace client, String groupId) {  //创建用户组
         // 传入可选参数调用接口
         HashMap<String, String> options = new HashMap<String, String>();
         // 创建用户组
@@ -143,7 +142,7 @@ public class FaceRpc {
         return res;
     }
 
-    public JSONObject deleteGroup(AipFace client,String groupId) {  //删除用户组
+    public JSONObject deleteGroup(AipFace client, String groupId) {  //删除用户组
         // 传入可选参数调用接口
         HashMap<String, String> options = new HashMap<String, String>();
         // 删除用户组
@@ -151,17 +150,17 @@ public class FaceRpc {
         return res;
     }
 
-    public JSONObject getUserList(AipFace client,String groupId,String length) { //返回group用户列表
+    public JSONObject getUserList(AipFace client, String groupId, String length) { //返回group用户列表
         // 传入可选参数调用接口
         HashMap<String, String> options = new HashMap<String, String>();
         options.put("start", "0");
-        options.put("length",length);
+        options.put("length", length);
         // 获取用户列表
         JSONObject res = client.getGroupUsers(groupId, options);
         return res;
     }
 
-    public JSONObject getUserInfo(AipFace client, String userId,String groupId) {  //查询用户信息
+    public JSONObject getUserInfo(AipFace client, String userId, String groupId) {  //查询用户信息
         // 传入可选参数调用接口
         HashMap<String, String> options = new HashMap<String, String>();
         // 用户信息查询
@@ -170,7 +169,7 @@ public class FaceRpc {
     }
 
 
-    public JSONObject getUserImageList(AipFace client,String userId,String groupId){   //获取用户人脸列表
+    public JSONObject getUserImageList(AipFace client, String userId, String groupId) {   //获取用户人脸列表
         // 传入可选参数调用接口
         HashMap<String, String> options = new HashMap<String, String>();
         // 获取用户人脸列表

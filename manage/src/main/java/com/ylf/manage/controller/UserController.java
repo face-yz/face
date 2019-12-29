@@ -24,25 +24,25 @@ public class UserController {
 
     @RequestMapping("/userLogin")
     @CrossOrigin
-    public Response userLogin(@RequestBody User user){
+    public Response userLogin(@RequestBody User user) {
         return userRpc.login(user);
     }
 
     @RequestMapping("/updateUser")
     @CrossOrigin
-    public Response updateUser(@RequestBody User user){
+    public Response updateUser(@RequestBody User user) {
         return userRpc.updateUser(user);
     }
 
     @RequestMapping("/addUser")
     @CrossOrigin
-    public Response addUser(@RequestBody User user){
+    public Response addUser(@RequestBody User user) {
         return userRpc.addUser(user);
     }
 
     @RequestMapping("/selectUserList")
     @CrossOrigin
-    public Response selectList(){
+    public Response selectList() {
         return userRpc.selectUserList();
     }
 

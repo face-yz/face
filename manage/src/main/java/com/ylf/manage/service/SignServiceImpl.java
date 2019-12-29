@@ -31,20 +31,20 @@ public class SignServiceImpl implements SignService {
 
     @Override
     public List selectUserAttendPlan(String uId) {
-        String id=Encoder.encoder(uId);
+        String id = Encoder.encoder(uId);
         return dao.selectUserAttendPlan(id);
     }
 
     @Override
     public ResSignPage selectUserSignList(ReqSign sign) {
-        ResSignPage res=new ResSignPage();
+        ResSignPage res = new ResSignPage();
         res.setPageNo(sign.getPageNo());
         res.setPageSize(sign.getPageSize());
         sign.setuId(Encoder.encoder(sign.getuId()));
-        sign.setPageNo(sign.getPageNo()*sign.getPageSize());
-        ArrayList<ResSign> list=(ArrayList<ResSign>) dao.selectUserSignList(sign);
-        if(list.size()>0){
-            for(ResSign a:list){
+        sign.setPageNo(sign.getPageNo() * sign.getPageSize());
+        ArrayList<ResSign> list = (ArrayList<ResSign>) dao.selectUserSignList(sign);
+        if (list.size() > 0) {
+            for (ResSign a : list) {
                 a.setuId(Encoder.decoder(a.getuId()));
             }
         }
@@ -56,5 +56,11 @@ public class SignServiceImpl implements SignService {
     @Override
     public int selectUserSignListCount(ReqSign sign) {
         return dao.selectUserSignListCount(sign);
+    }
+
+    @Override
+    public int updateUserSign(ReqSign sign) {
+        sign.setuId(Encoder.encoder(sign.getuId()));
+        return dao.updateUserSign(sign);
     }
 }

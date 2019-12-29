@@ -28,10 +28,10 @@ public class UserServiceImpl implements UserService {
 
     @Override
     public User getUser(String uId) {
-        User user=dao.selectUser(uId);
-        if(user!=null){
+        User user = dao.selectUser(uId);
+        if (user != null) {
             user.setuId(Encoder.decoder(user.getuId()));
-            if(user.getPhone()!=null){
+            if (user.getPhone() != null) {
                 user.setPhone(Encoder.decoder(user.getPhone()));
             }
         }
@@ -40,24 +40,24 @@ public class UserServiceImpl implements UserService {
 
     @Override
     public List getUserList() {
-       ArrayList<User> list=(ArrayList<User>) dao.selectUserList();
-       if(list.size()>0){
-           for(User user:list){
-               user.setuId(Encoder.decoder(user.getuId()));
-               user.setPassword(Encoder.decoder(user.getPassword()));
-               if(user.getPhone()!=null){
-                   user.setPhone(Encoder.decoder(user.getPhone()));
-               }
-           }
-       }
-       return list;
+        ArrayList<User> list = (ArrayList<User>) dao.selectUserList();
+        if (list.size() > 0) {
+            for (User user : list) {
+                user.setuId(Encoder.decoder(user.getuId()));
+                user.setPassword(Encoder.decoder(user.getPassword()));
+                if (user.getPhone() != null) {
+                    user.setPhone(Encoder.decoder(user.getPhone()));
+                }
+            }
+        }
+        return list;
     }
 
     @Override
     public boolean isLegal(User user) {
-        ArrayList<User> list=(ArrayList<User>) getUserList();
-        for(User a:list){
-            if(a.getuId().equals(user.getuId())&&a.getPassword().equals(user.getPassword())){
+        ArrayList<User> list = (ArrayList<User>) getUserList();
+        for (User a : list) {
+            if (a.getuId().equals(user.getuId()) && a.getPassword().equals(user.getPassword())) {
                 return true;
             }
         }

@@ -1,38 +1,38 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
-<mapper namespace="com.ylf.manage.daoAPI.AttendPlanMapper" >
-  <resultMap id="BaseResultMap" type="com.ylf.manage.entity.AttendPlan" >
-    <id column="groupName" property="groupname" jdbcType="VARCHAR" />
-    <result column="startTime" property="starttime" jdbcType="DATE" />
-    <result column="endTime" property="endtime" jdbcType="DATE" />
-    <result column="markTime" property="marktime" jdbcType="TIME" />
-    <result column="clazzName" property="clazzname" jdbcType="VARCHAR"/>
-    <result column="days"  property="days"  jdbcType="VARCHAR" />
-  </resultMap>
-  <sql id="Base_Column_List" >
-    groupName, startTime, endTime, markTime,clazzName, days
-  </sql>
-  <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="java.lang.String" >
-    select 
-    <include refid="Base_Column_List" />
-    from attendPlan
-    where groupName = #{groupname,jdbcType=VARCHAR}
-  </select>
-  <insert id="insert" parameterType="com.ylf.manage.entity.AttendPlan" >
-    insert into attendPlan (groupName, startTime, endTime, 
-      markTime,clazzName,days)
-    values (#{groupname,jdbcType=VARCHAR}, #{starttime,jdbcType=DATE}, #{endtime,jdbcType=DATE},
-      #{marktime,jdbcType=TIME},#{clazzname,jdbcType=VARCHAR},#{days,jdbcType=VARCHAR})
-  </insert>
-  <select id="selectList" resultMap="BaseResultMap">
-    select * from attendPlan;
-  </select>
-  <select id="selectCount" resultType="java.lang.Integer">
-    select count(*) from attendPlan;
-  </select>
-  <select id="selectLimitList" parameterType="com.ylf.manage.entity.BasePage.ReqPage" resultMap="BaseResultMap">
-    select * from attendPlan limit #{pageNo},#{pageSize}
-  </select>
+<mapper namespace="com.ylf.manage.daoAPI.AttendPlanMapper">
+    <resultMap id="BaseResultMap" type="com.ylf.manage.entity.AttendPlan">
+        <id column="groupName" property="groupname" jdbcType="VARCHAR"/>
+        <result column="startTime" property="starttime" jdbcType="DATE"/>
+        <result column="endTime" property="endtime" jdbcType="DATE"/>
+        <result column="markTime" property="marktime" jdbcType="TIME"/>
+        <result column="clazzName" property="clazzname" jdbcType="VARCHAR"/>
+        <result column="days" property="days" jdbcType="VARCHAR"/>
+    </resultMap>
+    <sql id="Base_Column_List">
+        groupName, startTime, endTime, markTime,clazzName, days
+    </sql>
+    <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="java.lang.String">
+        select
+        <include refid="Base_Column_List"/>
+        from attendPlan
+        where groupName = #{groupname,jdbcType=VARCHAR}
+    </select>
+    <insert id="insert" parameterType="com.ylf.manage.entity.AttendPlan">
+        insert into attendPlan (groupName, startTime, endTime,
+        markTime,clazzName,days)
+        values (#{groupname,jdbcType=VARCHAR}, #{starttime,jdbcType=DATE}, #{endtime,jdbcType=DATE},
+        #{marktime,jdbcType=TIME},#{clazzname,jdbcType=VARCHAR},#{days,jdbcType=VARCHAR})
+    </insert>
+    <select id="selectList" resultMap="BaseResultMap">
+        select * from attendPlan;
+    </select>
+    <select id="selectCount" resultType="java.lang.Integer">
+        select count(*) from attendPlan;
+    </select>
+    <select id="selectLimitList" parameterType="com.ylf.manage.entity.BasePage.ReqPage" resultMap="BaseResultMap">
+        select * from attendPlan limit #{pageNo},#{pageSize}
+    </select>
 
 
 </mapper>

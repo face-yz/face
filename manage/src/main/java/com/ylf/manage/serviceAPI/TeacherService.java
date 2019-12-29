@@ -9,6 +9,8 @@ import com.ylf.manage.entity.Teacher;
  */
 public interface TeacherService {
     int insert(Teacher teacher);  //添加老师信息
+
     Teacher getTeacher(String tId); //获取老师信息
+
     int updateTeacher(Teacher teacher); //更新老师信息
 }

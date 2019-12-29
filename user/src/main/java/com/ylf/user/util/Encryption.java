@@ -8,8 +8,8 @@ import org.springframework.util.DigestUtils;
  * @desc: 加密
  */
 public class Encryption {
-    public static String toEncryption(String str){
-        String res=DigestUtils.md5DigestAsHex(str.getBytes());
+    public static String toEncryption(String str) {
+        String res = DigestUtils.md5DigestAsHex(str.getBytes());
         return res;
     }
 }

@@ -7,8 +7,8 @@ package com.ylf.manage.entity.BasePage;
  * @desc:
  */
 public class ReqPage {
-    private Integer pageSize=10;
-    private Integer pageNo;
+    private Integer pageSize = 10;
+    private Integer pageNo=0;
 
     public Integer getPageSize() {
         return pageSize;

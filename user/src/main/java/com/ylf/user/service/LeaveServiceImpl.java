@@ -33,9 +33,9 @@ public class LeaveServiceImpl implements LeaveService {
 
     @Override
     public List selectUserLeave(String uId) {
-        ArrayList<Leave> list=(ArrayList<Leave>)dao.selectUserLeave(uId);
-        if(list.size()>0){
-            for(Leave a:list){
+        ArrayList<Leave> list = (ArrayList<Leave>) dao.selectUserLeave(uId);
+        if (list.size() > 0) {
+            for (Leave a : list) {
                 a.setuId(Encoder.decoder(a.getuId()));
             }
         }
@@ -44,9 +44,9 @@ public class LeaveServiceImpl implements LeaveService {
 
     @Override
     public List selectList() {
-        ArrayList<Leave> list=(ArrayList<Leave>)dao.selectList();
-        if(list.size()>0){
-            for(Leave a:list){
+        ArrayList<Leave> list = (ArrayList<Leave>) dao.selectList();
+        if (list.size() > 0) {
+            for (Leave a : list) {
                 a.setuId(Encoder.decoder(a.getuId()));
             }
         }
@@ -72,10 +72,10 @@ public class LeaveServiceImpl implements LeaveService {
 
     @Override
     public boolean isLegalLeave(Leave leave) {
-        boolean f=false;
-        ArrayList<Leave> list=(ArrayList<Leave>) dao.isLegalLeave(leave);
-        if(list.size()>0){
-            f=true;
+        boolean f = false;
+        ArrayList<Leave> list = (ArrayList<Leave>) dao.isLegalLeave(leave);
+        if (list.size() > 0) {
+            f = true;
         }
         return f;
     }

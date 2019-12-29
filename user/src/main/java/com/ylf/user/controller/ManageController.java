@@ -30,21 +30,19 @@ public class ManageController {
 
 
     @RequestMapping("/selectUserSignAttendPlanList")
-    public Response selectUserSignAttendPlanList(ImageDate imageDate){
-        if(service.faceIsLegal(imageDate.getImg())){
-            ArrayList<Sign> list=(ArrayList<Sign>) service.getUserAttendPlanList(imageDate);
-            if(list!=null&&list.size()>0){
-                User user=userService.getUser(list.get(0).getuId());
-                for(Sign a:list){
+    public Response selectUserSignAttendPlanList(ImageDate imageDate) {
+        if (service.faceIsLegal(imageDate.getImg())) {
+            ArrayList<Sign> list = (ArrayList<Sign>) service.getUserAttendPlanList(imageDate);
+            if (list != null && list.size() > 0) {
+                User user = userService.getUser(list.get(0).getuId());
+                for (Sign a : list) {
                     a.setuId(Encoder.decoder(a.getuId()));
                 }
                 return Response.success(list, user.getUsername());
+            } else {
+                return Response.success(list, "您今日暂无考勤计划");
             }
-            else{
-                return Response.success(list,"您今日暂无考勤计划");
-            }
-        }
-        else{
+        } else {
             return Response.error("照片不合法");
         }
 

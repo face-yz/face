@@ -32,59 +32,52 @@ public class AttendPlanController {
     @Autowired
     private FaceRpc faceRpc;
 
-    @Autowired
-    private UserRpc userRpc;
-
     @RequestMapping("/addPlan")
     @CrossOrigin
-    public Response addPlan(@RequestBody AttendPlan plan){
-        if(service.hasConflict(plan)==true){
+    public Response addPlan(@RequestBody AttendPlan plan) {
+        if (service.hasConflict(plan) == true) {
             return Response.error("此计划和已有计划有冲突");
-        }
-        else{
-            String days="";
-            for(int i=0;i<plan.getWeekdays().length;i++){
-                if(i==plan.getWeekdays().length-1){
-                    days+=plan.getWeekdays()[i];
-                }
-                else{
-                    days+=plan.getWeekdays()[i]+"_";
+        } else {
+            String days = "";
+            for (int i = 0; i < plan.getWeekdays().length; i++) {
+                if (i == plan.getWeekdays().length - 1) {
+                    days += plan.getWeekdays()[i];
+                } else {
+                    days += plan.getWeekdays()[i] + "_";
                 }
             }
             plan.setDays(days);
-            String faceGroupName=plan.getGroupname()+"_"+plan.getStarttime().getTime()+"_"+plan.getMarktime().getTime()+"_"+days;
-            faceRpc.createGroup(faceRpc.getClient(),faceGroupName);
+            String faceGroupName = plan.getGroupname() + "_" + plan.getStarttime().getTime() + "_" + plan.getMarktime().getTime() + "_" + days;
+            faceRpc.createGroup(faceRpc.getClient(), faceGroupName);
             service.addPlan(plan);
-            return Response.success(null,"添加计划成功");
+            return Response.success(null, "添加计划成功");
         }
     }
 
 
     @RequestMapping("/addPlan/addPlanUser")
     @CrossOrigin
-    public Response addPlanUser(FaceImage faceImage){
-        boolean f=service.faceIsLegal(faceImage.getImg());
-        if(f){
-            String bdGroupName=faceImage.getGroupName()+"_"+faceImage.getStart().getTime()+"_"+faceImage.getMarktime().getTime()+"_"+faceImage.getDays();
-            JSONObject res =faceRpc.getUserInfo(faceRpc.getClient(),faceImage.getuId(),bdGroupName);
-            if(res.getInt("error_code")!=0){
-                faceRpc.addFace(faceRpc.getClient(),faceImage.getUserName(),faceImage.getImg(),bdGroupName,faceImage.getuId());
-                String[] days=faceImage.getDays().split("_");
-                Integer[] l=new Integer[days.length];
-                for(int i=0;i<days.length;i++){
-                    l[i]=Integer.valueOf(days[i]);
+    public Response addPlanUser(FaceImage faceImage) {
+        boolean f = service.faceIsLegal(faceImage.getImg());
+        if (f) {
+            String bdGroupName = faceImage.getGroupName() + "_" + faceImage.getStart().getTime() + "_" + faceImage.getMarktime().getTime() + "_" + faceImage.getDays();
+            JSONObject res = faceRpc.getUserInfo(faceRpc.getClient(), faceImage.getuId(), bdGroupName);
+            if (res.getInt("error_code") != 0) {
+                faceRpc.addFace(faceRpc.getClient(), faceImage.getUserName(), faceImage.getImg(), bdGroupName, faceImage.getuId());
+                String[] days = faceImage.getDays().split("_");
+                Integer[] l = new Integer[days.length];
+                for (int i = 0; i < days.length; i++) {
+                    l[i] = Integer.valueOf(days[i]);
                 }
-                new Thread(()->{
-                    service.addDefaultSign(Encoder.encoder(faceImage.getuId()),faceImage.getStart(),faceImage.getEnd(),faceImage.getClazzname(),faceImage.getGroupName(),faceImage.getMarktime(),l,faceImage.getDays());
+                new Thread(() -> {
+                    service.addDefaultSign(Encoder.encoder(faceImage.getuId()), faceImage.getStart(), faceImage.getEnd(), faceImage.getClazzname(), faceImage.getGroupName(), faceImage.getMarktime(), l, faceImage.getDays());
                 }).start();
-                return Response.success(null,"学生录入成功");
-            }
-            else{
-                return Response.success(null,"此学生已录入当前考勤计划");
+                return Response.success(null, "学生录入成功");
+            } else {
+                return Response.success(null, "此学生已录入当前考勤计划");
             }
 
-        }
-        else {
+        } else {
             return Response.error("照片不符合规定");
         }
 
@@ -92,25 +85,25 @@ public class AttendPlanController {
 
     @RequestMapping("/selectAttendPlanList")
     @CrossOrigin
-    public Response selectList(){
-        ArrayList<AttendPlan> list=(ArrayList<AttendPlan>) service.selectList();
-        return Response.success(list,"返回所有考勤计划记录");
+    public Response selectList() {
+        ArrayList<AttendPlan> list = (ArrayList<AttendPlan>) service.selectList();
+        return Response.success(list, "返回所有考勤计划记录");
     }
 
     @RequestMapping("/selectAttendPlanCount")
     @CrossOrigin
-    public Response selectCount(){
-        ArrayList<Integer> list=new ArrayList<>();
+    public Response selectCount() {
+        ArrayList<Integer> list = new ArrayList<>();
         list.add(service.selectCount());
-        return Response.success(list,"查询考勤计划数目成功");
+        return Response.success(list, "查询考勤计划数目成功");
     }
 
     @RequestMapping("/selectAttendPlanLimitList")
     @CrossOrigin
-    public Response selectAttendPlanLimitList(@RequestBody Map map){
-        ReqPage page=new ReqPage();
+    public Response selectAttendPlanLimitList(@RequestBody Map map) {
+        ReqPage page = new ReqPage();
         page.setPageNo((Integer) map.get("k"));
-        ArrayList<AttendPlan> list=(ArrayList<AttendPlan>)service.selectLimitList(page);
-        return Response.success(list,"分页查询成功");
+        ArrayList<AttendPlan> list = (ArrayList<AttendPlan>) service.selectLimitList(page);
+        return Response.success(list, "分页查询成功");
     }
 }

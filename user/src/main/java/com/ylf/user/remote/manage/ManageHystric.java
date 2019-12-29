@@ -14,7 +14,7 @@ import java.util.Map;
  * @desc:
  */
 @Component
-public class ManageHystric implements ManageRpc{
+public class ManageHystric implements ManageRpc {
 
 
     @Override

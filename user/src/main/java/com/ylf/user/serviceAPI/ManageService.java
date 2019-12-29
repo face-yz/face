@@ -12,6 +12,8 @@ import java.util.List;
  */
 public interface ManageService {
     String getBaiduGroupList(int k);      //返回百度API group列表
-    List  getUserAttendPlanList(ImageDate img);    //返回用户当天的考勤计划
+
+    List getUserAttendPlanList(ImageDate img);    //返回用户当天的考勤计划
+
     boolean faceIsLegal(MultipartFile img);      //照片是否合法
 }

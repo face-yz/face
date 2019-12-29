@@ -9,15 +9,15 @@ import java.util.Date;
  */
 public class Token {
 
-    public static String key="5ff32454ebff4ad2b461089af3192aed557541952771215843";  //秘钥
+    public static String key = "5ff32454ebff4ad2b461089af3192aed557541952771215843";  //秘钥
 
-    public static Long expire=new Date().getTime()+1000*60*60l;        //过期时间
+    public static Long expire = new Date().getTime() + 1000 * 60 * 60l;        //过期时间
 
-    public  static String getToken(String uid){
-        String id=Encoder.encoder(uid);
-        String expireTime=Encoder.encoder(expire.toString());
-        String signature=Encoder.encoder((key));
-        return id+"."+expireTime+"."+signature;
+    public static String getToken(String uid) {
+        String id = Encoder.encoder(uid);
+        String expireTime = Encoder.encoder(expire.toString());
+        String signature = Encoder.encoder((key));
+        return id + "." + expireTime + "." + signature;
     }
 
 

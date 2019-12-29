@@ -1,4 +1,5 @@
 package com.ylf.manage.constantEnum;
+
 import java.util.HashMap;
 
 /**
@@ -8,19 +9,20 @@ import java.util.HashMap;
  */
 public enum LeaveEnum {
 
-    NOSEE(-1,"未查看"),APPROVAL(1,"批准"),NOAPPROVAL(0,"未批准");
+    NOSEE(-1, "未查看"), APPROVAL(1, "批准"), NOAPPROVAL(0, "未批准");
 
-    private LeaveEnum(Integer code,String desc){
-        this.code=code;
-        this.desc=desc;
+    private LeaveEnum(Integer code, String desc) {
+        this.code = code;
+        this.desc = desc;
     }
-    private  Integer code;
-    private  String desc;
 
-    public static HashMap<Integer,String> getLeaveEnum(){
-        HashMap<Integer,String> map=new HashMap();
-        for(LeaveEnum item:LeaveEnum.values()){
-            map.put(item.code,item.desc);
+    private Integer code;
+    private String desc;
+
+    public static HashMap<Integer, String> getLeaveEnum() {
+        HashMap<Integer, String> map = new HashMap();
+        for (LeaveEnum item : LeaveEnum.values()) {
+            map.put(item.code, item.desc);
         }
         return map;
     }

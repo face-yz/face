@@ -1,7 +1,19 @@
-
 server:
   port: 8089
+management:
+  endpoints:
+    web:
+      exposure:
+        include: "*"
 spring:
+  cloud:
+    gateway:
+      routes:
+        - id: path_route
+          uri: http://localhost:8090/api/v2/selectUserSignAttendPlanList
+          predicates:
+            - Path=/api/v1/selectUserSignAttendPlanList
+            - Method=post
   servlet:
     multipart:
       enabled: true
@@ -12,7 +24,7 @@ spring:
   application:
     name: face-manage
   datasource:
-    driver-class-name: com.mysql.cj.jdbc.Driver
+    driver-class-name: com.mysql.jdbc.Driver
     url: jdbc:mysql://120.27.246.207:3306/face?useUnicode=true&characterEncoding=utf-8&useSSL=false&serverTimezone=Asia/Shanghai
     username: root
     password: haha123.
@@ -36,8 +48,9 @@ feign:
     enabled: true
 hystrix:
   command:
-   default:
-    execution:
-     isolation:
-      thread:
-       timeoutInMilliseconds: 50000
+    default:
+      execution:
+        isolation:
+          thread:
+            timeoutInMilliseconds: 5000
+

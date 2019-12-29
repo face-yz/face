@@ -17,7 +17,7 @@ import java.util.Map;
  * @date: 2019-12-11
  * @desc:
  */
-@FeignClient(name = "face-user",fallback = UserHystric.class)
+@FeignClient(name = "face-user", fallback = UserHystric.class)
 @Service
 public interface UserRpc {
     @RequestMapping("/api/v2/login")
@@ -60,6 +60,5 @@ public interface UserRpc {
     @RequestMapping("/api/v2/updateArgee")
     @HystrixCommand(fallbackMethod = "updateArgee")
     Response updateArgee(@RequestBody Leave leave);
-
 
 }

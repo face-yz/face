@@ -28,67 +28,64 @@ public class UserController {
     private UserService service;
 
     @RequestMapping("/addUser")
-    public Response addUser(@RequestBody User user){
-        User readyUser=service.getUser(Encoder.encoder(user.getuId()));
-        if(readyUser!=null){
+    public Response addUser(@RequestBody User user) {
+        User readyUser = service.getUser(Encoder.encoder(user.getuId()));
+        if (readyUser != null) {
             return Response.error("该学生已添加");
         }
         user.setuId(Encoder.encoder(user.getuId()));
         user.setPassword(Encoder.encoder(user.getPassword()));
-        int state=service.addUser(user);
-        if(state<1){
+        int state = service.addUser(user);
+        if (state < 1) {
             return Response.error("添加学生失败");
-        }
-        else{
-            return Response.success(null,"添加学生成功");
+        } else {
+            return Response.success(null, "添加学生成功");
         }
     }
 
     @RequestMapping("/login")
-    public Response login(@RequestBody User user){
-        boolean f=service.isLegal(user);
-        if(f){
-            User u=service.getUser(Encoder.encoder(user.getuId()));
-            ArrayList list=new ArrayList<>();
-            JSONObject ticket=new JSONObject();
-            ticket.put("token",Token.getToken(user.getuId()));
+    public Response login(@RequestBody User user) {
+        boolean f = service.isLegal(user);
+        if (f) {
+            User u = service.getUser(Encoder.encoder(user.getuId()));
+            ArrayList list = new ArrayList<>();
+            JSONObject ticket = new JSONObject();
+            ticket.put("token", Token.getToken(user.getuId()));
             list.add(ticket);
             list.add(u);
-            return Response.success(list,"登录成功");
-        }
-        else {
+            return Response.success(list, "登录成功");
+        } else {
             return Response.error("登录失败");
         }
     }
 
     @RequestMapping("/updateUser")
-    public Response update(@RequestBody User user){
+    public Response update(@RequestBody User user) {
         user.setuId(Encoder.encoder(user.getuId()));
-        if(user.getPassword()!=null){
+        if (user.getPassword() != null) {
             user.setPassword(Encoder.encoder(user.getPassword()));
         }
-        if(user.getPhone()!=null){
+        if (user.getPhone() != null) {
             user.setPhone(Encoder.encoder(user.getPhone()));
         }
-        int f=service.updateUser(user);
-        if(f<1){
+        int f = service.updateUser(user);
+        if (f < 1) {
             return Response.error("更新失败");
-        }
-        else {
-            return Response.success(null,"更新成功");
+        } else {
+            return Response.success(null, "更新成功");
         }
     }
 
     @RequestMapping("/getUserInfo")
-    public User getUserInfo(@RequestBody User user){
-        User u=service.getUser(Encoder.encoder(user.getuId()));
+    public User getUserInfo(@RequestBody User user) {
+        User u = service.getUser(Encoder.encoder(user.getuId()));
         return u;
     }
 
     @RequestMapping("/selectUserList")
-    public Response selectList(){
-        ArrayList<User> list=(ArrayList<User>) service.getUserList();
-        return Response.success(list,"返回所有学生信息");
+    public Response selectList() {
+        ArrayList<User> list = (ArrayList<User>) service.getUserList();
+        return Response.success(list, "返回所有学生信息");
     }
 
 }
