@@ -5,6 +5,7 @@ import com.ylf.manage.entity.BasePage.ReqPage;
 import com.ylf.manage.remote.baidu.FaceRpc;
 import com.ylf.manage.remote.user.UserRpc;
 import com.ylf.manage.serviceAPI.AttendPlanService;
+import com.ylf.manage.serviceAPI.SignService;
 import com.ylf.manage.util.Encoder;
 import org.json.JSONObject;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -28,6 +29,9 @@ public class AttendPlanController {
 
     @Autowired
     private AttendPlanService service;
+
+    @Autowired
+    private SignService signService;
 
     @Autowired
     private FaceRpc faceRpc;
@@ -62,7 +66,14 @@ public class AttendPlanController {
         if (f) {
             String bdGroupName = faceImage.getGroupName() + "_" + faceImage.getStart().getTime() + "_" + faceImage.getMarktime().getTime() + "_" + faceImage.getDays();
             JSONObject res = faceRpc.getUserInfo(faceRpc.getClient(), faceImage.getuId(), bdGroupName);
-            if (res.getInt("error_code") != 0) {
+            ReqSign sign=new ReqSign();
+            sign.setuId(faceImage.getuId());
+            sign.setClazzname(faceImage.getClazzname());
+            sign.setGroupname(faceImage.getGroupName());
+            sign.setDays(faceImage.getDays());
+            sign.setMarktime(faceImage.getMarktime());
+            sign.setStarttime(faceImage.getStart());
+            if (res.getInt("error_code") != 0&&signService.selectExistUserSign(sign)==null) {
                 faceRpc.addFace(faceRpc.getClient(), faceImage.getUserName(), faceImage.getImg(), bdGroupName, faceImage.getuId());
                 String[] days = faceImage.getDays().split("_");
                 Integer[] l = new Integer[days.length];

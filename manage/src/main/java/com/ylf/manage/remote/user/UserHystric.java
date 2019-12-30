@@ -66,5 +66,10 @@ public class UserHystric implements UserRpc {
         return Response.error("Rpc服务器宕机");
     }
 
+    @Override
+    public Response selectUserSignAttendPlanList(ImageDate imageDate) {
+        return Response.error("Rpc服务器宕机");
+    }
+
 
 }

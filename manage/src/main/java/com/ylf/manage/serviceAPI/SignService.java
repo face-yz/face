@@ -2,6 +2,7 @@ package com.ylf.manage.serviceAPI;
 
 import com.ylf.manage.entity.ReqSign;
 import com.ylf.manage.entity.ResSignPage;
+import org.bouncycastle.cert.ocsp.Req;
 
 import java.util.List;
 
@@ -20,4 +21,12 @@ public interface SignService {
     int selectUserSignListCount(ReqSign sign);  //返回用户某考勤计划下的考勤记录数量
 
     int updateUserSign(ReqSign sign);       //更新用户考勤状态
+
+    List selectAttendPlanSignList(ReqSign sign);   //返回某考勤计划下某天的考勤记录
+
+    int selectAttendPlanOneSignDateCount(ReqSign sign);   //返回某考勤计划下某天的考勤记录数目
+
+    int selectAttendPlanOneSignDateOkCount(ReqSign sign); //返回某考勤计划下某天已签到的考勤记录数目
+
+    List selectExistUserSign(ReqSign sign);     //返回用户某考勤计划下的考勤记录
 }

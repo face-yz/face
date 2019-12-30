@@ -4,6 +4,8 @@ import com.ylf.manage.daoAPI.SignMapper;
 import com.ylf.manage.entity.ResSign;
 import com.ylf.manage.entity.ReqSign;
 import com.ylf.manage.entity.ResSignPage;
+import com.ylf.manage.entity.User;
+import com.ylf.manage.remote.user.UserRpc;
 import com.ylf.manage.serviceAPI.SignService;
 import com.ylf.manage.util.Encoder;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -22,6 +24,9 @@ public class SignServiceImpl implements SignService {
 
     @Autowired
     private SignMapper dao;
+
+    @Autowired
+    private UserRpc userRpc;
 
     @Override
     public List selectUserSign(ReqSign sign) {
@@ -62,5 +67,37 @@ public class SignServiceImpl implements SignService {
     public int updateUserSign(ReqSign sign) {
         sign.setuId(Encoder.encoder(sign.getuId()));
         return dao.updateUserSign(sign);
+    }
+
+    @Override
+    public List selectAttendPlanSignList(ReqSign sign) {
+        ArrayList<ResSign> list=(ArrayList<ResSign>) dao.selectAttendPlanSignList(sign);
+        if(list.size()>0){
+            for(ResSign a:list){
+                a.setuId(Encoder.decoder(a.getuId()));
+                User t=new User();
+                t.setuId(a.getuId());
+                User user=userRpc.getUser(t);
+                if(user!=null){
+                    a.setUsername(user.getUsername());
+                }
+            }
+        }
+        return list;
+    }
+
+    @Override
+    public int selectAttendPlanOneSignDateCount(ReqSign sign) {
+        return dao.selectAttendPlanOneSignDateCount(sign);
+    }
+
+    @Override
+    public int selectAttendPlanOneSignDateOkCount(ReqSign sign) {
+        return dao.selectAttendPlanOneSignDateOkCount(sign);
+    }
+
+    @Override
+    public List selectExistUserSign(ReqSign sign) {
+        return dao.selectExistUserSign(sign);
     }
 }

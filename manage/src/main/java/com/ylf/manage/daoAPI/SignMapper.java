@@ -18,4 +18,12 @@ public interface SignMapper {
     int selectUserSignListCount(ReqSign sign);
 
     int updateUserSign(ReqSign sign);
+
+    List selectAttendPlanSignList(ReqSign sign);
+
+    int selectAttendPlanOneSignDateCount(ReqSign sign);
+
+    int selectAttendPlanOneSignDateOkCount(ReqSign sign);
+
+    List selectExistUserSign(ReqSign sign);
 }

@@ -30,6 +30,7 @@ public class ReqSign extends ReqPage {
     @DateTimeFormat(pattern = "yyyy-MM-dd")
     private Date selecttime;
 
+
     public String getuId() {
         return uId;
     }
@@ -101,5 +102,4 @@ public class ReqSign extends ReqPage {
     public void setSelecttime(Date selecttime) {
         this.selecttime = selecttime;
     }
-
 }

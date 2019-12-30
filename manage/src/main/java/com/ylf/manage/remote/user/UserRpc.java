@@ -61,4 +61,7 @@ public interface UserRpc {
     @HystrixCommand(fallbackMethod = "updateArgee")
     Response updateArgee(@RequestBody Leave leave);
 
+    @RequestMapping("/api/v2/selectUserSignAttendPlanList")
+    @HystrixCommand(fallbackMethod = "selectUserSignAttendPlanList")
+    Response selectUserSignAttendPlanList(ImageDate imageDate);
 }
