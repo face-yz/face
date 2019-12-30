@@ -73,7 +73,8 @@ public class AttendPlanController {
             sign.setDays(faceImage.getDays());
             sign.setMarktime(faceImage.getMarktime());
             sign.setStarttime(faceImage.getStart());
-            if (res.getInt("error_code") != 0&&signService.selectExistUserSign(sign)==null) {
+            System.out.println(res.getInt("error_code"));
+            if (res.getInt("error_code") != 0&&signService.selectExistUserSign(sign).size()==0) {
                 faceRpc.addFace(faceRpc.getClient(), faceImage.getUserName(), faceImage.getImg(), bdGroupName, faceImage.getuId());
                 String[] days = faceImage.getDays().split("_");
                 Integer[] l = new Integer[days.length];

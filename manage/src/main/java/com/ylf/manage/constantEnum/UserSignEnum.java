@@ -9,7 +9,7 @@ import java.util.HashMap;
  */
 public enum UserSignEnum {
 
-    NOSTART(-1, "未开始"), START(-2, "正常签到"), LATESTART(-3, "迟到签到"), END(-4, "旷课");
+    NOSTART(-1, "未开始"), START(1, "正常签到"), LATESTART(3, "迟到签到"), END(-4, "旷课");
 
     private UserSignEnum(Integer code, String desc) {
         this.code = code;
