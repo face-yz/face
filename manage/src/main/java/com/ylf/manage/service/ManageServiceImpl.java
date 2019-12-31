@@ -4,9 +4,7 @@ import com.ylf.manage.controller.AttendPlanController;
 import com.ylf.manage.controller.SignController;
 import com.ylf.manage.entity.*;
 import com.ylf.manage.remote.baidu.FaceRpc;
-import com.ylf.manage.serviceAPI.AttendPlanService;
 import com.ylf.manage.serviceAPI.ManageService;
-import com.ylf.manage.serviceAPI.SignService;
 import org.json.JSONArray;
 import org.json.JSONObject;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -66,7 +64,6 @@ public class ManageServiceImpl implements ManageService {
                 ArrayList<ResSign> list = (ArrayList<ResSign>) signController.selectUserSign(sign).getData();
                 ArrayList<ResSign> r=new ArrayList<>();
                 for (ResSign a : list) {
-                    if (a.getState() == 0) {
                         if (img.getNowtime().getTime() - a.getMarktime().getTime() < -1000 * 60 * 30l) {
                             a.setFlag(-1);
                             r.add(a);
@@ -79,7 +76,6 @@ public class ManageServiceImpl implements ManageService {
                         } else {
                             a.setFlag(-4);
                         }
-                    }
                 }
                 ArrayList<ResSign> l=new ArrayList<>();
                 long u=Long.MAX_VALUE;

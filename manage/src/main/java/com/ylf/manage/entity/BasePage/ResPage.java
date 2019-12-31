@@ -11,7 +11,7 @@ import java.util.List;
  */
 public class ResPage<T> {
     private Integer total;
-    private Integer pageSize = 10;
+    private Integer pageSize;
     private Integer pageNo;
     private List<T> result;
 
