@@ -33,7 +33,7 @@
 
     <select id="selectAttendPlanSignList" parameterType="com.ylf.manage.entity.ReqSign" resultMap="BaseResultMap">
         select * from sign where groupName=#{groupname} and startTime=#{starttime,jdbcType=DATE}
-        and markTime=#{marktime,jdbcType=TIME} and days=#{days} and clazzName=#{clazzname} and signDate=#{selecttime,jdbcType=DATE}
+        and markTime=#{marktime,jdbcType=TIME} and days=#{days} and clazzName=#{clazzname} and signDate=#{selecttime,jdbcType=DATE} order by state DESC
     </select>
 
     <select id="selectUserSignListCount" parameterType="com.ylf.manage.entity.ReqSign" resultType="java.lang.Integer">
@@ -57,7 +57,7 @@
 
     <select id="selectAttendPlanOneSignDateCount" parameterType="com.ylf.manage.entity.ReqSign" resultType="java.lang.Integer">
         select count(*) from sign where groupName=#{groupname} and startTime=#{starttime,jdbcType=DATE} and markTime=#{marktime,jdbcType=TIME}
-        and days=#{days} and clazzName=#{clazzname} and signDate=#{selecttime,jdbcType=DATE} order by state DESC
+        and days=#{days} and clazzName=#{clazzname} and signDate=#{selecttime,jdbcType=DATE}
     </select>
 
     <select id="selectAttendPlanOneSignDateOkCount" parameterType="com.ylf.manage.entity.ReqSign" resultType="java.lang.Integer">
