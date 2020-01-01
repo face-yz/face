@@ -55,19 +55,23 @@
         limit #{pageNo},#{pageSize}
     </select>
 
-    <select id="selectAttendPlanOneSignDateCount" parameterType="com.ylf.manage.entity.ReqSign" resultType="java.lang.Integer">
-        select count(*) from sign where groupName=#{groupname} and startTime=#{starttime,jdbcType=DATE} and markTime=#{marktime,jdbcType=TIME}
-        and days=#{days} and clazzName=#{clazzname} and signDate=#{selecttime,jdbcType=DATE}
-    </select>
-
-    <select id="selectAttendPlanOneSignDateOkCount" parameterType="com.ylf.manage.entity.ReqSign" resultType="java.lang.Integer">
-        select count(*) from sign where groupName=#{groupname} and startTime=#{starttime,jdbcType=DATE} and markTime=#{marktime,jdbcType=TIME}
-        and days=#{days} and clazzName=#{clazzname} and signDate=#{selecttime,jdbcType=DATE} and state=1
-    </select>
-    
     <select id="selectExistUserSign" parameterType="com.ylf.manage.entity.ReqSign" resultMap="BaseResultMap">
          select * from sign where u_id=#{uId} and groupName=#{groupname} and startTime=#{starttime,jdbcType=DATE}
          and markTime=#{marktime,jdbcType=TIME} and days=#{days} and clazzName=#{clazzname}
     </select>
-    
+
+    <select id="selectAttendPlanAllSignList" parameterType="com.ylf.manage.entity.ReqSign" resultMap="BaseResultMap">
+         select * from sign where groupName=#{groupname} and startTime=#{starttime,jdbcType=DATE}
+        and markTime=#{marktime,jdbcType=TIME} and days=#{days} and clazzName=#{clazzname} and signDate&lt;=#{selecttime,jdbcType=DATE}
+    </select>
+
+    <select id="selectDistinctUserCount" parameterType="com.ylf.manage.entity.ReqSign" resultMap="BaseResultMap">
+        select distinct u_id from sign where groupName=#{groupname} and startTime=#{starttime,jdbcType=DATE}
+        and markTime=#{marktime,jdbcType=TIME} and days=#{days} and clazzName=#{clazzname} and signDate&lt;=#{selecttime,jdbcType=DATE}
+    </select>
+
+    <select id="selectCurrentPercentage" parameterType="com.ylf.manage.entity.ReqSign" resultMap="BaseResultMap">
+        select * from sign where groupName=#{groupname} and startTime=#{starttime,jdbcType=DATE}
+        and markTime=#{marktime,jdbcType=TIME} and days=#{days} and clazzName=#{clazzname} and signDate=#{selecttime,jdbcType=DATE}
+    </select>
 </mapper>

@@ -74,16 +74,6 @@ public class SignController {
         return Response.success(list,"查询成功");
     }
 
-    @RequestMapping("/currentClazzPercentage")
-    @CrossOrigin
-    public Response currentClazzPercentage(@RequestBody ReqSign sign){
-        ClazzPercentage c=new ClazzPercentage();
-        c.setTotal(service.selectAttendPlanOneSignDateCount(sign));
-        c.setReal(service.selectAttendPlanOneSignDateOkCount(sign));
-        ArrayList list=new ArrayList();
-        list.add(c);
-        return Response.success(list,"查询成功");
-    }
 
     @RequestMapping("/selectUserSignAttendPlanList")
     @CrossOrigin

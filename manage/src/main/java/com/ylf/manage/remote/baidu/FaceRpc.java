@@ -16,7 +16,7 @@ import java.util.HashMap;
 @Component
 public class FaceRpc {
     public static void main(String[] args) {
-        new FaceRpc().deleteGroup(new FaceRpc().getClient(), "FF207_1577721600000_0_2_4");
+        new FaceRpc().deleteGroup(new FaceRpc().getClient(), "");
     }
 
 

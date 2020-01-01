@@ -48,7 +48,7 @@
         #{teachersay,jdbcType=VARCHAR})
     </insert>
     <update id="updateArgee" parameterType="java.lang.String">
-        update askLeave set state=1 where id=#{id}
+        update askLeave set state=1,teacherSay='同意' where id=#{id}
     </update>
     <update id="updateUserSign" parameterType="com.ylf.user.entity.Leave">
         update sign set state=2 where signDate&gt;=#{startt,jdbcType=DATE} and signDate&lt;=#{endt,jdbcType=DATE} and

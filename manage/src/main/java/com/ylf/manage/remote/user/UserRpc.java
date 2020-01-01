@@ -39,7 +39,7 @@ public interface UserRpc {
 
     @RequestMapping("/api/v2/selectUserList")
     @HystrixCommand(fallbackMethod = "selectUserList")
-    Response selectUserList();
+    Response<User> selectUserList();
 
     @RequestMapping("/api/v2/askLeave")
     @HystrixCommand(fallbackMethod = "askLeave")

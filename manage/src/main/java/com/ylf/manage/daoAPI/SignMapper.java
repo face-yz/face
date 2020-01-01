@@ -21,9 +21,11 @@ public interface SignMapper {
 
     List selectAttendPlanSignList(ReqSign sign);
 
-    int selectAttendPlanOneSignDateCount(ReqSign sign);
-
-    int selectAttendPlanOneSignDateOkCount(ReqSign sign);
-
     List selectExistUserSign(ReqSign sign);
+
+    List selectAttendPlanAllSignList(ReqSign sign);
+
+    List selectDistinctUserCount(ReqSign sign);
+
+    List selectCurrentPercentage(ReqSign sign);
 }

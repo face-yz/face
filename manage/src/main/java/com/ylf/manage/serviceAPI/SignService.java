@@ -24,9 +24,5 @@ public interface SignService {
 
     List selectAttendPlanSignList(ReqSign sign);   //返回某考勤计划下某天的考勤记录
 
-    int selectAttendPlanOneSignDateCount(ReqSign sign);   //返回某考勤计划下某天的考勤记录数目
-
-    int selectAttendPlanOneSignDateOkCount(ReqSign sign); //返回某考勤计划下某天已签到的考勤记录数目
-
     List selectExistUserSign(ReqSign sign);     //返回用户某考勤计划下的考勤记录
 }

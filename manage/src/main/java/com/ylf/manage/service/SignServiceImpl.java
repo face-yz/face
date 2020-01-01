@@ -86,15 +86,6 @@ public class SignServiceImpl implements SignService {
         return list;
     }
 
-    @Override
-    public int selectAttendPlanOneSignDateCount(ReqSign sign) {
-        return dao.selectAttendPlanOneSignDateCount(sign);
-    }
-
-    @Override
-    public int selectAttendPlanOneSignDateOkCount(ReqSign sign) {
-        return dao.selectAttendPlanOneSignDateOkCount(sign);
-    }
 
     @Override
     public List selectExistUserSign(ReqSign sign) {
