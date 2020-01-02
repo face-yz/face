@@ -25,4 +25,5 @@ public interface SignService {
     List selectAttendPlanSignList(ReqSign sign);   //返回某考勤计划下某天的考勤记录
 
     List selectExistUserSign(ReqSign sign);     //返回用户某考勤计划下的考勤记录
+
 }

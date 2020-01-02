@@ -2,6 +2,8 @@ package com.ylf.manage.serviceAPI;
 
 import com.ylf.manage.entity.AttendPlan;
 import com.ylf.manage.entity.BasePage.ReqPage;
+import com.ylf.manage.entity.ReqSign;
+import com.ylf.manage.entity.ResSign;
 import org.springframework.web.multipart.MultipartFile;
 
 import java.util.ArrayList;
@@ -31,4 +33,8 @@ public interface AttendPlanService {
     int selectCount();  //返回考勤计划数目
 
     List selectLimitList(ReqPage page); //分页查询考勤计划
+
+    boolean isAddUserHasConflict(String uId,AttendPlan plan); //判断考勤计划添加用户是否有冲突
+
+    AttendPlan selectAttendPlan(ResSign sign);  //查询某考勤记录
 }

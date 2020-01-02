@@ -74,4 +74,5 @@
         select * from sign where groupName=#{groupname} and startTime=#{starttime,jdbcType=DATE}
         and markTime=#{marktime,jdbcType=TIME} and days=#{days} and clazzName=#{clazzname} and signDate=#{selecttime,jdbcType=DATE}
     </select>
+
 </mapper>

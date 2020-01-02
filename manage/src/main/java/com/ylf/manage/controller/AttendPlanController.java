@@ -62,6 +62,23 @@ public class AttendPlanController {
     @RequestMapping("/addPlan/addPlanUser")
     @CrossOrigin
     public Response addPlanUser(FaceImage faceImage) {
+        AttendPlan attendPlan=new AttendPlan();
+        attendPlan.setGroupname(faceImage.getGroupName());
+        attendPlan.setStarttime(faceImage.getStart());
+        attendPlan.setEndtime(faceImage.getEnd());
+        attendPlan.setMarktime(faceImage.getMarktime());
+        attendPlan.setDays(faceImage.getDays());
+        attendPlan.setClazzname(faceImage.getClazzname());
+        String[] t=faceImage.getDays().split("_");
+        Integer[] nums=new Integer[t.length];
+        for(int i=0;i<t.length;i++){
+            nums[i]=Integer.valueOf(t[i]);
+        }
+        attendPlan.setWeekdays(nums);
+        boolean flag=service.isAddUserHasConflict(faceImage.getuId(),attendPlan);
+        if(flag){
+            return Response.error("此学生已在本时间段有其他课程");
+        }
         boolean f = service.faceIsLegal(faceImage.getImg());
         if (f) {
             String bdGroupName = faceImage.getGroupName() + "_" + faceImage.getStart().getTime() + "_" + faceImage.getMarktime().getTime() + "_" + faceImage.getDays();
@@ -118,4 +135,5 @@ public class AttendPlanController {
         ArrayList<AttendPlan> list = (ArrayList<AttendPlan>) service.selectLimitList(page);
         return Response.success(list, "分页查询成功");
     }
+
 }

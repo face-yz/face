@@ -2,6 +2,8 @@ package com.ylf.manage.daoAPI;
 
 import com.ylf.manage.entity.AttendPlan;
 import com.ylf.manage.entity.BasePage.ReqPage;
+import com.ylf.manage.entity.ReqSign;
+import com.ylf.manage.entity.ResSign;
 import org.springframework.stereotype.Repository;
 
 import java.util.List;
@@ -18,4 +20,6 @@ public interface AttendPlanMapper {
     int selectCount();
 
     List<AttendPlan> selectLimitList(ReqPage page);
+
+    AttendPlan selectAttendPlan(ResSign sign);
 }

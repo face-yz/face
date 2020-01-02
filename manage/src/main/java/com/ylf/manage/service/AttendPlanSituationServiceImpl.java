@@ -84,7 +84,6 @@ public class AttendPlanSituationServiceImpl implements AttendPlanSituationServic
     @Override
     public List selectClazzCurrentPercentage(ReqSign sign) {
         ArrayList<ResSign> list=(ArrayList<ResSign>) dao.selectCurrentPercentage(sign);
-        int total=list.size();
         int normal=0,late=0,leave=0,abnormal=0;
         ArrayList<ClazzPercentage> res=new ArrayList<>();
         ClazzPercentage c=new ClazzPercentage();

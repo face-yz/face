@@ -5,8 +5,10 @@ import com.ylf.manage.daoAPI.SignMapper;
 import com.ylf.manage.entity.AttendPlan;
 import com.ylf.manage.entity.BasePage.ReqPage;
 import com.ylf.manage.entity.ReqSign;
+import com.ylf.manage.entity.ResSign;
 import com.ylf.manage.remote.baidu.FaceRpc;
 import com.ylf.manage.serviceAPI.AttendPlanService;
+import com.ylf.manage.util.Encoder;
 import org.json.JSONObject;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -147,6 +149,54 @@ public class AttendServiceImpl implements AttendPlanService {
         page.setPageSize(10);
         page.setPageNo(page.getPageNo() * 10);
         return dao.selectLimitList(page);
+    }
+
+    @Override
+    public boolean isAddUserHasConflict(String uId,AttendPlan plan) {
+        Long standard = 2 * 60 * 60 * 1000 + 30 * 60 * 1000l;   //上课时间2小时+休息时间30分钟
+        ArrayList<ResSign> list=(ArrayList<ResSign>) signDao.selectUserAttendPlan(Encoder.encoder("04163035"));
+        ArrayList<AttendPlan> plans=new ArrayList<>();
+        for(ResSign a:list){
+            AttendPlan t=selectAttendPlan(a);
+            plans.add(t);
+        }
+        for (AttendPlan p : plans) {
+            String[] days = p.getDays().split("_");
+            ArrayList<Integer> l = new ArrayList<>();
+            for (String d : days) {
+                l.add(Integer.valueOf(d));
+            }
+            boolean f = weekhasConflict(l, plan.getWeekdays());
+            if (plan.getStarttime().getTime() >= p.getStarttime().getTime() && plan.getStarttime().getTime() <= p.getEndtime().getTime()) {
+                if (f) {
+                    if (Math.abs(p.getMarktime().getTime() - plan.getMarktime().getTime()) < standard) {
+                        return true;
+                    }
+                }
+            }
+            if (plan.getEndtime().getTime() >= p.getStarttime().getTime() && plan.getEndtime().getTime() <= p.getEndtime().getTime()) {
+                if (f) {
+                    if (Math.abs(p.getMarktime().getTime() - plan.getMarktime().getTime()) < standard) {
+                        return true;
+                    }
+                }
+            }
+            if (plan.getStarttime().getTime() <= p.getStarttime().getTime() && plan.getEndtime().getTime() >= p.getEndtime().getTime()) {
+                if (f) {
+                    if (Math.abs(p.getMarktime().getTime() - plan.getMarktime().getTime()) < standard) {
+                        return true;
+                    }
+                }
+
+            }
+
+        }
+        return false;
+    }
+
+    @Override
+    public AttendPlan selectAttendPlan(ResSign sign) {
+        return dao.selectAttendPlan(sign);
     }
 
 }

@@ -34,5 +34,8 @@
         select * from attendPlan limit #{pageNo},#{pageSize}
     </select>
 
-
+    <select id="selectAttendPlan" parameterType="com.ylf.manage.entity.ResSign" resultMap="BaseResultMap">
+        select * from attendPlan where groupName=#{groupname} and startTime=#{starttime,jdbcType=DATE}
+        and markTime=#{marktime,jdbcType=TIME} and days=#{days} and clazzName=#{clazzname}
+    </select>
 </mapper>
