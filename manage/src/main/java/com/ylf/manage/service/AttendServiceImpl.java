@@ -154,7 +154,7 @@ public class AttendServiceImpl implements AttendPlanService {
     @Override
     public boolean isAddUserHasConflict(String uId,AttendPlan plan) {
         Long standard = 2 * 60 * 60 * 1000 + 30 * 60 * 1000l;   //上课时间2小时+休息时间30分钟
-        ArrayList<ResSign> list=(ArrayList<ResSign>) signDao.selectUserAttendPlan(Encoder.encoder("04163035"));
+        ArrayList<ResSign> list=(ArrayList<ResSign>) signDao.selectUserAttendPlan(Encoder.encoder(uId));
         ArrayList<AttendPlan> plans=new ArrayList<>();
         for(ResSign a:list){
             AttendPlan t=selectAttendPlan(a);
