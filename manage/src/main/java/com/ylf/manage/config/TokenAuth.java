@@ -4,7 +4,6 @@ import com.alibaba.fastjson.JSONObject;
 import com.ylf.manage.entity.Response;
 import com.ylf.manage.util.Token;
 import org.springframework.stereotype.Component;
-import org.springframework.stereotype.Service;
 import org.springframework.web.servlet.HandlerInterceptor;
 import org.springframework.web.servlet.ModelAndView;
 
