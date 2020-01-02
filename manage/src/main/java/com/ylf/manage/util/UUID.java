@@ -25,4 +25,8 @@ public class UUID {
         return res;
     }
 
+    public static int getCode() {
+        return (int) ((Math.random() * 9 + 1) * 100000);
+    }
+
 }

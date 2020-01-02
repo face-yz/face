@@ -17,7 +17,7 @@ public class FaceRedisTemplate {
     @Autowired
     public RedisTemplate redisTemplate;
 
-    @Bean("YlfRedisTemplate")
+    @Bean
     public RedisTemplate getRedisTemplate() {
         redisTemplate.setKeySerializer(new StringRedisSerializer());
         return redisTemplate;
