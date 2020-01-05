@@ -45,7 +45,7 @@ public class AcountController {
             list.add(ticket);
             return Response.success(list, "登录成功");
         } else {
-            return Response.error("登录失败");
+            return Response.error("密码错误");
         }
 
     }

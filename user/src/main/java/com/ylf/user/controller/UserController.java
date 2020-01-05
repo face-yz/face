@@ -35,6 +35,9 @@ public class UserController {
         }
         user.setuId(Encoder.encoder(user.getuId()));
         user.setPassword(Encoder.encoder(user.getPassword()));
+        if(user.getPhone()!=null){
+            user.setPhone(Encoder.encoder(user.getPhone()));
+        }
         int state = service.addUser(user);
         if (state < 1) {
             return Response.error("添加学生失败");
@@ -55,7 +58,7 @@ public class UserController {
             list.add(u);
             return Response.success(list, "登录成功");
         } else {
-            return Response.error("登录失败");
+            return Response.error("密码错误");
         }
     }
 
