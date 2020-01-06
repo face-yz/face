@@ -32,7 +32,6 @@ public interface UserRpc {
     @HystrixCommand(fallbackMethod = "login")
     User getUser(@RequestBody User user);
 
-
     @RequestMapping("/api/v2/addUser")
     @HystrixCommand(fallbackMethod = "addUser")
     Response addUser(@RequestBody User user);
@@ -64,4 +63,20 @@ public interface UserRpc {
     @RequestMapping("/api/v2/selectUserSignAttendPlanList")
     @HystrixCommand(fallbackMethod = "selectUserSignAttendPlanList")
     Response selectUserSignAttendPlanList(ImageDate imageDate);
+
+    @RequestMapping("/api/v2/loginByPhone")
+    @HystrixCommand(fallbackMethod = "loginByPhone")
+    Response loginByPhone(@RequestBody Map map) throws Exception;
+
+    @RequestMapping("/api/v2/authByPhoneCode")
+    @HystrixCommand(fallbackMethod = "authByPhoneCode")
+    Response authByPhoneCode(@RequestBody Map map) throws Exception;
+
+    @RequestMapping("/api/v2/updatePhone")
+    @HystrixCommand(fallbackMethod = "")
+    Response updatePhone(@RequestBody User user)throws Exception;
+
+    @RequestMapping("/api/v2/authUpdatePhone")
+    @HystrixCommand(fallbackMethod = "")
+    Response authUpdatePhone(@RequestBody Map map)throws Exception;
 }

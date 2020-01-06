@@ -5,6 +5,8 @@
 //import org.springframework.web.servlet.config.annotation.InterceptorRegistry;
 //import org.springframework.web.servlet.config.annotation.WebMvcConfigurer;
 //
+//import java.util.ArrayList;
+//
 //
 ///**
 // * @author: leifeng.ye
@@ -21,6 +23,14 @@
 //    @Override
 //    public void addInterceptors(InterceptorRegistry registry) {
 //        //拦截所有的请求
-//        registry.addInterceptor(tokenAuth).addPathPatterns("/**").excludePathPatterns("/api/v1/login", "/api/v1/userLogin").excludePathPatterns("/static/**");
+//        ArrayList<String> list=new ArrayList<>();
+//        list.add("/api/v1/login");
+//        list.add("/api/v1/userLogin");
+//        list.add("/api/v1/loginByPhone");
+//        list.add("/api/vi/sendCode");
+//        list.add("/api/v1/getCode");
+//        list.add("/api/v1/authByPhoneCode");
+//        list.add("/static/**");
+//        registry.addInterceptor(tokenAuth).addPathPatterns("/**").excludePathPatterns(list);
 //    }
 //}

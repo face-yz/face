@@ -36,4 +36,13 @@ public class AcountServiceImpl implements AcountService {
         }
         return false;
     }
+
+    @Override
+    public boolean isLegalByPhone(String phone) {
+        Acount a=dao.selectByPrimaryKey(Encryption.toEncryption(phone));
+        if(a!=null){
+            return true;
+        }
+        return false;
+    }
 }

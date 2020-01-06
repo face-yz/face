@@ -19,4 +19,8 @@ public interface UserService {
     boolean isLegal(User user);//登录是否合法
 
     int updateUser(User user); //更新用户信息
+
+    boolean isLegalByPhone(String phone); //根据手机号码查看用户是否合法
+
+    User getUserByPhone(String phone);  //根据手机号码查看用户是否合法
 }

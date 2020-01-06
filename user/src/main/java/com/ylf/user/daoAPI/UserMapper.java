@@ -14,4 +14,6 @@ public interface UserMapper {
     User selectUser(String uId);
 
     int updateUser(User user);
+
+    User selectUserByPhone(String phone);
 }

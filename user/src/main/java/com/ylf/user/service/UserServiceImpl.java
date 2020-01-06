@@ -69,5 +69,20 @@ public class UserServiceImpl implements UserService {
         return dao.updateUser(user);
     }
 
+    @Override
+    public boolean isLegalByPhone(String phone) {
+       User user=dao.selectUserByPhone(Encoder.encoder(phone));
+       if(user!=null){
+           return true;
+       }
+        return false;
+    }
+
+    @Override
+    public User getUserByPhone(String phone) {
+        User user=dao.selectUserByPhone(Encoder.encoder(phone));
+        return user;
+    }
+
 
 }

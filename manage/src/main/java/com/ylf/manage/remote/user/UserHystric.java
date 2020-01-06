@@ -71,5 +71,25 @@ public class UserHystric implements UserRpc {
         return Response.error("Rpc服务器宕机");
     }
 
+    @Override
+    public Response loginByPhone(Map map) throws Exception {
+        return Response.error("Rpc服务器宕机");
+    }
+
+    @Override
+    public Response authByPhoneCode(Map map) throws Exception {
+        return Response.error("Rpc服务器宕机");
+    }
+
+    @Override
+    public Response updatePhone(User user) throws Exception {
+        return Response.error("Rpc服务器宕机");
+    }
+
+    @Override
+    public Response authUpdatePhone(Map map) throws Exception {
+        return Response.error("Rpc服务器宕机");
+    }
+
 
 }

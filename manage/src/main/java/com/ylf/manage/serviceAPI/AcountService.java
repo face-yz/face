@@ -12,5 +12,8 @@ import java.util.List;
 public interface AcountService {
     List<Acount> selectList();                //返回账户list
 
-    boolean isLegal(Acount acount);       //是否为合法用户
+    boolean isLegal(Acount acount);           //是否为合法用户(账号密码登录)
+
+    boolean isLegalByPhone(String phone);    //是否为合法用户(手机登录)
+
 }

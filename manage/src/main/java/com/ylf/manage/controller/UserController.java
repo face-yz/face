@@ -17,7 +17,7 @@ import java.util.Map;
  * @desc:
  */
 @RestController
-@RequestMapping("api/v1")
+@RequestMapping("/api/v1")
 public class UserController {
     @Autowired
     private UserRpc userRpc;
@@ -26,6 +26,18 @@ public class UserController {
     @CrossOrigin
     public Response userLogin(@RequestBody User user) {
         return userRpc.login(user);
+    }
+
+    @RequestMapping("/userLoginByPhone")
+    @CrossOrigin
+    public Response userLoginByPhone(@RequestBody Map map) throws Exception{
+        return userRpc.loginByPhone(map);
+    }
+
+    @RequestMapping("/userAuthByPhoneCode")
+    @CrossOrigin
+    public Response userAuthByPhoneCode(@RequestBody Map map)throws Exception{
+        return userRpc.authByPhoneCode(map);
     }
 
     @RequestMapping("/updateUser")
@@ -44,6 +56,18 @@ public class UserController {
     @CrossOrigin
     public Response selectList() {
         return userRpc.selectUserList();
+    }
+
+    @RequestMapping("/updatePhone")
+    @CrossOrigin
+    public Response updatePhone(@RequestBody User user)throws Exception{
+        return userRpc.updatePhone(user);
+    }
+
+    @RequestMapping("/authUpdatePhone")
+    @CrossOrigin
+    public Response authUpdatePhone(@RequestBody Map map)throws Exception{
+        return userRpc.authUpdatePhone(map);
     }
 
 }
