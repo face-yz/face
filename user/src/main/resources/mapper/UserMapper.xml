@@ -6,12 +6,12 @@
         <result column="userName" property="username" jdbcType="VARCHAR"/>
         <result column="password" property="password" jdbcType="VARCHAR"/>
         <result column="phone" property="phone" jdbcType="VARCHAR"/>
-
+        <result column="flag" property="flag" jdbcType="VARCHAR"/>
     </resultMap>
     <insert id="insertUser" parameterType="com.ylf.user.entity.User">
-        insert into user (u_id,userName,password,phone)
+        insert into user (u_id,userName,password,phone,flag)
         values (#{uId,jdbcType=VARCHAR},
-        #{username,jdbcType=VARCHAR},#{password,jdbcType=VARCHAR},#{phone,jdbcType=VARCHAR})
+        #{username,jdbcType=VARCHAR},#{password,jdbcType=VARCHAR},#{phone,jdbcType=VARCHAR},#{flag,jdbcType=VARCHAR})
     </insert>
     <select id="selectUserByPhone" parameterType="java.lang.String" resultMap="BaseResultMap">
         select * from user where phone=#{phone}
@@ -33,6 +33,9 @@
             </if>
             <if test="phone != null and phone !=''">
                 phone=#{phone}
+            </if>
+            <if test="flag != null and flag !=''">
+                flag=#{flag}
             </if>
         </set>
         where u_id = #{uId,jdbcType=VARCHAR}

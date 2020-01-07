@@ -23,6 +23,7 @@ public class UserServiceImpl implements UserService {
 
     @Override
     public int addUser(User user) {
+        user.setFlag("0");
         return dao.insertUser(user);
     }
 

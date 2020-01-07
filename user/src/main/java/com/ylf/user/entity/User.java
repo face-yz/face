@@ -5,6 +5,7 @@ public class User {
     private String username;
     private String password;
     private String phone;
+    private String flag;
 
     public String getUsername() {
         return username;
@@ -36,5 +37,14 @@ public class User {
 
     public void setuId(String uId) {
         this.uId = uId;
+    }
+
+
+    public String getFlag() {
+        return flag;
+    }
+
+    public void setFlag(String flag) {
+        this.flag = flag;
     }
 }

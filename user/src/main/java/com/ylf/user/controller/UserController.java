@@ -80,6 +80,7 @@ public class UserController {
         }
         if (user.getPhone() != null) {
             user.setPhone(Encoder.encoder(user.getPhone()));
+            user.setFlag("1");
         }
         int f = service.updateUser(user);
         if (f < 1) {
@@ -169,8 +170,8 @@ public class UserController {
             if(realCode.equals(userCode)){
                 User user=new User();
                 user.setuId(uId);
-                user.setPhone(Encoder.encoder(phone));
-                service.updateUser(user);
+                user.setPhone(phone);
+                update(user);
                 return Response.success(null,"手机号码绑定成功");
             }
             else{
