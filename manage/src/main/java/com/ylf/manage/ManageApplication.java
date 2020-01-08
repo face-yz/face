@@ -24,7 +24,7 @@ public class ManageApplication {
     }
 
     @Bean
-    public TomcatServletWebServerFactory servletContainer() { //springboot2 新变化
+    public TomcatServletWebServerFactory servletContainer() {
 
         TomcatServletWebServerFactory tomcat = new TomcatServletWebServerFactory() {
 
@@ -48,7 +48,7 @@ public class ManageApplication {
         connector.setScheme("http");
         connector.setPort(8080);
         connector.setSecure(false);
-        connector.setRedirectPort(80);
+        connector.setRedirectPort(8443);
         return connector;
     }
 
