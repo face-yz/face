@@ -92,6 +92,8 @@ public class AcountController {
         }
         else{
             if(realCode.equals(userCode)){
+                RedisTemplate redisTemplate1=factory.getRedisTemplate();
+                redisTemplate1.delete(phone);
                 String token = Token.getToken(phone);
                 JSONObject ticket = new JSONObject();
                 ticket.put("token", token);

@@ -130,6 +130,8 @@ public class UserController {
             return Response.error("验证码已失效");
         } else {
             if (realCode.equals(userCode)) {
+                RedisTemplate redisTemplate1=factory.getRedisTemplate();
+                redisTemplate1.delete(phone);
                 String token = Token.getToken(phone);
                 JSONObject ticket = new JSONObject();
                 ticket.put("token", token);
@@ -168,6 +170,8 @@ public class UserController {
         }
         else{
             if(realCode.equals(userCode)){
+                RedisTemplate redisTemplate1=factory.getRedisTemplate();
+                redisTemplate1.delete(phone);
                 User user=new User();
                 user.setuId(uId);
                 user.setPhone(phone);
