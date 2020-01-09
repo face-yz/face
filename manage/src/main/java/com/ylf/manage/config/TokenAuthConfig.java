@@ -22,7 +22,6 @@ public class TokenAuthConfig  implements WebMvcConfigurer {
     //注册拦截器
     @Override
     public void addInterceptors(InterceptorRegistry registry) {
-        //拦截所有的请求
         ArrayList<String> list=new ArrayList<>();
         list.add("/api/v1/login");
         list.add("/api/v1/userLogin");
