@@ -18,7 +18,7 @@ public class UUID {
             long abs = Math.abs(random);
             String id = java.util.UUID.randomUUID().toString();
             id = id.replaceAll("-", "");
-            res = id + abs;
+            res = id;
         } catch (Exception e) {
             e.printStackTrace();
         }
