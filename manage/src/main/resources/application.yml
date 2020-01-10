@@ -1,8 +1,8 @@
 server:
   port: 8443
   ssl:
-    key-store: classpath:keystore.p12
-    key-store-password: haha123.
+    key-store: classpath:3354836_www.zhkt.fun.pfx
+    key-store-password: SopYOCf7
     key-store-type: PKCS12
 spring:
   servlet:
