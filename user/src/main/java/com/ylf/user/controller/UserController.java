@@ -171,12 +171,11 @@ public class UserController {
         }
         else{
             if(realCode.equals(userCode)){
-                RedisTemplate redisTemplate1=factory.getRedisTemplate();
-                redisTemplate1.delete(phone);
                 User user=new User();
                 user.setuId(uId);
                 user.setPhone(phone);
                 update(user);
+                redisTemplate.delete(phone);
                 return Response.success(null,"手机号码绑定成功");
             }
             else{

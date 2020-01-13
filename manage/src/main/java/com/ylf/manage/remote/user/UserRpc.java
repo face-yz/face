@@ -73,10 +73,10 @@ public interface UserRpc {
     Response authByPhoneCode(@RequestBody Map map) throws Exception;
 
     @RequestMapping("/api/v2/updatePhone")
-    @HystrixCommand(fallbackMethod = "")
+    @HystrixCommand(fallbackMethod = "updatePhone")
     Response updatePhone(@RequestBody User user)throws Exception;
 
     @RequestMapping("/api/v2/authUpdatePhone")
-    @HystrixCommand(fallbackMethod = "")
+    @HystrixCommand(fallbackMethod = "authUpdatePhone")
     Response authUpdatePhone(@RequestBody Map map)throws Exception;
 }

@@ -32,7 +32,7 @@
                 password = #{password,jdbcType=VARCHAR},
             </if>
             <if test="phone != null and phone !=''">
-                phone=#{phone}
+                phone=#{phone},
             </if>
             <if test="flag != null and flag !=''">
                 flag=#{flag}
