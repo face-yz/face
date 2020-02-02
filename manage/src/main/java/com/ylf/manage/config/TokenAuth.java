@@ -17,7 +17,7 @@ import java.io.PrintWriter;
  * @desc:
  */
 @Component
-public class TokenAuth implements HandlerInterceptor {
+public class        TokenAuth implements HandlerInterceptor {
 
     @Override
     public boolean preHandle(HttpServletRequest httpServletRequest, HttpServletResponse httpServletResponse, Object o) throws Exception{

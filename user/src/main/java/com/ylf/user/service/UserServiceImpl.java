@@ -82,6 +82,7 @@ public class UserServiceImpl implements UserService {
     @Override
     public User getUserByPhone(String phone) {
         User user=dao.selectUserByPhone(Encoder.encoder(phone));
+        user.setuId(Encoder.decoder(user.getuId()));
         return user;
     }
 
