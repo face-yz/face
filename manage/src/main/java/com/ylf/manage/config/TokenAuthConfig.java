@@ -28,6 +28,7 @@ public class TokenAuthConfig  implements WebMvcConfigurer {
         list.add("/api/v1/loginByPhone");
         list.add("/api/v1/authByPhoneCode");
         list.add("/api/v1/userLoginByPhone");
+        list.add("/api/v1/updateUserSign");
         list.add("/api/v1/userAuthByPhoneCode");
         list.add("/index.html");
         list.add("/js/**");

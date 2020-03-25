@@ -20,15 +20,14 @@ public class FaceRpc {
     }
 
 
-    AipFace client = null;
+    static AipFace client = null;
+
+    static {
+        client = new AipFace("17970422", "zSDokOAIfXMH06y0NhnfmUjg", "NSyjgYVuq1phaWvlxL9wouGcGOVtBMsF");
+    }
 
     public AipFace getClient() {
-        if (client == null) {
-            client = new AipFace("17970422", "zSDokOAIfXMH06y0NhnfmUjg", "NSyjgYVuq1phaWvlxL9wouGcGOVtBMsF");
             return client;
-        } else {
-            return client;
-        }
     }
 
     public static String fileToBase64(MultipartFile file) {
