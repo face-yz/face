@@ -1,0 +1,1393 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="33c3349e-7c0a-4b30-9490-049748ea8b10" name="Default Changelist" comment="" />
+    <ignored path="$PROJECT_DIR$/out/" />
+    <ignored path="$PROJECT_DIR$/target/" />
+    <ignored path="$PROJECT_DIR$/register_center/target/" />
+    <ignored path="$PROJECT_DIR$/manage/target/" />
+    <ignored path="$PROJECT_DIR$/user/target/" />
+    <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="CompilerWorkspaceConfiguration">
+    <option name="MAKE_PROJECT_ON_SAVE" value="true" />
+  </component>
+  <component name="DatabaseView">
+    <option name="SHOW_INTERMEDIATE" value="true" />
+    <option name="GROUP_DATA_SOURCES" value="true" />
+    <option name="GROUP_SCHEMA" value="true" />
+    <option name="GROUP_CONTENTS" value="false" />
+    <option name="SORT_POSITIONED" value="false" />
+    <option name="SHOW_EMPTY_GROUPS" value="false" />
+    <option name="AUTO_SCROLL_FROM_SOURCE" value="false" />
+    <option name="HIDDEN_KINDS">
+      <set />
+    </option>
+    <expand>
+      <path>
+        <item name="Database" type="3277223f:DatabaseStructure$DbRootGroup" />
+        <item name="remote" type="feb32156:DbDataSourceImpl" />
+      </path>
+      <path>
+        <item name="Database" type="3277223f:DatabaseStructure$DbRootGroup" />
+        <item name="remote" type="feb32156:DbDataSourceImpl" />
+        <item name="schemas" type="d4e8921:DatabaseStructure$FamilyGroup" />
+      </path>
+      <path>
+        <item name="Database" type="3277223f:DatabaseStructure$DbRootGroup" />
+        <item name="remote" type="feb32156:DbDataSourceImpl" />
+        <item name="schemas" type="d4e8921:DatabaseStructure$FamilyGroup" />
+        <item name="face: schema" type="76f4a085:MysqlImplModel$Schema" />
+      </path>
+    </expand>
+    <select />
+  </component>
+  <component name="DefaultGradleProjectSettings">
+    <option name="isMigrated" value="true" />
+  </component>
+  <component name="FileEditorManager">
+    <leaf>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/user/src/main/java/com/ylf/user/config/FaceRedisTemplate.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="270">
+              <caret line="14" column="26" selection-start-line="14" selection-start-column="26" selection-end-line="14" selection-end-column="26" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+    </leaf>
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="FxmlFile" />
+        <option value="spring-beans.schema" />
+        <option value="Enum" />
+        <option value="Interface" />
+        <option value="HTML File" />
+        <option value="Class" />
+      </list>
+    </option>
+  </component>
+  <component name="FindInProjectRecents">
+    <dirStrings>
+      <dir>$PROJECT_DIR$/manage/src/main/resources</dir>
+    </dirStrings>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+    <option name="RECENT_BRANCH_BY_REPOSITORY">
+      <map>
+        <entry key="$PROJECT_DIR$" value="ylf" />
+      </map>
+    </option>
+  </component>
+  <component name="IdeDocumentHistory">
+    <option name="CHANGED_PATHS">
+      <list>
+        <option value="$PROJECT_DIR$/manage/src/main/java/com/ylf/manage/controller/SignController.java" />
+        <option value="$PROJECT_DIR$/manage/src/main/java/com/ylf/manage/service/SignServiceImpl.java" />
+        <option value="$PROJECT_DIR$/manage/src/main/java/com/ylf/manage/serviceAPI/AttendPlanSituationService.java" />
+        <option value="$PROJECT_DIR$/manage/src/main/java/com/ylf/manage/controller/AttendPlanSituationController.java" />
+        <option value="$PROJECT_DIR$/manage/src/main/resources/mapper/SignMapper.xml" />
+        <option value="$PROJECT_DIR$/manage/src/main/java/com/ylf/manage/serviceAPI/SignService.java" />
+        <option value="$PROJECT_DIR$/manage/src/main/java/com/ylf/manage/daoAPI/SignMapper.java" />
+        <option value="$PROJECT_DIR$/manage/src/main/java/com/ylf/manage/service/AttendPlanSituationServiceImpl.java" />
+        <option value="$PROJECT_DIR$/manage/src/main/java/com/ylf/manage/daoAPI/AttendPlanMapper.java" />
+        <option value="$PROJECT_DIR$/manage/src/main/resources/mapper/AttendPlanMapper.xml" />
+        <option value="$PROJECT_DIR$/manage/src/main/java/com/ylf/manage/serviceAPI/AttendPlanService.java" />
+        <option value="$PROJECT_DIR$/manage/src/main/java/com/ylf/manage/controller/AttendPlanController.java" />
+        <option value="$APPLICATION_CONFIG_DIR$/consoles/db/ca381248-9d3f-4feb-ba68-5e456457ff58/console.sql" />
+        <option value="$PROJECT_DIR$/manage/src/main/java/com/ylf/manage/service/AttendServiceImpl.java" />
+        <option value="$PROJECT_DIR$/manage/src/main/java/com/ylf/manage/util/UUID.java" />
+        <option value="$PROJECT_DIR$/manage/src/main/java/com/ylf/manage/controller/MessageController.java" />
+        <option value="$PROJECT_DIR$/manage/src/main/java/com/ylf/manage/util/MessageService.java" />
+        <option value="$PROJECT_DIR$/manage/src/main/resources/static/index.html" />
+        <option value="$PROJECT_DIR$/manage/src/main/java/com/ylf/manage/controller/ViewController.java" />
+        <option value="$PROJECT_DIR$/user/src/main/resources/application.yml" />
+        <option value="$PROJECT_DIR$/manage/src/main/java/com/ylf/manage/serviceAPI/AcountService.java" />
+        <option value="$PROJECT_DIR$/manage/src/main/java/com/ylf/manage/service/AcountServiceImpl.java" />
+        <option value="$PROJECT_DIR$/user/src/main/java/com/ylf/user/daoAPI/UserMapper.java" />
+        <option value="$PROJECT_DIR$/user/src/main/java/com/ylf/user/util/MessageService.java" />
+        <option value="$PROJECT_DIR$/user/src/main/java/com/ylf/user/serviceAPI/UserService.java" />
+        <option value="$PROJECT_DIR$/user/src/main/java/com/ylf/user/controller/MessageController.java" />
+        <option value="$PROJECT_DIR$/manage/src/main/java/com/ylf/manage/remote/user/UserHystric.java" />
+        <option value="$PROJECT_DIR$/manage/src/main/java/com/ylf/manage/entity/User.java" />
+        <option value="$PROJECT_DIR$/user/src/main/java/com/ylf/user/entity/User.java" />
+        <option value="$PROJECT_DIR$/manage/src/main/resources/static/hello.html" />
+        <option value="$PROJECT_DIR$/manage/pom.xml" />
+        <option value="$PROJECT_DIR$/register_center/src/main/resources/application.yml" />
+        <option value="$PROJECT_DIR$/manage/src/main/java/com/ylf/manage/config/Test.java" />
+        <option value="$PROJECT_DIR$/user/src/main/java/com/ylf/user/util/Token.java" />
+        <option value="$PROJECT_DIR$/manage/src/main/java/com/ylf/manage/util/Token.java" />
+        <option value="$PROJECT_DIR$/user/src/main/java/com/ylf/user/util/UUID.java" />
+        <option value="$PROJECT_DIR$/user/src/main/resources/mapper/UserMapper.xml" />
+        <option value="$PROJECT_DIR$/user/pom.xml" />
+        <option value="$PROJECT_DIR$/manage/src/main/java/com/ylf/manage/remote/user/UserRpc.java" />
+        <option value="$PROJECT_DIR$/user/src/main/java/com/ylf/user/controller/UserController.java" />
+        <option value="$PROJECT_DIR$/manage/src/main/java/com/ylf/manage/controller/AcountController.java" />
+        <option value="$PROJECT_DIR$/user/src/main/java/com/ylf/user/service/UserServiceImpl.java" />
+        <option value="$PROJECT_DIR$/manage/src/main/java/com/ylf/manage/controller/UserController.java" />
+        <option value="$PROJECT_DIR$/manage/src/main/java/com/ylf/manage/config/FaceRedisTemplate.java" />
+        <option value="$PROJECT_DIR$/manage/src/main/resources/application.yml" />
+        <option value="$PROJECT_DIR$/manage/src/main/java/com/ylf/manage/ManageApplication.java" />
+        <option value="$PROJECT_DIR$/manage/src/main/java/com/ylf/manage/remote/baidu/FaceRpc.java" />
+        <option value="$PROJECT_DIR$/manage/src/main/java/com/ylf/manage/config/TokenAuthConfig.java" />
+        <option value="$APPLICATION_CONFIG_DIR$/consoles/.datagrid/cell" />
+        <option value="$PROJECT_DIR$/manage/src/main/java/com/ylf/manage/config/TokenAuth.java" />
+        <option value="$PROJECT_DIR$/user/src/main/java/com/ylf/user/config/FaceRedisTemplate.java" />
+      </list>
+    </option>
+  </component>
+  <component name="MavenImportPreferences">
+    <option name="generalSettings">
+      <MavenGeneralSettings>
+        <option name="userSettingsFile" value="$USER_HOME$/Downloads/apache-maven-3.6.1/conf/settings.xml" />
+      </MavenGeneralSettings>
+    </option>
+  </component>
+  <component name="MavenProjectNavigator">
+    <treeState>
+      <expand>
+        <path>
+          <item name="" type="16c1761:MavenProjectsStructure$RootNode" />
+          <item name="user" type="9519ce18:MavenProjectsStructure$ProjectNode" />
+        </path>
+        <path>
+          <item name="" type="16c1761:MavenProjectsStructure$RootNode" />
+          <item name="user" type="9519ce18:MavenProjectsStructure$ProjectNode" />
+          <item name="Lifecycle" type="58874e2:MavenProjectsStructure$LifecycleNode" />
+        </path>
+      </expand>
+      <select />
+    </treeState>
+  </component>
+  <component name="ProjectFrameBounds" extendedState="6">
+    <option name="x" value="282" />
+    <option name="y" value="213" />
+    <option name="width" value="1270" />
+    <option name="height" value="695" />
+  </component>
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectView">
+    <navigator proportions="" version="1">
+      <flattenPackages ProjectPane="false" />
+      <hideEmptyPackages ProjectPane="true" />
+      <foldersAlwaysOnTop value="true" />
+    </navigator>
+    <panes>
+      <pane id="ProjectPane">
+        <subPane>
+          <expand>
+            <path>
+              <item name="face" type="b2602c69:ProjectViewProjectNode" />
+              <item name="user" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="face" type="b2602c69:ProjectViewProjectNode" />
+              <item name="user" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="face" type="b2602c69:ProjectViewProjectNode" />
+              <item name="user" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="face" type="b2602c69:ProjectViewProjectNode" />
+              <item name="user" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="face" type="b2602c69:ProjectViewProjectNode" />
+              <item name="user" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="user" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="face" type="b2602c69:ProjectViewProjectNode" />
+              <item name="user" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="user" type="462c0819:PsiDirectoryNode" />
+              <item name="config" type="462c0819:PsiDirectoryNode" />
+            </path>
+          </expand>
+          <select />
+        </subPane>
+      </pane>
+      <pane id="Scope" />
+      <pane id="PackagesPane" />
+    </panes>
+  </component>
+  <component name="PropertiesComponent">
+    <property name="DatabaseDriversLRU" value="mysql" />
+    <property name="DefaultHtmlFileTemplate" value="HTML File" />
+    <property name="RequestMappingsPanelOrder0" value="0" />
+    <property name="RequestMappingsPanelOrder1" value="1" />
+    <property name="RequestMappingsPanelWidth0" value="75" />
+    <property name="RequestMappingsPanelWidth1" value="75" />
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="aspect.path.notification.shown" value="true" />
+    <property name="database.console.LAST_STATE" value="false" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
+    <property name="nodejs_npm_path_reset_for_default_project" value="true" />
+    <property name="nodejs_package_manager_path" value="npm" />
+    <property name="project.structure.last.edited" value="Modules" />
+    <property name="project.structure.proportion" value="0.15" />
+    <property name="project.structure.side.proportion" value="0.2" />
+    <property name="settings.editor.selected.configurable" value="vcs.Git" />
+  </component>
+  <component name="RecentsManager">
+    <key name="CopyClassDialog.RECENTS_KEY">
+      <recent name="com.ylf.user.util" />
+      <recent name="com.ylf.user.config" />
+      <recent name="com.ylf.user.controller" />
+      <recent name="com.ylf.manage.service" />
+      <recent name="com.ylf.manage.serviceAPI" />
+    </key>
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/manage/src/main/resources/static" />
+      <recent name="$PROJECT_DIR$/manage/src/main/resources/static/js" />
+      <recent name="$PROJECT_DIR$/manage/src/main/resources" />
+      <recent name="$PROJECT_DIR$/manage/src/main/java/com/ylf/manage" />
+      <recent name="$PROJECT_DIR$/user/src/main/java/com/ylf/user" />
+    </key>
+  </component>
+  <component name="RunDashboard">
+    <option name="ruleStates">
+      <list>
+        <RuleState>
+          <option name="name" value="ConfigurationTypeDashboardGroupingRule" />
+        </RuleState>
+        <RuleState>
+          <option name="name" value="StatusDashboardGroupingRule" />
+        </RuleState>
+      </list>
+    </option>
+  </component>
+  <component name="RunManager" selected="Application.FaceRpc">
+    <configuration name="FaceRpc" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="com.ylf.manage.remote.baidu.FaceRpc" />
+      <module name="manage" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.ylf.manage.remote.baidu.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="mybatis-manage" type="MavenRunConfiguration" factoryName="Maven">
+      <MavenSettings>
+        <option name="myGeneralSettings" />
+        <option name="myRunnerSettings" />
+        <option name="myRunnerParameters">
+          <MavenRunnerParameters>
+            <option name="profiles">
+              <set />
+            </option>
+            <option name="goals">
+              <list>
+                <option value="mybatis-generator:generate" />
+              </list>
+            </option>
+            <option name="pomFileName" />
+            <option name="profilesMap">
+              <map />
+            </option>
+            <option name="resolveToWorkspace" value="false" />
+            <option name="workingDirPath" value="$PROJECT_DIR$/manage" />
+          </MavenRunnerParameters>
+        </option>
+      </MavenSettings>
+      <method v="2" />
+    </configuration>
+    <configuration name="mybatis-user" type="MavenRunConfiguration" factoryName="Maven">
+      <MavenSettings>
+        <option name="myGeneralSettings" />
+        <option name="myRunnerSettings" />
+        <option name="myRunnerParameters">
+          <MavenRunnerParameters>
+            <option name="profiles">
+              <set />
+            </option>
+            <option name="goals">
+              <list>
+                <option value="mybatis-generator:generate" />
+              </list>
+            </option>
+            <option name="pomFileName" />
+            <option name="profilesMap">
+              <map />
+            </option>
+            <option name="resolveToWorkspace" value="false" />
+            <option name="workingDirPath" value="$PROJECT_DIR$/user" />
+          </MavenRunnerParameters>
+        </option>
+      </MavenSettings>
+      <method v="2" />
+    </configuration>
+    <configuration name="ManageApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot">
+      <module name="manage" />
+      <option name="SPRING_BOOT_MAIN_CLASS" value="com.ylf.manage.ManageApplication" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="RegisterCenterApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot">
+      <module name="register_center" />
+      <option name="SPRING_BOOT_MAIN_CLASS" value="com.ylf.register_center.RegisterCenterApplication" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="UserApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot">
+      <module name="user" />
+      <option name="SPRING_BOOT_MAIN_CLASS" value="com.ylf.user.UserApplication" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <list>
+      <item itemvalue="Application.FaceRpc" />
+      <item itemvalue="Maven.mybatis-manage" />
+      <item itemvalue="Maven.mybatis-user" />
+      <item itemvalue="Spring Boot.ManageApplication" />
+      <item itemvalue="Spring Boot.RegisterCenterApplication" />
+      <item itemvalue="Spring Boot.UserApplication" />
+    </list>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Application.FaceRpc" />
+        <item itemvalue="Application.FaceRpc" />
+        <item itemvalue="Application.Token" />
+        <item itemvalue="Application.FaceRpc" />
+      </list>
+    </recent_temporary>
+  </component>
+  <component name="SvnConfiguration">
+    <configuration />
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="33c3349e-7c0a-4b30-9490-049748ea8b10" name="Default Changelist" comment="" />
+      <created>1575380012482</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1575380012482</updated>
+      <workItem from="1575380013853" duration="1852000" />
+      <workItem from="1575382045754" duration="994000" />
+      <workItem from="1575383064741" duration="3185000" />
+      <workItem from="1575442867536" duration="2669000" />
+      <workItem from="1575445976426" duration="14050000" />
+      <workItem from="1575466209590" duration="549000" />
+      <workItem from="1575555677227" duration="582000" />
+      <workItem from="1575556292902" duration="504000" />
+      <workItem from="1575556955305" duration="207000" />
+      <workItem from="1575557184983" duration="182000" />
+      <workItem from="1575613569020" duration="4131000" />
+      <workItem from="1575617796544" duration="206000" />
+      <workItem from="1575812274803" duration="6232000" />
+      <workItem from="1575977307120" duration="3317000" />
+      <workItem from="1575980666936" duration="4208000" />
+      <workItem from="1575986959400" duration="3572000" />
+      <workItem from="1576064371644" duration="9759000" />
+      <workItem from="1576074222800" duration="60000" />
+      <workItem from="1576127229180" duration="9171000" />
+      <workItem from="1576140750824" duration="8673000" />
+      <workItem from="1576223104212" duration="4545000" />
+      <workItem from="1576405386303" duration="367000" />
+      <workItem from="1576421095547" duration="384000" />
+      <workItem from="1576479178654" duration="14986000" />
+      <workItem from="1576559128171" duration="2413000" />
+      <workItem from="1576565811133" duration="4168000" />
+      <workItem from="1576648511056" duration="11213000" />
+      <workItem from="1576732903808" duration="26129000" />
+      <workItem from="1577009432974" duration="3158000" />
+      <workItem from="1577014686551" duration="2819000" />
+      <workItem from="1577083798696" duration="354000" />
+      <workItem from="1577084183420" duration="7726000" />
+      <workItem from="1577093575665" duration="661000" />
+      <workItem from="1577103499743" duration="80000" />
+      <workItem from="1577103995905" duration="17000" />
+      <workItem from="1577104036629" duration="2880000" />
+      <workItem from="1577193047897" duration="8480000" />
+      <workItem from="1577262923038" duration="2027000" />
+      <workItem from="1577274664039" duration="1096000" />
+      <workItem from="1577337284192" duration="15144000" />
+      <workItem from="1577422263105" duration="6323000" />
+      <workItem from="1577609695707" duration="8384000" />
+      <workItem from="1577618545601" duration="3339000" />
+      <workItem from="1577622125177" duration="302000" />
+      <workItem from="1577622535093" duration="14000" />
+      <workItem from="1577622787842" duration="29000" />
+      <workItem from="1577622840399" duration="1536000" />
+      <workItem from="1577624411543" duration="89000" />
+      <workItem from="1577683430571" duration="818000" />
+      <workItem from="1577684333459" duration="24000" />
+      <workItem from="1577684373839" duration="7446000" />
+      <workItem from="1577693517015" duration="17000" />
+      <workItem from="1577693629697" duration="556000" />
+      <workItem from="1577694420545" duration="10620000" />
+      <workItem from="1577708317978" duration="20000" />
+      <workItem from="1577714583852" duration="2736000" />
+      <workItem from="1577769421760" duration="4157000" />
+      <workItem from="1577859828637" duration="13803000" />
+      <workItem from="1577945121521" duration="13185000" />
+      <workItem from="1577965626295" duration="3412000" />
+      <workItem from="1578221779406" duration="4749000" />
+      <workItem from="1578228462903" duration="511000" />
+      <workItem from="1578272786870" duration="1277000" />
+      <workItem from="1578308295385" duration="7537000" />
+      <workItem from="1578394087624" duration="660000" />
+      <workItem from="1578398506498" duration="3063000" />
+      <workItem from="1578401620362" duration="473000" />
+      <workItem from="1578483502152" duration="9478000" />
+      <workItem from="1578565418830" duration="1345000" />
+      <workItem from="1578569790943" duration="1193000" />
+      <workItem from="1578571369839" duration="4198000" />
+      <workItem from="1578575998203" duration="699000" />
+      <workItem from="1578633511536" duration="2150000" />
+      <workItem from="1578638668784" duration="199000" />
+      <workItem from="1578639270554" duration="400000" />
+      <workItem from="1578639683868" duration="270000" />
+      <workItem from="1578640020232" duration="520000" />
+      <workItem from="1578640727603" duration="116000" />
+      <workItem from="1578658108203" duration="20000" />
+      <workItem from="1578658230832" duration="2252000" />
+      <workItem from="1578661220352" duration="186000" />
+      <workItem from="1578745398703" duration="44000" />
+      <workItem from="1578746908845" duration="1167000" />
+      <workItem from="1578751462753" duration="89000" />
+      <workItem from="1578800430366" duration="1233000" />
+      <workItem from="1578807221285" duration="80000" />
+      <workItem from="1578812019363" duration="22000" />
+      <workItem from="1578828293399" duration="37000" />
+      <workItem from="1578889780662" duration="3662000" />
+      <workItem from="1578976769445" duration="47000" />
+      <workItem from="1579152986778" duration="211000" />
+      <workItem from="1579153307608" duration="120000" />
+      <workItem from="1579497595550" duration="28000" />
+      <workItem from="1580283339012" duration="3905000" />
+      <workItem from="1580287944800" duration="2941000" />
+      <workItem from="1580291699700" duration="890000" />
+      <workItem from="1580384741525" duration="911000" />
+      <workItem from="1580385683120" duration="247000" />
+      <workItem from="1580385959644" duration="1156000" />
+      <workItem from="1580555870388" duration="21000" />
+      <workItem from="1580641680189" duration="212000" />
+      <workItem from="1580641921160" duration="591000" />
+      <workItem from="1580797934921" duration="91000" />
+      <workItem from="1583660236038" duration="250000" />
+      <workItem from="1584419533082" duration="383000" />
+      <workItem from="1584419945376" duration="6000" />
+      <workItem from="1584879699678" duration="2325000" />
+      <workItem from="1584891053860" duration="1911000" />
+      <workItem from="1584964428709" duration="1736000" />
+      <workItem from="1584967724801" duration="961000" />
+      <workItem from="1584968897147" duration="40000" />
+      <workItem from="1585122332093" duration="808000" />
+      <workItem from="1585465501567" duration="484000" />
+    </task>
+    <task id="LOCAL-00019" summary="add attendPlan">
+      <created>1576140677803</created>
+      <option name="number" value="00019" />
+      <option name="presentableId" value="LOCAL-00019" />
+      <option name="project" value="LOCAL" />
+      <updated>1576140677803</updated>
+    </task>
+    <task id="LOCAL-00020" summary="add attendPlanUser 50%">
+      <created>1576154547485</created>
+      <option name="number" value="00020" />
+      <option name="presentableId" value="LOCAL-00020" />
+      <option name="project" value="LOCAL" />
+      <updated>1576154547486</updated>
+    </task>
+    <task id="LOCAL-00021" summary="Change plan algorithm">
+      <created>1576224484838</created>
+      <option name="number" value="00021" />
+      <option name="presentableId" value="LOCAL-00021" />
+      <option name="project" value="LOCAL" />
+      <updated>1576224484838</updated>
+    </task>
+    <task id="LOCAL-00022" summary="change UserRpc">
+      <created>1576226756268</created>
+      <option name="number" value="00022" />
+      <option name="presentableId" value="LOCAL-00022" />
+      <option name="project" value="LOCAL" />
+      <updated>1576226756268</updated>
+    </task>
+    <task id="LOCAL-00023" summary="change Time algorithm">
+      <created>1576405741573</created>
+      <option name="number" value="00023" />
+      <option name="presentableId" value="LOCAL-00023" />
+      <option name="project" value="LOCAL" />
+      <updated>1576405741573</updated>
+    </task>
+    <task id="LOCAL-00024" summary="add  @CrossOrigin">
+      <created>1576421229135</created>
+      <option name="number" value="00024" />
+      <option name="presentableId" value="LOCAL-00024" />
+      <option name="project" value="LOCAL" />
+      <updated>1576421229136</updated>
+    </task>
+    <task id="LOCAL-00025" summary="完成添加planUser">
+      <created>1576493727840</created>
+      <option name="number" value="00025" />
+      <option name="presentableId" value="LOCAL-00025" />
+      <option name="project" value="LOCAL" />
+      <updated>1576493727840</updated>
+    </task>
+    <task id="LOCAL-00026" summary="完成学生信息,重置密码api">
+      <created>1576569587209</created>
+      <option name="number" value="00026" />
+      <option name="presentableId" value="LOCAL-00026" />
+      <option name="project" value="LOCAL" />
+      <updated>1576569587210</updated>
+    </task>
+    <task id="LOCAL-00027" summary="增加添加考勤选择周几功能，更新查重函数">
+      <created>1576659705336</created>
+      <option name="number" value="00027" />
+      <option name="presentableId" value="LOCAL-00027" />
+      <option name="project" value="LOCAL" />
+      <updated>1576659705336</updated>
+    </task>
+    <task id="LOCAL-00028" summary="完善添加用户(考勤计划中),完成用户图片-&gt;考勤记录接口">
+      <created>1576765238808</created>
+      <option name="number" value="00028" />
+      <option name="presentableId" value="LOCAL-00028" />
+      <option name="project" value="LOCAL" />
+      <updated>1576765238808</updated>
+    </task>
+    <task id="LOCAL-00029" summary="修复user登录接口">
+      <created>1577009898321</created>
+      <option name="number" value="00029" />
+      <option name="presentableId" value="LOCAL-00029" />
+      <option name="project" value="LOCAL" />
+      <updated>1577009898321</updated>
+    </task>
+    <task id="LOCAL-00030" summary="修复user登录接口">
+      <created>1577010516980</created>
+      <option name="number" value="00030" />
+      <option name="presentableId" value="LOCAL-00030" />
+      <option name="project" value="LOCAL" />
+      <updated>1577010516980</updated>
+    </task>
+    <task id="LOCAL-00031" summary="完成用户-查询考勤计划接口">
+      <created>1577016614247</created>
+      <option name="number" value="00031" />
+      <option name="presentableId" value="LOCAL-00031" />
+      <option name="project" value="LOCAL" />
+      <updated>1577016614247</updated>
+    </task>
+    <task id="LOCAL-00032" summary="添加请假、审批接口">
+      <created>1577094224233</created>
+      <option name="number" value="00032" />
+      <option name="presentableId" value="LOCAL-00032" />
+      <option name="project" value="LOCAL" />
+      <updated>1577094224233</updated>
+    </task>
+    <task id="LOCAL-00033" summary="添加请假/签到枚举">
+      <created>1577106905430</created>
+      <option name="number" value="00033" />
+      <option name="presentableId" value="LOCAL-00033" />
+      <option name="project" value="LOCAL" />
+      <updated>1577106905430</updated>
+    </task>
+    <task id="LOCAL-00034" summary="测试请假接口，接口已修改调式">
+      <created>1577201321514</created>
+      <option name="number" value="00034" />
+      <option name="presentableId" value="LOCAL-00034" />
+      <option name="project" value="LOCAL" />
+      <updated>1577201321514</updated>
+    </task>
+    <task id="LOCAL-00035" summary="修改学生登录token">
+      <created>1577274754996</created>
+      <option name="number" value="00035" />
+      <option name="presentableId" value="LOCAL-00035" />
+      <option name="project" value="LOCAL" />
+      <updated>1577274754996</updated>
+    </task>
+    <task id="LOCAL-00036" summary="修改人脸搜索匹配度为80">
+      <created>1577343125908</created>
+      <option name="number" value="00036" />
+      <option name="presentableId" value="LOCAL-00036" />
+      <option name="project" value="LOCAL" />
+      <updated>1577343125908</updated>
+    </task>
+    <task id="LOCAL-00037" summary="添加用户当日考勤计划的枚举描述">
+      <created>1577345535910</created>
+      <option name="number" value="00037" />
+      <option name="presentableId" value="LOCAL-00037" />
+      <option name="project" value="LOCAL" />
+      <updated>1577345535910</updated>
+    </task>
+    <task id="LOCAL-00038" summary="添加用户当日考勤计划的枚举描述">
+      <created>1577345587231</created>
+      <option name="number" value="00038" />
+      <option name="presentableId" value="LOCAL-00038" />
+      <option name="project" value="LOCAL" />
+      <updated>1577345587231</updated>
+    </task>
+    <task id="LOCAL-00039" summary="添加用户某考勤计划下的考勤记录查询">
+      <created>1577348719302</created>
+      <option name="number" value="00039" />
+      <option name="presentableId" value="LOCAL-00039" />
+      <option name="project" value="LOCAL" />
+      <updated>1577348719302</updated>
+    </task>
+    <task id="LOCAL-00040" summary="添加老师模块">
+      <created>1577373561953</created>
+      <option name="number" value="00040" />
+      <option name="presentableId" value="LOCAL-00040" />
+      <option name="project" value="LOCAL" />
+      <updated>1577373561953</updated>
+    </task>
+    <task id="LOCAL-00041" summary="学生考勤记录分页接口修改">
+      <created>1577428122314</created>
+      <option name="number" value="00041" />
+      <option name="presentableId" value="LOCAL-00041" />
+      <option name="project" value="LOCAL" />
+      <updated>1577428122314</updated>
+    </task>
+    <task id="LOCAL-00042" summary="添加打卡路由">
+      <created>1577622287253</created>
+      <option name="number" value="00042" />
+      <option name="presentableId" value="LOCAL-00042" />
+      <option name="project" value="LOCAL" />
+      <updated>1577622287253</updated>
+    </task>
+    <task id="LOCAL-00043" summary="更新打卡功能模块">
+      <created>1577707848540</created>
+      <option name="number" value="00043" />
+      <option name="presentableId" value="LOCAL-00043" />
+      <option name="project" value="LOCAL" />
+      <updated>1577707848541</updated>
+    </task>
+    <task id="LOCAL-00044" summary="更新打卡功能模块">
+      <created>1577708049304</created>
+      <option name="number" value="00044" />
+      <option name="presentableId" value="LOCAL-00044" />
+      <option name="project" value="LOCAL" />
+      <updated>1577708049304</updated>
+    </task>
+    <task id="LOCAL-00045" summary="修改录入学生bug">
+      <created>1577718381637</created>
+      <option name="number" value="00045" />
+      <option name="presentableId" value="LOCAL-00045" />
+      <option name="project" value="LOCAL" />
+      <updated>1577718381639</updated>
+    </task>
+    <task id="LOCAL-00046" summary="更新ResPage">
+      <created>1577770102919</created>
+      <option name="number" value="00046" />
+      <option name="presentableId" value="LOCAL-00046" />
+      <option name="project" value="LOCAL" />
+      <updated>1577770102920</updated>
+    </task>
+    <task id="LOCAL-00047" summary="更新 SignMapper">
+      <created>1577775758197</created>
+      <option name="number" value="00047" />
+      <option name="presentableId" value="LOCAL-00047" />
+      <option name="project" value="LOCAL" />
+      <updated>1577775758197</updated>
+    </task>
+    <task id="LOCAL-00048" summary="添加数据可视化接口">
+      <created>1577874275168</created>
+      <option name="number" value="00048" />
+      <option name="presentableId" value="LOCAL-00048" />
+      <option name="project" value="LOCAL" />
+      <updated>1577874275168</updated>
+    </task>
+    <task id="LOCAL-00049" summary="添加token验证">
+      <created>1577954285412</created>
+      <option name="number" value="00049" />
+      <option name="presentableId" value="LOCAL-00049" />
+      <option name="project" value="LOCAL" />
+      <updated>1577954285412</updated>
+    </task>
+    <task id="LOCAL-00050" summary="添加token验证">
+      <created>1577954307878</created>
+      <option name="number" value="00050" />
+      <option name="presentableId" value="LOCAL-00050" />
+      <option name="project" value="LOCAL" />
+      <updated>1577954307879</updated>
+    </task>
+    <task id="LOCAL-00051" summary="修改录入学生bug">
+      <created>1577957253114</created>
+      <option name="number" value="00051" />
+      <option name="presentableId" value="LOCAL-00051" />
+      <option name="project" value="LOCAL" />
+      <updated>1577957253114</updated>
+    </task>
+    <task id="LOCAL-00052" summary="添加手机验证码接口">
+      <created>1577970620370</created>
+      <option name="number" value="00052" />
+      <option name="presentableId" value="LOCAL-00052" />
+      <option name="project" value="LOCAL" />
+      <updated>1577970620371</updated>
+    </task>
+    <task id="LOCAL-00053" summary="添加前端代码">
+      <created>1578227759021</created>
+      <option name="number" value="00053" />
+      <option name="presentableId" value="LOCAL-00053" />
+      <option name="project" value="LOCAL" />
+      <updated>1578227759029</updated>
+    </task>
+    <task id="LOCAL-00054" summary="配置文件更改">
+      <created>1578228037775</created>
+      <option name="number" value="00054" />
+      <option name="presentableId" value="LOCAL-00054" />
+      <option name="project" value="LOCAL" />
+      <updated>1578228037775</updated>
+    </task>
+    <task id="LOCAL-00055" summary="添加手机号验证码登录，用户绑定手机号接口">
+      <created>1578315827372</created>
+      <option name="number" value="00055" />
+      <option name="presentableId" value="LOCAL-00055" />
+      <option name="project" value="LOCAL" />
+      <updated>1578315827372</updated>
+    </task>
+    <task id="LOCAL-00056" summary="完善用户手机绑定相关接口">
+      <created>1578400989417</created>
+      <option name="number" value="00056" />
+      <option name="presentableId" value="LOCAL-00056" />
+      <option name="project" value="LOCAL" />
+      <updated>1578400989418</updated>
+    </task>
+    <task id="LOCAL-00057" summary="完善验证码接口">
+      <created>1578483823452</created>
+      <option name="number" value="00057" />
+      <option name="presentableId" value="LOCAL-00057" />
+      <option name="project" value="LOCAL" />
+      <updated>1578483823453</updated>
+    </task>
+    <task id="LOCAL-00058" summary="完善token验证，添加https协议">
+      <created>1578490563274</created>
+      <option name="number" value="00058" />
+      <option name="presentableId" value="LOCAL-00058" />
+      <option name="project" value="LOCAL" />
+      <updated>1578490563274</updated>
+    </task>
+    <task id="LOCAL-00059" summary="添加https协议">
+      <created>1578492574697</created>
+      <option name="number" value="00059" />
+      <option name="presentableId" value="LOCAL-00059" />
+      <option name="project" value="LOCAL" />
+      <updated>1578492574697</updated>
+    </task>
+    <task id="LOCAL-00060" summary="修复token验证expire时间bug">
+      <created>1578574803384</created>
+      <option name="number" value="00060" />
+      <option name="presentableId" value="LOCAL-00060" />
+      <option name="project" value="LOCAL" />
+      <updated>1578574803384</updated>
+    </task>
+    <task id="LOCAL-00061" summary="修改face-user id生成策略">
+      <created>1578576320950</created>
+      <option name="number" value="00061" />
+      <option name="presentableId" value="LOCAL-00061" />
+      <option name="project" value="LOCAL" />
+      <updated>1578576320951</updated>
+    </task>
+    <task id="LOCAL-00062" summary="采用阿里云证书">
+      <created>1578633811569</created>
+      <option name="number" value="00062" />
+      <option name="presentableId" value="LOCAL-00062" />
+      <option name="project" value="LOCAL" />
+      <updated>1578633811569</updated>
+    </task>
+    <task id="LOCAL-00063" summary="修改face-user 验证码token发放">
+      <created>1578661340752</created>
+      <option name="number" value="00063" />
+      <option name="presentableId" value="LOCAL-00063" />
+      <option name="project" value="LOCAL" />
+      <updated>1578661340752</updated>
+    </task>
+    <task id="LOCAL-00064" summary="修改学生绑定手机号bug">
+      <created>1578893285196</created>
+      <option name="number" value="00064" />
+      <option name="presentableId" value="LOCAL-00064" />
+      <option name="project" value="LOCAL" />
+      <updated>1578893285200</updated>
+    </task>
+    <task id="LOCAL-00065" summary="1.0版本">
+      <created>1580642329283</created>
+      <option name="number" value="00065" />
+      <option name="presentableId" value="LOCAL-00065" />
+      <option name="project" value="LOCAL" />
+      <updated>1580642329289</updated>
+    </task>
+    <task id="LOCAL-00066" summary="1.1版本">
+      <created>1585122396488</created>
+      <option name="number" value="00066" />
+      <option name="presentableId" value="LOCAL-00066" />
+      <option name="project" value="LOCAL" />
+      <updated>1585122396493</updated>
+    </task>
+    <task id="LOCAL-00067" summary="1.1版本">
+      <created>1585465911529</created>
+      <option name="number" value="00067" />
+      <option name="presentableId" value="LOCAL-00067" />
+      <option name="project" value="LOCAL" />
+      <updated>1585465911530</updated>
+    </task>
+    <option name="localTasksCounter" value="68" />
+    <servers />
+  </component>
+  <component name="TimeTrackingManager">
+    <option name="totallyTimeSpent" value="327465000" />
+  </component>
+  <component name="TodoView">
+    <todo-panel id="selected-file">
+      <is-autoscroll-to-source value="true" />
+    </todo-panel>
+    <todo-panel id="all">
+      <are-packages-shown value="true" />
+      <is-autoscroll-to-source value="true" />
+    </todo-panel>
+  </component>
+  <component name="ToolWindowManager">
+    <frame x="-1" y="-1" width="1922" height="1015" extended-state="6" />
+    <layout>
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.28456593" />
+      <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
+      <window_info id="Image Layers" order="2" />
+      <window_info id="Designer" order="3" />
+      <window_info id="UI Designer" order="4" />
+      <window_info id="Capture Tool" order="5" />
+      <window_info id="Favorites" order="6" side_tool="true" />
+      <window_info id="Web" order="7" side_tool="true" />
+      <window_info anchor="bottom" id="Message" order="0" />
+      <window_info anchor="bottom" id="Find" order="1" weight="0.32781065" />
+      <window_info anchor="bottom" id="Run" order="2" sideWeight="0.4989282" weight="0.24970414" />
+      <window_info anchor="bottom" id="Debug" order="3" weight="0.39976275" />
+      <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
+      <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
+      <window_info anchor="bottom" id="TODO" order="6" weight="0.3289941" />
+      <window_info anchor="bottom" id="Docker" order="7" show_stripe_button="false" />
+      <window_info anchor="bottom" id="Version Control" order="8" sideWeight="0.4994641" weight="0.32544377" />
+      <window_info anchor="bottom" id="Database Console" order="9" sideWeight="0.49946353" weight="0.63852555" />
+      <window_info anchor="bottom" id="Database Changes" order="10" show_stripe_button="false" />
+      <window_info anchor="bottom" id="Terminal" order="11" sideWeight="0.49785638" weight="0.29349113" />
+      <window_info active="true" anchor="bottom" id="Event Log" order="12" sideWeight="0.5005359" side_tool="true" visible="true" weight="0.32544377" />
+      <window_info anchor="bottom" id="Java Enterprise" order="13" weight="0.3289941" />
+      <window_info anchor="bottom" id="Spring" order="14" weight="0.3289941" />
+      <window_info anchor="bottom" id="Messages" order="15" sideWeight="0.4994641" weight="0.32544377" />
+      <window_info anchor="bottom" id="Problems" order="16" weight="0.3289941" />
+      <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
+      <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
+      <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
+      <window_info anchor="right" id="Palette" order="3" />
+      <window_info anchor="right" id="Theme Preview" order="4" />
+      <window_info anchor="right" id="Capture Analysis" order="5" />
+      <window_info anchor="right" id="Palette&#9;" order="6" />
+      <window_info anchor="right" id="Maven" order="7" weight="0.3279743" />
+      <window_info anchor="right" id="Database" order="8" weight="0.42229366" />
+      <window_info anchor="right" id="Bean Validation" order="9" />
+    </layout>
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="1" />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <ignored-roots>
+      <path value="$PROJECT_DIR$" />
+    </ignored-roots>
+    <MESSAGE value="添加用户某考勤计划下的考勤记录查询" />
+    <MESSAGE value="添加老师模块" />
+    <MESSAGE value="学生考勤记录分页接口修改" />
+    <MESSAGE value="添加打卡路由" />
+    <MESSAGE value="更新打卡功能模块" />
+    <MESSAGE value="更新ResPage" />
+    <MESSAGE value="更新 SignMapper" />
+    <MESSAGE value="添加数据可视化接口" />
+    <MESSAGE value="添加token验证" />
+    <MESSAGE value="修改录入学生bug" />
+    <MESSAGE value="添加手机验证码接口" />
+    <MESSAGE value="添加前端代码" />
+    <MESSAGE value="配置文件更改" />
+    <MESSAGE value="添加手机号验证码登录，用户绑定手机号接口" />
+    <MESSAGE value="完善用户手机绑定相关接口" />
+    <MESSAGE value="完善验证码接口" />
+    <MESSAGE value="完善token验证，添加https协议" />
+    <MESSAGE value="添加https协议" />
+    <MESSAGE value="修复token验证expire时间bug" />
+    <MESSAGE value="修改face-user id生成策略" />
+    <MESSAGE value="采用阿里云证书" />
+    <MESSAGE value="修改face-user 验证码token发放" />
+    <MESSAGE value="修改学生绑定手机号bug" />
+    <MESSAGE value="1.0版本" />
+    <MESSAGE value="1.1版本" />
+    <option name="LAST_COMMIT_MESSAGE" value="1.1版本" />
+  </component>
+  <component name="antWorkspaceConfiguration">
+    <option name="IS_AUTOSCROLL_TO_SOURCE" value="false" />
+    <option name="FILTER_TARGETS" value="false" />
+  </component>
+  <component name="editorHistoryManager">
+    <entry file="file://$PROJECT_DIR$/user/src/main/java/com/ylf/user/controller/MessageController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="657">
+          <caret line="40" column="5" lean-forward="true" selection-start-line="40" selection-start-column="5" selection-end-line="40" selection-end-column="5" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/user/pom.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="435">
+          <caret line="26" column="4" selection-start-line="26" selection-start-column="4" selection-end-line="29" selection-end-column="21" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/manage/src/main/resources/static/css/app.dab2a799.css" />
+    <entry file="file://$PROJECT_DIR$/manage/pom.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-2850">
+          <caret line="34" column="21" lean-forward="true" selection-start-line="34" selection-start-column="21" selection-end-line="34" selection-end-column="21" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/user/src/main/java/com/ylf/user/util/MessageService.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-1727">
+          <caret line="26" column="13" selection-start-line="26" selection-start-column="13" selection-end-line="26" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$USER_HOME$/Downloads/jdk1.8.0_221/jre/lib/rt.jar!/sun/nio/ch/SocketChannelImpl.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="2">
+          <caret line="806" selection-start-line="806" selection-end-line="806" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/user/src/main/java/com/ylf/user/util/Token.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="187">
+          <caret line="21" column="55" lean-forward="true" selection-start-line="21" selection-start-column="55" selection-end-line="21" selection-end-column="55" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/manage/src/main/java/com/ylf/manage/entity/Acount.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="81">
+          <caret line="3" column="27" selection-start-line="3" selection-start-column="19" selection-end-line="3" selection-end-column="27" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/manage/src/main/java/com/ylf/manage/controller/MessageController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="55">
+          <caret line="24" column="17" lean-forward="true" selection-start-line="24" selection-start-column="17" selection-end-line="24" selection-end-column="24" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/user/src/main/java/com/ylf/user/serviceAPI/UserService.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="349">
+          <caret line="24" column="9" selection-start-line="24" selection-start-column="9" selection-end-line="24" selection-end-column="9" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/manage/src/main/java/com/ylf/manage/remote/user/UserRpc.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="546">
+          <caret line="32" column="8" selection-start-line="32" selection-start-column="4" selection-end-line="32" selection-end-column="8" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/manage/src/main/java/com/ylf/manage/util/Token.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="384">
+          <caret line="28" column="34" lean-forward="true" selection-start-line="28" selection-start-column="34" selection-end-line="28" selection-end-column="37" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/manage/src/main/java/com/ylf/manage/constantEnum/UserSignEnum.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-398">
+          <caret line="9" column="12" selection-start-line="9" selection-start-column="12" selection-end-line="9" selection-end-column="12" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/user/src/main/resources/mapper/LeaveMapper.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="297">
+          <caret line="50" column="50" lean-forward="true" selection-start-line="50" selection-start-column="50" selection-end-line="50" selection-end-column="50" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/manage/src/main/resources/static/img/login.8ec91266.svg">
+      <provider selected="true" editor-type-id="images" />
+    </entry>
+    <entry file="das://ca381248-9d3f-4feb-ba68-5e456457ff58/schema/face/table/user">
+      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
+        <state projectRestartId="1e3a0700-b477-4c6e-b0f6-75b0f17b02c7">
+          <filtering>
+            <filter text="" />
+          </filtering>
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$MAVEN_REPOSITORY$/org/springframework/spring-webmvc/5.2.1.RELEASE/spring-webmvc-5.2.1.RELEASE.jar!/org/springframework/web/servlet/config/annotation/WebMvcConfigurer.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="108">
+          <caret line="7" column="7" lean-forward="true" selection-start-line="7" selection-start-column="7" selection-end-line="7" selection-end-column="7" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#2147#2148#0" expanded="true" />
+            <element signature="e#2174#2175#0" expanded="true" />
+            <element signature="e#2250#2251#0" expanded="true" />
+            <element signature="e#2277#2278#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/manage/src/main/java/com/ylf/manage/entity/User.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="81">
+          <caret line="3" column="22" selection-start-line="3" selection-start-column="19" selection-end-line="3" selection-end-column="22" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/user/src/main/resources/mapper/UserMapper.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="621">
+          <caret line="23" column="13" lean-forward="true" selection-start-line="23" selection-start-column="13" selection-end-line="23" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/manage/src/main/java/com/ylf/manage/controller/UserController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="540">
+          <caret line="37" column="50" selection-start-line="37" selection-start-column="50" selection-end-line="37" selection-end-column="50" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/manage/src/main/resources/static/js/app.6a55f7ff.js" />
+    <entry file="file://$PROJECT_DIR$/manage/src/main/resources/static/index.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <caret column="20" lean-forward="true" selection-start-column="20" selection-end-column="20" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/manage/src/main/resources/static/css/app.05d44a91.css" />
+    <entry file="file://$PROJECT_DIR$/manage/src/main/resources/static/css/app.13e76a90.css">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/user/src/main/java/com/ylf/user/service/UserServiceImpl.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1574">
+          <caret line="78" column="21" lean-forward="true" selection-start-line="78" selection-start-column="21" selection-end-line="78" selection-end-column="21" />
+          <folding>
+            <element signature="e#1855#1856#0" expanded="true" />
+            <element signature="e#1898#1899#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/user/src/main/java/com/ylf/user/controller/UserController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="999">
+          <caret line="157" column="36" selection-start-line="157" selection-start-column="19" selection-end-line="157" selection-end-column="36" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/register_center/src/main/java/com/ylf/register_center/RegisterCenterApplication.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="189">
+          <caret line="9" column="13" selection-start-line="9" selection-start-column="13" selection-end-line="9" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/pom.xml">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/manage/src/main/resources/3354836_www.zhkt.fun.pfx">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="162">
+          <caret line="6" column="36" selection-start-line="6" selection-start-column="36" selection-end-line="6" selection-end-column="36" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/manage/src/main/java/com/ylf/manage/ManageApplication.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="297">
+          <caret line="35" column="29" lean-forward="true" selection-start-line="35" selection-start-column="29" selection-end-line="35" selection-end-column="29" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#861#862#0" expanded="true" />
+            <element signature="e#929#930#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/manage/src/main/java/com/ylf/manage/constantEnum/LeaveEnum.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="444">
+          <caret line="23" column="39" selection-start-line="23" selection-start-column="30" selection-end-line="23" selection-end-column="39" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/manage/src/main/java/com/ylf/manage/constantEnum/SignEnum.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="270">
+          <caret line="10" column="12" selection-start-line="10" selection-start-column="12" selection-end-line="10" selection-end-column="12" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$MAVEN_REPOSITORY$/com/baidu/aip/java-sdk/4.12.0/java-sdk-4.12.0.jar!/com/baidu/aip/face/AipFace.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-216">
+          <caret line="7" column="7" selection-start-line="7" selection-start-column="7" selection-end-line="7" selection-end-column="7" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$MAVEN_REPOSITORY$/com/baidu/aip/java-sdk/4.12.0/java-sdk-4.12.0-sources.jar!/com/baidu/aip/http/AipHttpClient.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="93">
+          <caret line="54" column="85" selection-start-line="54" selection-start-column="80" selection-end-line="54" selection-end-column="85" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$MAVEN_REPOSITORY$/com/baidu/aip/java-sdk/4.12.0/java-sdk-4.12.0-sources.jar!/com/baidu/aip/client/BaseClient.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="325">
+          <caret line="291" column="47" lean-forward="true" selection-start-line="291" selection-start-column="47" selection-end-line="291" selection-end-column="47" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$MAVEN_REPOSITORY$/com/baidu/aip/java-sdk/4.12.0/java-sdk-4.12.0-sources.jar!/com/baidu/aip/face/AipFace.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-2916">
+          <caret line="60" column="20" lean-forward="true" selection-start-line="60" selection-start-column="20" selection-end-line="60" selection-end-column="20" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$MAVEN_REPOSITORY$/com/baidu/aip/java-sdk/4.12.0/java-sdk-4.12.0-sources.jar!/com/baidu/aip/ocr/AipOcr.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-486">
+          <caret line="26" column="13" selection-start-line="26" selection-start-column="13" selection-end-line="26" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$MAVEN_REPOSITORY$/com/baidu/aip/java-sdk/4.12.0/java-sdk-4.12.0-sources.jar!/com/baidu/aip/util/ImageUtil.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-999">
+          <caret line="25" column="13" selection-start-line="25" selection-start-column="13" selection-end-line="25" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/manage/src/main/java/com/ylf/manage/remote/baidu/FaceRpc.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-1445">
+          <caret line="36" column="45" lean-forward="true" selection-start-line="36" selection-start-column="45" selection-end-line="36" selection-end-column="45" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#686#687#0" expanded="true" />
+            <element signature="e#719#720#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="das://ca381248-9d3f-4feb-ba68-5e456457ff58/schema/face/table/sign">
+      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
+        <state projectRestartId="054f208b-704d-4c94-90ca-80af9668645d">
+          <filtering>
+            <filter text="" />
+          </filtering>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/manage/src/main/resources/application.yml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-567">
+          <caret line="3" column="25" selection-start-line="3" selection-start-column="25" selection-end-line="3" selection-end-column="25" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/register_center/src/main/resources/application.yml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="324">
+          <caret line="12" column="22" selection-start-line="12" selection-start-column="22" selection-end-line="12" selection-end-column="22" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/manage/src/main/java/com/ylf/manage/config/TokenAuthConfig.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="162">
+          <caret line="30" column="43" selection-start-line="30" selection-start-column="43" selection-end-line="30" selection-end-column="43" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/manage/src/main/java/com/ylf/manage/controller/SignController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1377">
+          <caret line="62" column="20" selection-start-line="62" selection-start-column="20" selection-end-line="62" selection-end-column="20" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/manage/src/main/java/com/ylf/manage/entity/Response.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-124">
+          <caret line="9" column="13" selection-start-line="9" selection-start-column="13" selection-end-line="9" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/manage/src/main/java/com/ylf/manage/config/TokenAuth.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="405">
+          <caret line="33" column="32" selection-start-line="33" selection-start-column="32" selection-end-line="33" selection-end-column="32" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$MAVEN_REPOSITORY$/org/springframework/data/spring-data-redis/2.2.1.RELEASE/spring-data-redis-2.2.1.RELEASE.jar!/org/springframework/data/redis/core/RedisTemplate.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-4860">
+          <caret line="47" column="13" selection-start-line="47" selection-start-column="13" selection-end-line="47" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/manage/src/main/java/com/ylf/manage/config/FaceRedisTemplate.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="324">
+          <caret line="17" column="16" lean-forward="true" selection-start-line="17" selection-start-column="16" selection-end-line="17" selection-end-column="16" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/manage/src/main/java/com/ylf/manage/controller/AcountController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="302">
+          <caret line="14" column="41" selection-start-line="14" selection-start-column="41" selection-end-line="14" selection-end-column="41" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/manage/src/main/java/com/ylf/manage/controller/AttendPlanController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-2175">
+          <caret line="36" column="28" selection-start-line="36" selection-start-column="28" selection-end-line="36" selection-end-column="28" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/user/src/main/java/com/ylf/user/config/FaceRedisTemplate.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="270">
+          <caret line="14" column="26" selection-start-line="14" selection-start-column="26" selection-end-line="14" selection-end-column="26" />
+        </state>
+      </provider>
+    </entry>
+  </component>
+  <component name="masterDetails">
+    <states>
+      <state key="ArtifactsStructureConfigurable.UI">
+        <settings>
+          <artifact-editor />
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+      <state key="FacetStructureConfigurable.UI">
+        <settings>
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+      <state key="GlobalLibrariesConfigurable.UI">
+        <settings>
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+      <state key="JdkListConfigurable.UI">
+        <settings>
+          <last-edited>1.8</last-edited>
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+      <state key="ModuleStructureConfigurable.UI">
+        <settings>
+          <last-edited>user</last-edited>
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+                <option value="0.6" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+      <state key="ProjectLibrariesConfigurable.UI">
+        <settings>
+          <last-edited>Maven: antlr:antlr:2.7.7</last-edited>
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+    </states>
+  </component>
+</project>
