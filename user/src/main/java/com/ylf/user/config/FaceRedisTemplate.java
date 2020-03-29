@@ -9,7 +9,7 @@ import org.springframework.stereotype.Component;
 /**
  * @author: leifeng.ye
  * @date: 2019-12-18
- * @desc:
+ * @desc: redis
  */
 @Component
 public class FaceRedisTemplate {
